@@ -1,4 +1,4 @@
-﻿namespace Store_Rental_Management_Systems
+﻿namespace Condo_Sale_Management_Systems
 {
     partial class FrmCustomer
     {

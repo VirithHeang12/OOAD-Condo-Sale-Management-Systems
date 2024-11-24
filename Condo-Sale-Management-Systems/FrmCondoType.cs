@@ -9,10 +9,10 @@ namespace Condo_Sale_Management_Systems
     public partial class FrmCondoType : FrmHome
     {
 
-        private const string TABLE_NAME = "tblStoreType";
+        private const string TABLE_NAME = "tblCondoType";
         private DataSet _storeRentalDataSet = new DataSet();
-        private SqlDataAdapter _storetypeDataAdapter = new();
-        private BindingSource _storetypeBindingSource = new();
+        private SqlDataAdapter _condotypeDataAdapter = new();
+        private BindingSource _condotypeBindingSource = new();
 
         private ErrorProvider _errorProvider = new();
 
@@ -21,45 +21,36 @@ namespace Condo_Sale_Management_Systems
         {
             InitializeComponent();
             #region Init DataAdapter Commands
-            _storetypeDataAdapter.SelectCommand = CondoTypeHelper.CreateGetAllStoreTypesCommand();
-            _storetypeDataAdapter.InsertCommand = CondoTypeHelper.CreateInsertStoreTypeCommand();
-            _storetypeDataAdapter.UpdateCommand = CondoTypeHelper.CreateUpdateStoreTypeCommand();
+            _condotypeDataAdapter.SelectCommand = CondoTypeHelper.CreateGetAllCondoTypesCommand();
+            _condotypeDataAdapter.InsertCommand = CondoTypeHelper.CreateInsertCondoTypeCommand();
+            _condotypeDataAdapter.UpdateCommand = CondoTypeHelper.CreateUpdateCondoTypeCommand();
             #endregion
 
             #region Add controls for validation
             _errorProvider.ContainerControl = this;
-            _validatingControls.Add(txtStoreTypeDescription);
-            _validatingControls.Add(txtMonthlyLeasePrice);
-            _validatingControls.Add(txtThreeMonthPaymentDiscount);
-            _validatingControls.Add(txtSixMonthPaymentDiscount);
-            _validatingControls.Add(txtOneYearPaymentDiscount);
+            _validatingControls.Add(txtCondoTypeDescription);
+            _validatingControls.Add(txtPrice);
             #endregion
 
-            LoadAllStoreTypes();
+            LoadAllCondoTypes();
             BindWithControls();
 
 
             #region Event Registrations
-            btnNewStoreType.Click += HandleBtnNewStoreTypeClicked;
-            btnInsertStoreType.Click += HandleBtnInsertStoreTypeClicked;
-            btnUpdateStoreType.Click += HandleBtnUpdateStoreTypeClicked;
-            btnCancelStoreType.Click += HandleBtnCancelStoreTypeClicked;
+            btnNewCondoType.Click += HandleBtnNewCondoTypeClicked;
+            btnInsertCondoType.Click += HandleBtnInsertCondoTypeClicked;
+            btnUpdateCondoType.Click += HandleBtnUpdateCondoTypeClicked;
+            btnCancelCondoType.Click += HandleBtnCancelCondoTypeClicked;
 
-            txtStoreTypeDescription.Validating += ValidateTextBox;
-            txtMonthlyLeasePrice.Validating += ValidateTextBoxNumber;
-            txtThreeMonthPaymentDiscount.Validating += ValidateTextBoxIntegerOneToHundred;
-            txtSixMonthPaymentDiscount.Validating += ValidateTextBoxIntegerOneToHundred;
-            txtOneYearPaymentDiscount.Validating += ValidateTextBoxIntegerOneToHundred;
+            txtCondoTypeDescription.Validating += ValidateTextBox;
+            txtPrice.Validating += ValidateTextBoxNumber;
 
-            dgvStoreTypes.SelectionChanged += HandleSelectionChanged;
+            dgvCondoTypes.SelectionChanged += HandleSelectionChanged;
 
-            txtSearchStoreType.TextChanged += HandleSearchStoreType;
-            txtStoreTypeDescription.GotFocus += HandleGotFocusKM;
-            txtMonthlyLeasePrice.GotFocus += HandleGotFocusEN;
-            txtThreeMonthPaymentDiscount.GotFocus += HandleGotFocusEN;
-            txtSixMonthPaymentDiscount.GotFocus += HandleGotFocusEN;
-            txtOneYearPaymentDiscount.GotFocus += HandleGotFocusEN;
-            txtSearchStoreType.GotFocus += HandleGotFocusEN;
+            txtSearchCondoType.TextChanged += HandleSearchCondoType;
+            txtCondoTypeDescription.GotFocus += HandleGotFocusKM;
+            txtPrice.GotFocus += HandleGotFocusEN;
+            txtSearchCondoType.GotFocus += HandleGotFocusEN;
             #endregion
 
         }
@@ -81,12 +72,9 @@ namespace Condo_Sale_Management_Systems
         #region Bind With Controls
         private void BindWithControls()
         {
-            txtStoreTypeID.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "StoreTypeID"));
-            txtStoreTypeDescription.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "StoreTypeDescription"));
-            txtMonthlyLeasePrice.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "MonthlyLeasePrice"));
-            txtThreeMonthPaymentDiscount.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "ThreeMonthPaymentDiscount"));
-            txtSixMonthPaymentDiscount.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "SixMonthPaymentDiscount"));
-            txtOneYearPaymentDiscount.DataBindings.Add(new Binding("Text", _storetypeBindingSource, "OneYearPaymentDiscount"));
+            txtCondoTypeID.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "CondoTypeID"));
+            txtCondoTypeDescription.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "CondoTypeDescription"));
+            txtPrice.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "Price"));
         }
         #endregion
 
@@ -99,7 +87,7 @@ namespace Condo_Sale_Management_Systems
             }
             else
             {
-                btnCancelStoreType.PerformClick();
+                btnCancelCondoType.PerformClick();
             }
         }
 
@@ -112,17 +100,17 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Search
-        private void HandleSearchStoreType(object? sender, EventArgs e)
+        private void HandleSearchCondoType(object? sender, EventArgs e)
         {
-            string searchText = txtSearchStoreType.Text.Trim().ToLower();
+            string searchText = txtSearchCondoType.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                _storetypeBindingSource.Filter = string.Empty;
+                _condotypeBindingSource.Filter = string.Empty;
             }
             else
             {
-                _storetypeBindingSource.Filter = "StoreTypeDescription LIKE '%" + searchText + "%'";
+                _condotypeBindingSource.Filter = "CondoTypeDescription LIKE '%" + searchText + "%'";
 
             }
         }
@@ -146,32 +134,32 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle New
-        private void HandleBtnNewStoreTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnNewCondoTypeClicked(object? sender, EventArgs e)
         {
             try
             {
-                _storetypeBindingSource.AddNew();
+                _condotypeBindingSource.AddNew();
             }
             catch (Exception)
             {
                 MessageBox.Show("ការថែមទិន្នន័យមិនបានសម្រេច", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            txtStoreTypeDescription.Focus();
+            txtCondoTypeDescription.Focus();
         }
         #endregion
 
         #region Handle Insert
-        private void HandleBtnInsertStoreTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnInsertCondoTypeClicked(object? sender, EventArgs e)
         {
             CauseValidation();
 
             if (ErrorHelper.HasErrors(_validatingControls, _errorProvider)) return;
-            _storetypeBindingSource.EndEdit();
+            _condotypeBindingSource.EndEdit();
             try
             {
-                _storetypeDataAdapter.Update(_storeRentalDataSet, TABLE_NAME);
-                _storetypeBindingSource.ResetBindings(false);
+                _condotypeDataAdapter.Update(_storeRentalDataSet, TABLE_NAME);
+                _condotypeBindingSource.ResetBindings(false);
             }
             catch (Exception)
             {
@@ -183,14 +171,14 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Update
-        private void HandleBtnUpdateStoreTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnUpdateCondoTypeClicked(object? sender, EventArgs e)
         {
-            HandleBtnInsertStoreTypeClicked(null, EventArgs.Empty);
+            HandleBtnInsertCondoTypeClicked(null, EventArgs.Empty);
         }
         #endregion
 
         #region Handle Cancel
-        private void HandleBtnCancelStoreTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnCancelCondoTypeClicked(object? sender, EventArgs e)
         {
             _errorProvider.Clear();
             _storeRentalDataSet.RejectChanges();
@@ -231,20 +219,20 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Load
-        private void LoadAllStoreTypes()
+        private void LoadAllCondoTypes()
         {
-            _storetypeDataAdapter.TableMappings.Add("Table", TABLE_NAME);
+            _condotypeDataAdapter.TableMappings.Add("Table", TABLE_NAME);
             try
             {
-                _storetypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
+                _condotypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _storetypeBindingSource.DataSource = _storeRentalDataSet.Tables[TABLE_NAME];
-            dgvStoreTypes.DataSource = _storetypeBindingSource;
+            _condotypeBindingSource.DataSource = _storeRentalDataSet.Tables[TABLE_NAME];
+            dgvCondoTypes.DataSource = _condotypeBindingSource;
         }
         #endregion
 
@@ -254,7 +242,7 @@ namespace Condo_Sale_Management_Systems
             _storeRentalDataSet.Tables[TABLE_NAME]?.Clear();
             try
             {
-                _storetypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
+                _condotypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
             }
             catch (Exception)
             {

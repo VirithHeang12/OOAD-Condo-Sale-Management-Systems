@@ -31,41 +31,31 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblTitle = new Label();
-            lblSearchStoreType = new Label();
-            txtSearchStoreType = new TextBox();
+            lblSearchCondoType = new Label();
+            txtSearchCondoType = new TextBox();
             pnlLeftSide = new Panel();
-            dgvStoreTypes = new DataGridView();
-            StoreTypeID = new DataGridViewTextBoxColumn();
-            StoreTypeDescription = new DataGridViewTextBoxColumn();
-            MonthlyLeasePrice = new DataGridViewTextBoxColumn();
-            ThreeMonthPaymentDiscount = new DataGridViewTextBoxColumn();
-            SixMonthPaymentDiscount = new DataGridViewTextBoxColumn();
-            OneYearPaymentDiscount = new DataGridViewTextBoxColumn();
+            dgvCondoTypes = new DataGridView();
+            CondoTypeID = new DataGridViewTextBoxColumn();
+            CondoTypeDescription = new DataGridViewTextBoxColumn();
             pnlRightSide = new Panel();
-            gbStoreTypeInformation = new GroupBox();
+            gbCondoTypeInformation = new GroupBox();
             label2 = new Label();
-            txtStoreTypeDescription = new TextBox();
-            txtOneYearPaymentDiscount = new TextBox();
-            lblOneYearPaymentDiscount = new Label();
-            pnlStoreTypeManipulation = new Panel();
-            btnCancelStoreType = new Button();
-            btnNewStoreType = new Button();
-            btnUpdateStoreType = new Button();
-            btnInsertStoreType = new Button();
-            lblSixMonthPaymentDiscount = new Label();
-            lblStoreTypeID = new Label();
-            txtMonthlyLeasePrice = new TextBox();
-            lblMonthlyLeasePrice = new Label();
-            txtStoreTypeID = new TextBox();
-            lblThreeMonthPaymentDiscount = new Label();
-            txtSixMonthPaymentDiscount = new TextBox();
-            txtThreeMonthPaymentDiscount = new TextBox();
+            txtCondoTypeDescription = new TextBox();
+            pnlCondoTypeManipulation = new Panel();
+            btnCancelCondoType = new Button();
+            btnNewCondoType = new Button();
+            btnUpdateCondoType = new Button();
+            btnInsertCondoType = new Button();
+            lblCondoTypeID = new Label();
+            txtPrice = new TextBox();
+            lblPrice = new Label();
+            txtCondoTypeID = new TextBox();
             label1 = new Label();
             pnlLeftSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStoreTypes).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCondoTypes).BeginInit();
             pnlRightSide.SuspendLayout();
-            gbStoreTypeInformation.SuspendLayout();
-            pnlStoreTypeManipulation.SuspendLayout();
+            gbCondoTypeInformation.SuspendLayout();
+            pnlCondoTypeManipulation.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitle
@@ -81,38 +71,38 @@
             lblTitle.Text = "ព័ត៌មានប្រភេទតូប";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblSearchStoreType
+            // lblSearchCondoType
             // 
-            lblSearchStoreType.AutoSize = true;
-            lblSearchStoreType.Location = new Point(82, 25);
-            lblSearchStoreType.Name = "lblSearchStoreType";
-            lblSearchStoreType.Size = new Size(266, 36);
-            lblSearchStoreType.TabIndex = 1;
-            lblSearchStoreType.Text = "ស្វែងរក (ពិព័ណ៌នាប្រភេទតូប):";
+            lblSearchCondoType.AutoSize = true;
+            lblSearchCondoType.Location = new Point(82, 25);
+            lblSearchCondoType.Name = "lblSearchCondoType";
+            lblSearchCondoType.Size = new Size(266, 36);
+            lblSearchCondoType.TabIndex = 1;
+            lblSearchCondoType.Text = "ស្វែងរក (ពិព័ណ៌នាប្រភេទតូប):";
             // 
-            // txtSearchStoreType
+            // txtSearchCondoType
             // 
-            txtSearchStoreType.Location = new Point(469, 22);
-            txtSearchStoreType.Name = "txtSearchStoreType";
-            txtSearchStoreType.Size = new Size(445, 44);
-            txtSearchStoreType.TabIndex = 7;
-            txtSearchStoreType.TabStop = false;
+            txtSearchCondoType.Location = new Point(469, 22);
+            txtSearchCondoType.Name = "txtSearchCondoType";
+            txtSearchCondoType.Size = new Size(445, 44);
+            txtSearchCondoType.TabIndex = 7;
+            txtSearchCondoType.TabStop = false;
             // 
             // pnlLeftSide
             // 
-            pnlLeftSide.Controls.Add(dgvStoreTypes);
-            pnlLeftSide.Controls.Add(lblSearchStoreType);
-            pnlLeftSide.Controls.Add(txtSearchStoreType);
+            pnlLeftSide.Controls.Add(dgvCondoTypes);
+            pnlLeftSide.Controls.Add(lblSearchCondoType);
+            pnlLeftSide.Controls.Add(txtSearchCondoType);
             pnlLeftSide.Location = new Point(266, 537);
             pnlLeftSide.Name = "pnlLeftSide";
             pnlLeftSide.Size = new Size(1534, 463);
             pnlLeftSide.TabIndex = 3;
             // 
-            // dgvStoreTypes
+            // dgvCondoTypes
             // 
-            dgvStoreTypes.AllowUserToAddRows = false;
-            dgvStoreTypes.AllowUserToDeleteRows = false;
-            dgvStoreTypes.BackgroundColor = Color.WhiteSmoke;
+            dgvCondoTypes.AllowUserToAddRows = false;
+            dgvCondoTypes.AllowUserToDeleteRows = false;
+            dgvCondoTypes.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -120,9 +110,9 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvStoreTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvStoreTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStoreTypes.Columns.AddRange(new DataGridViewColumn[] { StoreTypeID, StoreTypeDescription, MonthlyLeasePrice, ThreeMonthPaymentDiscount, SixMonthPaymentDiscount, OneYearPaymentDiscount });
+            dgvCondoTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCondoTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCondoTypes.Columns.AddRange(new DataGridViewColumn[] { CondoTypeID, CondoTypeDescription, Price });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -130,106 +120,60 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvStoreTypes.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvStoreTypes.Location = new Point(82, 90);
-            dgvStoreTypes.Name = "dgvStoreTypes";
-            dgvStoreTypes.ReadOnly = true;
-            dgvStoreTypes.RowHeadersWidth = 51;
-            dgvStoreTypes.RowTemplate.Height = 29;
-            dgvStoreTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvStoreTypes.Size = new Size(1397, 337);
-            dgvStoreTypes.TabIndex = 3;
-            dgvStoreTypes.TabStop = false;
+            dgvCondoTypes.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCondoTypes.Location = new Point(82, 90);
+            dgvCondoTypes.Name = "dgvCondoTypes";
+            dgvCondoTypes.ReadOnly = true;
+            dgvCondoTypes.RowHeadersWidth = 51;
+            dgvCondoTypes.RowTemplate.Height = 29;
+            dgvCondoTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCondoTypes.Size = new Size(1397, 337);
+            dgvCondoTypes.TabIndex = 3;
+            dgvCondoTypes.TabStop = false;
             // 
-            // StoreTypeID
+            // CondoTypeID
             // 
-            StoreTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            StoreTypeID.DataPropertyName = "StoreTypeID";
-            StoreTypeID.HeaderText = "លេខសម្គាល់ប្រភេទតូប";
-            StoreTypeID.MinimumWidth = 8;
-            StoreTypeID.Name = "StoreTypeID";
-            StoreTypeID.ReadOnly = true;
-            StoreTypeID.Width = 226;
+            CondoTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            CondoTypeID.DataPropertyName = "CondoTypeID";
+            CondoTypeID.HeaderText = "លេខសម្គាល់ប្រភេទតូប";
+            CondoTypeID.MinimumWidth = 8;
+            CondoTypeID.Name = "CondoTypeID";
+            CondoTypeID.ReadOnly = true;
+            CondoTypeID.Width = 226;
             // 
-            // StoreTypeDescription
+            // CondoTypeDescription
             // 
-            StoreTypeDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            StoreTypeDescription.DataPropertyName = "StoreTypeDescription";
-            StoreTypeDescription.HeaderText = "ពិពណ៌នា";
-            StoreTypeDescription.MinimumWidth = 8;
-            StoreTypeDescription.Name = "StoreTypeDescription";
-            StoreTypeDescription.ReadOnly = true;
-            // 
-            // MonthlyLeasePrice
-            // 
-            MonthlyLeasePrice.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            MonthlyLeasePrice.DataPropertyName = "MonthlyLeasePrice";
-            MonthlyLeasePrice.HeaderText = "ថ្លៃជួលប្រចាំខែ";
-            MonthlyLeasePrice.MinimumWidth = 8;
-            MonthlyLeasePrice.Name = "MonthlyLeasePrice";
-            MonthlyLeasePrice.ReadOnly = true;
-            MonthlyLeasePrice.Width = 158;
-            // 
-            // ThreeMonthPaymentDiscount
-            // 
-            ThreeMonthPaymentDiscount.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            ThreeMonthPaymentDiscount.DataPropertyName = "ThreeMonthPaymentDiscount";
-            ThreeMonthPaymentDiscount.HeaderText = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង៣ខែ";
-            ThreeMonthPaymentDiscount.MinimumWidth = 8;
-            ThreeMonthPaymentDiscount.Name = "ThreeMonthPaymentDiscount";
-            ThreeMonthPaymentDiscount.ReadOnly = true;
-            ThreeMonthPaymentDiscount.Width = 255;
-            // 
-            // SixMonthPaymentDiscount
-            // 
-            SixMonthPaymentDiscount.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            SixMonthPaymentDiscount.DataPropertyName = "SixMonthPaymentDiscount";
-            SixMonthPaymentDiscount.HeaderText = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង៦ខែ";
-            SixMonthPaymentDiscount.MinimumWidth = 8;
-            SixMonthPaymentDiscount.Name = "SixMonthPaymentDiscount";
-            SixMonthPaymentDiscount.ReadOnly = true;
-            SixMonthPaymentDiscount.Width = 252;
-            // 
-            // OneYearPaymentDiscount
-            // 
-            OneYearPaymentDiscount.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            OneYearPaymentDiscount.DataPropertyName = "OneYearPaymentDiscount";
-            OneYearPaymentDiscount.HeaderText = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង១ឆ្នាំ";
-            OneYearPaymentDiscount.MinimumWidth = 8;
-            OneYearPaymentDiscount.Name = "OneYearPaymentDiscount";
-            OneYearPaymentDiscount.ReadOnly = true;
-            OneYearPaymentDiscount.Width = 252;
+            CondoTypeDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CondoTypeDescription.DataPropertyName = "CondoTypeDescription";
+            CondoTypeDescription.HeaderText = "ពិពណ៌នា";
+            CondoTypeDescription.MinimumWidth = 8;
+            CondoTypeDescription.Name = "CondoTypeDescription";
+            CondoTypeDescription.ReadOnly = true;
             // 
             // pnlRightSide
             // 
-            pnlRightSide.Controls.Add(gbStoreTypeInformation);
+            pnlRightSide.Controls.Add(gbCondoTypeInformation);
             pnlRightSide.Location = new Point(266, 184);
             pnlRightSide.Name = "pnlRightSide";
             pnlRightSide.Size = new Size(1534, 347);
             pnlRightSide.TabIndex = 4;
             // 
-            // gbStoreTypeInformation
+            // gbCondoTypeInformation
             // 
-            gbStoreTypeInformation.Controls.Add(label2);
-            gbStoreTypeInformation.Controls.Add(txtStoreTypeDescription);
-            gbStoreTypeInformation.Controls.Add(txtOneYearPaymentDiscount);
-            gbStoreTypeInformation.Controls.Add(lblOneYearPaymentDiscount);
-            gbStoreTypeInformation.Controls.Add(pnlStoreTypeManipulation);
-            gbStoreTypeInformation.Controls.Add(lblSixMonthPaymentDiscount);
-            gbStoreTypeInformation.Controls.Add(lblStoreTypeID);
-            gbStoreTypeInformation.Controls.Add(txtMonthlyLeasePrice);
-            gbStoreTypeInformation.Controls.Add(lblMonthlyLeasePrice);
-            gbStoreTypeInformation.Controls.Add(txtStoreTypeID);
-            gbStoreTypeInformation.Controls.Add(lblThreeMonthPaymentDiscount);
-            gbStoreTypeInformation.Controls.Add(txtSixMonthPaymentDiscount);
-            gbStoreTypeInformation.Controls.Add(txtThreeMonthPaymentDiscount);
-            gbStoreTypeInformation.Font = new Font("Khmer OS Siemreap", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            gbStoreTypeInformation.Location = new Point(82, 12);
-            gbStoreTypeInformation.Name = "gbStoreTypeInformation";
-            gbStoreTypeInformation.Size = new Size(1397, 319);
-            gbStoreTypeInformation.TabIndex = 25;
-            gbStoreTypeInformation.TabStop = false;
-            gbStoreTypeInformation.Text = "ព័ត៌មានប្រភេទតូប";
+            gbCondoTypeInformation.Controls.Add(label2);
+            gbCondoTypeInformation.Controls.Add(txtCondoTypeDescription);
+            gbCondoTypeInformation.Controls.Add(pnlCondoTypeManipulation);
+            gbCondoTypeInformation.Controls.Add(lblCondoTypeID);
+            gbCondoTypeInformation.Controls.Add(txtPrice);
+            gbCondoTypeInformation.Controls.Add(lblPrice);
+            gbCondoTypeInformation.Controls.Add(txtCondoTypeID);
+            gbCondoTypeInformation.Font = new Font("Khmer OS Siemreap", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            gbCondoTypeInformation.Location = new Point(82, 12);
+            gbCondoTypeInformation.Name = "gbCondoTypeInformation";
+            gbCondoTypeInformation.Size = new Size(1397, 319);
+            gbCondoTypeInformation.TabIndex = 25;
+            gbCondoTypeInformation.TabStop = false;
+            gbCondoTypeInformation.Text = "ព័ត៌មានប្រភេទតូប";
             // 
             // label2
             // 
@@ -241,172 +185,115 @@
             label2.TabIndex = 32;
             label2.Text = "ពិពណ៌នា";
             // 
-            // txtStoreTypeDescription
+            // txtCondoTypeDescription
             // 
-            txtStoreTypeDescription.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStoreTypeDescription.Location = new Point(1007, 33);
-            txtStoreTypeDescription.Name = "txtStoreTypeDescription";
-            txtStoreTypeDescription.Size = new Size(342, 44);
-            txtStoreTypeDescription.TabIndex = 1;
+            txtCondoTypeDescription.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCondoTypeDescription.Location = new Point(1007, 33);
+            txtCondoTypeDescription.Name = "txtCondoTypeDescription";
+            txtCondoTypeDescription.Size = new Size(342, 44);
+            txtCondoTypeDescription.TabIndex = 1;
             // 
-            // txtOneYearPaymentDiscount
+            // pnlCondoTypeManipulation
             // 
-            txtOneYearPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtOneYearPaymentDiscount.Location = new Point(1007, 164);
-            txtOneYearPaymentDiscount.Name = "txtOneYearPaymentDiscount";
-            txtOneYearPaymentDiscount.Size = new Size(342, 44);
-            txtOneYearPaymentDiscount.TabIndex = 5;
-            txtOneYearPaymentDiscount.Tag = "n";
+            pnlCondoTypeManipulation.Controls.Add(btnCancelCondoType);
+            pnlCondoTypeManipulation.Controls.Add(btnNewCondoType);
+            pnlCondoTypeManipulation.Controls.Add(btnUpdateCondoType);
+            pnlCondoTypeManipulation.Controls.Add(btnInsertCondoType);
+            pnlCondoTypeManipulation.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pnlCondoTypeManipulation.Location = new Point(18, 232);
+            pnlCondoTypeManipulation.Name = "pnlCondoTypeManipulation";
+            pnlCondoTypeManipulation.Size = new Size(1301, 81);
+            pnlCondoTypeManipulation.TabIndex = 5;
             // 
-            // lblOneYearPaymentDiscount
+            // btnCancelCondoType
             // 
-            lblOneYearPaymentDiscount.AutoSize = true;
-            lblOneYearPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblOneYearPaymentDiscount.Location = new Point(711, 182);
-            lblOneYearPaymentDiscount.Name = "lblOneYearPaymentDiscount";
-            lblOneYearPaymentDiscount.Size = new Size(229, 36);
-            lblOneYearPaymentDiscount.TabIndex = 28;
-            lblOneYearPaymentDiscount.Text = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង១ឆ្នាំ:";
+            btnCancelCondoType.BackColor = Color.FromArgb(0, 28, 87);
+            btnCancelCondoType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelCondoType.ForeColor = Color.WhiteSmoke;
+            btnCancelCondoType.Location = new Point(1102, 20);
+            btnCancelCondoType.Name = "btnCancelCondoType";
+            btnCancelCondoType.Size = new Size(152, 52);
+            btnCancelCondoType.TabIndex = 3;
+            btnCancelCondoType.TabStop = false;
+            btnCancelCondoType.Text = "បោះបង់";
+            btnCancelCondoType.UseVisualStyleBackColor = false;
             // 
-            // pnlStoreTypeManipulation
+            // btnNewCondoType
             // 
-            pnlStoreTypeManipulation.Controls.Add(btnCancelStoreType);
-            pnlStoreTypeManipulation.Controls.Add(btnNewStoreType);
-            pnlStoreTypeManipulation.Controls.Add(btnUpdateStoreType);
-            pnlStoreTypeManipulation.Controls.Add(btnInsertStoreType);
-            pnlStoreTypeManipulation.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlStoreTypeManipulation.Location = new Point(18, 232);
-            pnlStoreTypeManipulation.Name = "pnlStoreTypeManipulation";
-            pnlStoreTypeManipulation.Size = new Size(1301, 81);
-            pnlStoreTypeManipulation.TabIndex = 5;
+            btnNewCondoType.BackColor = Color.FromArgb(0, 28, 87);
+            btnNewCondoType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNewCondoType.ForeColor = Color.White;
+            btnNewCondoType.Location = new Point(774, 20);
+            btnNewCondoType.Name = "btnNewCondoType";
+            btnNewCondoType.Size = new Size(152, 52);
+            btnNewCondoType.TabIndex = 6;
+            btnNewCondoType.TabStop = false;
+            btnNewCondoType.Text = "បង្កើតថ្មី";
+            btnNewCondoType.UseVisualStyleBackColor = false;
             // 
-            // btnCancelStoreType
+            // btnUpdateCondoType
             // 
-            btnCancelStoreType.BackColor = Color.FromArgb(0, 28, 87);
-            btnCancelStoreType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelStoreType.ForeColor = Color.WhiteSmoke;
-            btnCancelStoreType.Location = new Point(1102, 20);
-            btnCancelStoreType.Name = "btnCancelStoreType";
-            btnCancelStoreType.Size = new Size(152, 52);
-            btnCancelStoreType.TabIndex = 3;
-            btnCancelStoreType.TabStop = false;
-            btnCancelStoreType.Text = "បោះបង់";
-            btnCancelStoreType.UseVisualStyleBackColor = false;
+            btnUpdateCondoType.BackColor = Color.FromArgb(0, 28, 87);
+            btnUpdateCondoType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdateCondoType.ForeColor = Color.White;
+            btnUpdateCondoType.Location = new Point(411, 20);
+            btnUpdateCondoType.Name = "btnUpdateCondoType";
+            btnUpdateCondoType.Size = new Size(152, 52);
+            btnUpdateCondoType.TabIndex = 1;
+            btnUpdateCondoType.TabStop = false;
+            btnUpdateCondoType.Text = "កែប្រែ";
+            btnUpdateCondoType.UseVisualStyleBackColor = false;
             // 
-            // btnNewStoreType
+            // btnInsertCondoType
             // 
-            btnNewStoreType.BackColor = Color.FromArgb(0, 28, 87);
-            btnNewStoreType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNewStoreType.ForeColor = Color.White;
-            btnNewStoreType.Location = new Point(774, 20);
-            btnNewStoreType.Name = "btnNewStoreType";
-            btnNewStoreType.Size = new Size(152, 52);
-            btnNewStoreType.TabIndex = 6;
-            btnNewStoreType.TabStop = false;
-            btnNewStoreType.Text = "បង្កើតថ្មី";
-            btnNewStoreType.UseVisualStyleBackColor = false;
+            btnInsertCondoType.BackColor = Color.FromArgb(0, 28, 87);
+            btnInsertCondoType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInsertCondoType.ForeColor = Color.White;
+            btnInsertCondoType.Location = new Point(20, 20);
+            btnInsertCondoType.Name = "btnInsertCondoType";
+            btnInsertCondoType.Size = new Size(152, 52);
+            btnInsertCondoType.TabIndex = 0;
+            btnInsertCondoType.TabStop = false;
+            btnInsertCondoType.Text = "បញ្ចូល";
+            btnInsertCondoType.UseVisualStyleBackColor = false;
             // 
-            // btnUpdateStoreType
+            // lblCondoTypeID
             // 
-            btnUpdateStoreType.BackColor = Color.FromArgb(0, 28, 87);
-            btnUpdateStoreType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdateStoreType.ForeColor = Color.White;
-            btnUpdateStoreType.Location = new Point(411, 20);
-            btnUpdateStoreType.Name = "btnUpdateStoreType";
-            btnUpdateStoreType.Size = new Size(152, 52);
-            btnUpdateStoreType.TabIndex = 1;
-            btnUpdateStoreType.TabStop = false;
-            btnUpdateStoreType.Text = "កែប្រែ";
-            btnUpdateStoreType.UseVisualStyleBackColor = false;
+            lblCondoTypeID.AutoSize = true;
+            lblCondoTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCondoTypeID.Location = new Point(18, 41);
+            lblCondoTypeID.Name = "lblCondoTypeID";
+            lblCondoTypeID.Size = new Size(203, 36);
+            lblCondoTypeID.TabIndex = 0;
+            lblCondoTypeID.Text = "លេខសម្គាល់ប្រភេទតូប:";
             // 
-            // btnInsertStoreType
+            // txtPrice
             // 
-            btnInsertStoreType.BackColor = Color.FromArgb(0, 28, 87);
-            btnInsertStoreType.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInsertStoreType.ForeColor = Color.White;
-            btnInsertStoreType.Location = new Point(20, 20);
-            btnInsertStoreType.Name = "btnInsertStoreType";
-            btnInsertStoreType.Size = new Size(152, 52);
-            btnInsertStoreType.TabIndex = 0;
-            btnInsertStoreType.TabStop = false;
-            btnInsertStoreType.Text = "បញ្ចូល";
-            btnInsertStoreType.UseVisualStyleBackColor = false;
+            txtPrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPrice.Location = new Point(309, 105);
+            txtPrice.Name = "txtPrice";
+            txtPrice.Size = new Size(354, 44);
+            txtPrice.TabIndex = 2;
+            txtPrice.Tag = "d";
             // 
-            // lblSixMonthPaymentDiscount
+            // lblPrice
             // 
-            lblSixMonthPaymentDiscount.AutoSize = true;
-            lblSixMonthPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSixMonthPaymentDiscount.Location = new Point(18, 182);
-            lblSixMonthPaymentDiscount.Name = "lblSixMonthPaymentDiscount";
-            lblSixMonthPaymentDiscount.Size = new Size(229, 36);
-            lblSixMonthPaymentDiscount.TabIndex = 27;
-            lblSixMonthPaymentDiscount.Text = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង៦ខែ:";
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPrice.Location = new Point(18, 111);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(135, 36);
+            lblPrice.TabIndex = 4;
+            lblPrice.Text = "ថ្លៃជួលប្រចាំខែ:";
             // 
-            // lblStoreTypeID
+            // txtCondoTypeID
             // 
-            lblStoreTypeID.AutoSize = true;
-            lblStoreTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStoreTypeID.Location = new Point(18, 41);
-            lblStoreTypeID.Name = "lblStoreTypeID";
-            lblStoreTypeID.Size = new Size(203, 36);
-            lblStoreTypeID.TabIndex = 0;
-            lblStoreTypeID.Text = "លេខសម្គាល់ប្រភេទតូប:";
-            // 
-            // txtMonthlyLeasePrice
-            // 
-            txtMonthlyLeasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMonthlyLeasePrice.Location = new Point(309, 105);
-            txtMonthlyLeasePrice.Name = "txtMonthlyLeasePrice";
-            txtMonthlyLeasePrice.Size = new Size(354, 44);
-            txtMonthlyLeasePrice.TabIndex = 2;
-            txtMonthlyLeasePrice.Tag = "d";
-            // 
-            // lblMonthlyLeasePrice
-            // 
-            lblMonthlyLeasePrice.AutoSize = true;
-            lblMonthlyLeasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblMonthlyLeasePrice.Location = new Point(18, 111);
-            lblMonthlyLeasePrice.Name = "lblMonthlyLeasePrice";
-            lblMonthlyLeasePrice.Size = new Size(135, 36);
-            lblMonthlyLeasePrice.TabIndex = 4;
-            lblMonthlyLeasePrice.Text = "ថ្លៃជួលប្រចាំខែ:";
-            // 
-            // txtStoreTypeID
-            // 
-            txtStoreTypeID.Enabled = false;
-            txtStoreTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStoreTypeID.Location = new Point(309, 33);
-            txtStoreTypeID.Name = "txtStoreTypeID";
-            txtStoreTypeID.Size = new Size(354, 44);
-            txtStoreTypeID.TabIndex = 0;
-            // 
-            // lblThreeMonthPaymentDiscount
-            // 
-            lblThreeMonthPaymentDiscount.AutoSize = true;
-            lblThreeMonthPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblThreeMonthPaymentDiscount.Location = new Point(711, 109);
-            lblThreeMonthPaymentDiscount.Name = "lblThreeMonthPaymentDiscount";
-            lblThreeMonthPaymentDiscount.Size = new Size(232, 36);
-            lblThreeMonthPaymentDiscount.TabIndex = 6;
-            lblThreeMonthPaymentDiscount.Text = "អត្រាបញ្ចុះតម្លៃបង់ម្ដង៣ខែ:";
-            // 
-            // txtSixMonthPaymentDiscount
-            // 
-            txtSixMonthPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtSixMonthPaymentDiscount.Location = new Point(309, 174);
-            txtSixMonthPaymentDiscount.Name = "txtSixMonthPaymentDiscount";
-            txtSixMonthPaymentDiscount.Size = new Size(354, 44);
-            txtSixMonthPaymentDiscount.TabIndex = 4;
-            txtSixMonthPaymentDiscount.Tag = "n";
-            // 
-            // txtThreeMonthPaymentDiscount
-            // 
-            txtThreeMonthPaymentDiscount.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtThreeMonthPaymentDiscount.Location = new Point(1007, 96);
-            txtThreeMonthPaymentDiscount.Name = "txtThreeMonthPaymentDiscount";
-            txtThreeMonthPaymentDiscount.Size = new Size(342, 44);
-            txtThreeMonthPaymentDiscount.TabIndex = 3;
-            txtThreeMonthPaymentDiscount.Tag = "n";
+            txtCondoTypeID.Enabled = false;
+            txtCondoTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCondoTypeID.Location = new Point(309, 33);
+            txtCondoTypeID.Name = "txtCondoTypeID";
+            txtCondoTypeID.Size = new Size(354, 44);
+            txtCondoTypeID.TabIndex = 0;
             // 
             // label1
             // 
@@ -418,7 +305,7 @@
             label1.TabIndex = 30;
             label1.Text = "ពិព័ណ៌នាប្រភេទតូប:";
             // 
-            // FrmStoreType
+            // FrmCondoType
             // 
             AutoScaleMode = AutoScaleMode.None;
             ClientSize = new Size(1800, 1000);
@@ -426,53 +313,44 @@
             Controls.Add(pnlRightSide);
             Controls.Add(pnlLeftSide);
             Controls.Add(lblTitle);
-            Name = "FrmStoreType";
+            Name = "FrmCondoType";
             Text = "ព័ត៌មានបុគ្គលិក";
             Controls.SetChildIndex(lblTitle, 0);
             Controls.SetChildIndex(pnlLeftSide, 0);
             Controls.SetChildIndex(pnlRightSide, 0);
             pnlLeftSide.ResumeLayout(false);
             pnlLeftSide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStoreTypes).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCondoTypes).EndInit();
             pnlRightSide.ResumeLayout(false);
-            gbStoreTypeInformation.ResumeLayout(false);
-            gbStoreTypeInformation.PerformLayout();
-            pnlStoreTypeManipulation.ResumeLayout(false);
+            gbCondoTypeInformation.ResumeLayout(false);
+            gbCondoTypeInformation.PerformLayout();
+            pnlCondoTypeManipulation.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label lblTitle;
-        private Label lblSearchStoreType;
-        private TextBox txtSearchStoreType;
+        private Label lblSearchCondoType;
+        private TextBox txtSearchCondoType;
         private Panel pnlLeftSide;
         private Panel pnlRightSide;
-        private Label lblStoreTypeID;
-        private TextBox txtSixMonthPaymentDiscount;
-        private Label lblThreeMonthPaymentDiscount;
-        private TextBox txtMonthlyLeasePrice;
-        private Label lblMonthlyLeasePrice;
-        private TextBox txtStoreTypeID;
-        private TextBox txtThreeMonthPaymentDiscount;
-        private GroupBox gbStoreTypeInformation;
-        private Panel pnlStoreTypeManipulation;
-        private Button btnInsertStoreType;
-        private Button btnCancelStoreType;
-        private Button btnNewStoreType;
-        private Button btnUpdateStoreType;
-        private Label lblSixMonthPaymentDiscount;
-        private DataGridView dgvStoreTypes;
-        private TextBox txtOneYearPaymentDiscount;
-        private Label lblOneYearPaymentDiscount;
-        private TextBox txtStoreTypeDescription;
+        private Label lblCondoTypeID;
+        private TextBox txtPrice;
+        private Label lblPrice;
+        private TextBox txtCondoTypeID;
+        private GroupBox gbCondoTypeInformation;
+        private Panel pnlCondoTypeManipulation;
+        private Button btnInsertCondoType;
+        private Button btnCancelCondoType;
+        private Button btnNewCondoType;
+        private Button btnUpdateCondoType;
+        private DataGridView dgvCondoTypes;
+        private TextBox txtCondoTypeDescription;
         private Label label1;
         private Label label2;
-        private DataGridViewTextBoxColumn StoreTypeID;
-        private DataGridViewTextBoxColumn StoreTypeDescription;
-        private DataGridViewTextBoxColumn MonthlyLeasePrice;
-        private DataGridViewTextBoxColumn ThreeMonthPaymentDiscount;
-        private DataGridViewTextBoxColumn SixMonthPaymentDiscount;
-        private DataGridViewTextBoxColumn OneYearPaymentDiscount;
+        private DataGridViewTextBoxColumn CondoTypeID;
+        private DataGridViewTextBoxColumn CondoTypeDescription;
+        private DataGridViewTextBoxColumn Price;
     }
 }

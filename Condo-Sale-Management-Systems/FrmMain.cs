@@ -38,14 +38,8 @@ namespace Condo_Sale_Management_Systems
                 case FormTypes.FrmCustomer:
                     OpenChildForm(new FrmCustomer());
                     break;
-                case FormTypes.FrmItem:
-                    OpenChildForm(new FrmItem());
-                    break;
-                case FormTypes.FrmSupplier:
-                    OpenChildForm(new FrmSupplier());
-                    break;
-                case FormTypes.FrmStoreType:
-                    OpenChildForm(new FrmStoreType());
+                case FormTypes.FrmCondoType:
+                    OpenChildForm(new FrmCondoType());
                     break;
                 case FormTypes.FrmUser:
                     OpenChildForm(new FrmUser());
@@ -53,29 +47,11 @@ namespace Condo_Sale_Management_Systems
                 case FormTypes.FrmInsurance:
                     OpenChildForm(new FrmInsurance());
                     break;
-                case FormTypes.FrmExpenseType:
-                    OpenChildForm(new FrmExpenseType());
-                    break;
-                case FormTypes.FrmSalaryPayment:
-                    OpenChildForm(new FrmSalaryPayment());
-                    break;
-                case FormTypes.FrmImport:
-                    OpenChildForm(new FrmImport());
-                    break;
-                case FormTypes.FrmAppointment:
-                    OpenChildForm(new FrmAppointment());
-                    break;
-                case FormTypes.FrmMaintenance:
-                    OpenChildForm(new FrmMaintenance());
-                    break;
-                case FormTypes.FrmPayment:
-                    OpenChildForm(new FrmPayment());
-                    break;
-                case FormTypes.FrmContract:
+                case FormTypes.FrmPurchase:
                     OpenChildForm(new FrmPurchase());
                     break;
-                case FormTypes.FrmStore:
-                    OpenChildForm(new FrmStore());
+                case FormTypes.FrmCondo:
+                    OpenChildForm(new FrmCondo());
                     break;
                 default: break;
             }

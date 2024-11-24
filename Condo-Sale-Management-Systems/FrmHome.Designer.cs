@@ -43,8 +43,8 @@
             btnShowInsuranceForm = new Button();
             btnShowUserForm = new Button();
             btnShowSupplierForm = new Button();
-            btnShowStoreTypeForm = new Button();
-            btnShowContractForm = new Button();
+            btnShowCondoTypeForm = new Button();
+            btnShowPurchaseForm = new Button();
             btnShowStoreForm = new Button();
             btnShowCustomerForm = new Button();
             btnShowStaffForm = new Button();
@@ -72,8 +72,8 @@
             pnlSideNav.Controls.Add(btnShowInsuranceForm);
             pnlSideNav.Controls.Add(btnShowUserForm);
             pnlSideNav.Controls.Add(btnShowSupplierForm);
-            pnlSideNav.Controls.Add(btnShowStoreTypeForm);
-            pnlSideNav.Controls.Add(btnShowContractForm);
+            pnlSideNav.Controls.Add(btnShowCondoTypeForm);
+            pnlSideNav.Controls.Add(btnShowPurchaseForm);
             pnlSideNav.Controls.Add(btnShowStoreForm);
             pnlSideNav.Controls.Add(btnShowCustomerForm);
             pnlSideNav.Controls.Add(btnShowStaffForm);
@@ -274,37 +274,37 @@
             btnShowSupplierForm.Text = "អ្នកផ្គត់ផ្គង់";
             btnShowSupplierForm.UseVisualStyleBackColor = false;
             // 
-            // btnShowStoreTypeForm
+            // btnShowCondoTypeForm
             // 
-            btnShowStoreTypeForm.BackColor = Color.Transparent;
-            btnShowStoreTypeForm.FlatAppearance.BorderSize = 0;
-            btnShowStoreTypeForm.FlatStyle = FlatStyle.Flat;
-            btnShowStoreTypeForm.Image = (Image)resources.GetObject("btnShowStoreTypeForm.Image");
-            btnShowStoreTypeForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnShowStoreTypeForm.Location = new Point(3, 302);
-            btnShowStoreTypeForm.Name = "btnShowStoreTypeForm";
-            btnShowStoreTypeForm.Padding = new Padding(5, 0, 0, 0);
-            btnShowStoreTypeForm.Size = new Size(260, 41);
-            btnShowStoreTypeForm.TabIndex = 4;
-            btnShowStoreTypeForm.TabStop = false;
-            btnShowStoreTypeForm.Text = "ប្រភេទតូប";
-            btnShowStoreTypeForm.UseVisualStyleBackColor = false;
+            btnShowCondoTypeForm.BackColor = Color.Transparent;
+            btnShowCondoTypeForm.FlatAppearance.BorderSize = 0;
+            btnShowCondoTypeForm.FlatStyle = FlatStyle.Flat;
+            btnShowCondoTypeForm.Image = (Image)resources.GetObject("btnShowCondoTypeForm.Image");
+            btnShowCondoTypeForm.ImageAlign = ContentAlignment.MiddleLeft;
+            btnShowCondoTypeForm.Location = new Point(3, 302);
+            btnShowCondoTypeForm.Name = "btnShowCondoTypeForm";
+            btnShowCondoTypeForm.Padding = new Padding(5, 0, 0, 0);
+            btnShowCondoTypeForm.Size = new Size(260, 41);
+            btnShowCondoTypeForm.TabIndex = 4;
+            btnShowCondoTypeForm.TabStop = false;
+            btnShowCondoTypeForm.Text = "ប្រភេទតូប";
+            btnShowCondoTypeForm.UseVisualStyleBackColor = false;
             // 
-            // btnShowContractForm
+            // btnShowPurchaseForm
             // 
-            btnShowContractForm.BackColor = Color.Transparent;
-            btnShowContractForm.FlatAppearance.BorderSize = 0;
-            btnShowContractForm.FlatStyle = FlatStyle.Flat;
-            btnShowContractForm.Image = (Image)resources.GetObject("btnShowContractForm.Image");
-            btnShowContractForm.ImageAlign = ContentAlignment.MiddleLeft;
-            btnShowContractForm.Location = new Point(3, 396);
-            btnShowContractForm.Name = "btnShowContractForm";
-            btnShowContractForm.Padding = new Padding(5, 0, 0, 0);
-            btnShowContractForm.Size = new Size(260, 41);
-            btnShowContractForm.TabIndex = 6;
-            btnShowContractForm.TabStop = false;
-            btnShowContractForm.Text = "កិច្ចសន្យា";
-            btnShowContractForm.UseVisualStyleBackColor = false;
+            btnShowPurchaseForm.BackColor = Color.Transparent;
+            btnShowPurchaseForm.FlatAppearance.BorderSize = 0;
+            btnShowPurchaseForm.FlatStyle = FlatStyle.Flat;
+            btnShowPurchaseForm.Image = (Image)resources.GetObject("btnShowPurchaseForm.Image");
+            btnShowPurchaseForm.ImageAlign = ContentAlignment.MiddleLeft;
+            btnShowPurchaseForm.Location = new Point(3, 396);
+            btnShowPurchaseForm.Name = "btnShowPurchaseForm";
+            btnShowPurchaseForm.Padding = new Padding(5, 0, 0, 0);
+            btnShowPurchaseForm.Size = new Size(260, 41);
+            btnShowPurchaseForm.TabIndex = 6;
+            btnShowPurchaseForm.TabStop = false;
+            btnShowPurchaseForm.Text = "កិច្ចសន្យា";
+            btnShowPurchaseForm.UseVisualStyleBackColor = false;
             // 
             // btnShowStoreForm
             // 
@@ -425,8 +425,8 @@
         private Button btnShowCustomerForm;
         private Panel panel1;
         private Button btnShowStoreForm;
-        private Button btnShowStoreTypeForm;
-        private Button btnShowContractForm;
+        private Button btnShowCondoTypeForm;
+        private Button btnShowPurchaseForm;
         private Button btnShowSupplierForm;
         private Button btnShowInsuranceForm;
         private Button btnShowUserForm;

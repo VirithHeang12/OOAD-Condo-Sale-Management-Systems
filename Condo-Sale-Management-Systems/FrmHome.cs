@@ -13,18 +13,10 @@ namespace Condo_Sale_Management_Systems
             btnHome.Click += HandleShowFormHome;
             btnShowStaffForm.Click += HandleShowFormStaff;
             btnShowCustomerForm.Click += HandleShowFormCustomer;
-            btnShowItemForm.Click += HandleShowFormItem;
-            btnShowSupplierForm.Click += HandleShowFromSupplier;
-            btnShowStoreTypeForm.Click += HandleShowFormStoreType;
+            btnShowCondoTypeForm.Click += HandleShowFormCondoType;
             btnShowUserForm.Click += HandleShowFormUser;
             btnShowInsuranceForm.Click += HandleShowFormInsurance;
-            btnShowExpenseTypeForm.Click += HandleShowFormExpenseType;
-            btnShowSalaryPaymentForm.Click += HandleShowFormSalaryPayment;
-            btnShowImportForm.Click += HandleShowFormImport;
-            btnShowAppointmentForm.Click += HandleShowFormAppointment;
-            btnShowMaintenanceForm.Click += HandleShowFormMaintenance;
-            btnShowPaymentForm.Click += HandleShowFormPayment;
-            btnShowContractForm.Click += HandleShowFormContract;
+            btnShowPurchaseForm.Click += HandleShowFormPurchase;
             btnShowStoreForm.Click += HandleShowFormStore;
 
             btnLogout.Click += HandleButtonLogoutClick;
@@ -32,42 +24,12 @@ namespace Condo_Sale_Management_Systems
 
         private void HandleShowFormStore(object? sender, EventArgs e)
         {
-            RaiseEvent(FormTypes.FrmStore);
+            RaiseEvent(FormTypes.FrmCondo);
         }
 
-        private void HandleShowFormContract(object? sender, EventArgs e)
+        private void HandleShowFormPurchase(object? sender, EventArgs e)
         {
-            RaiseEvent(FormTypes.FrmContract);
-        }
-
-        private void HandleShowFormPayment(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmPayment);
-        }
-
-        private void HandleShowFormMaintenance(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmMaintenance);
-        }
-
-        private void HandleShowFormAppointment(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmAppointment);
-        }
-
-        private void HandleShowFormImport(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmImport);
-        }
-
-        private void HandleShowFormSalaryPayment(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmSalaryPayment);
-        }
-
-        private void HandleShowFormExpenseType(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmExpenseType);
+            RaiseEvent(FormTypes.FrmPurchase);
         }
 
         private void HandleShowFormInsurance(object? sender, EventArgs e)
@@ -80,19 +42,9 @@ namespace Condo_Sale_Management_Systems
             RaiseEvent(FormTypes.FrmUser);
         }
 
-        private void HandleShowFormStoreType(object? sender, EventArgs e)
+        private void HandleShowFormCondoType(object? sender, EventArgs e)
         {
-            RaiseEvent(FormTypes.FrmStoreType);
-        }
-
-        private void HandleShowFromSupplier(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmSupplier);
-        }
-
-        private void HandleShowFormItem(object? sender, EventArgs e)
-        {
-            RaiseEvent(FormTypes.FrmItem);
+            RaiseEvent(FormTypes.FrmCondoType);
         }
 
         private void HandleShowFormCustomer(object? sender, EventArgs e)

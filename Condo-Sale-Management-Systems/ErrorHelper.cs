@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
 
-
-namespace Store_Rental_Management_Systems
+namespace Condo_Sale_Management_Systems
 {
     public static class ErrorHelper
     {

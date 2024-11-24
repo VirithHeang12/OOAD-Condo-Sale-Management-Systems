@@ -1,4 +1,4 @@
-﻿using StoreRentalHelper;
+﻿using CondoSaleManagementSystemsHelper;
 
 
 namespace Condo_Sale_Management_Systems
@@ -13,38 +13,38 @@ namespace Condo_Sale_Management_Systems
 
 
             #region Get All Counts 
-            GetRentedStores();
-            GetAllStores();
+            GetSoldCondos();
+            GetAllCondos();
             GetAllStaffs();
             GetAllCustomers();
             GetAllInsurances();
-            GetAllContracts();
+            GetAllPurchases();
             #endregion
 
         }
 
-        #region GetAllContracts
-        private void GetAllContracts()
+        #region GetAllPurchases
+        private void GetAllPurchases()
         {
-            string contractCount = HomeDesignHelper.GetAllContracts(Program.Connection);
+            string contractCount = HomeDesignHelper.GetAllPurchases(Program.Connection);
             lblCountContract.Text = contractCount;
         }
 
         #endregion
 
-        #region GetRentedStores
-        private void GetRentedStores()
+        #region GetSoldCondos
+        private void GetSoldCondos()
         {
-            string rentedStoreCount = HomeDesignHelper.GetRentedStoreCount(Program.Connection);
+            string rentedStoreCount = HomeDesignHelper.GetSoldCondoCount(Program.Connection);
             lblStoreRentedCount.Text = rentedStoreCount;
         }
 
         #endregion
 
-        #region GetAllStores
-        private void GetAllStores()
+        #region GetAllCondos
+        private void GetAllCondos()
         {
-            string allStoresCount = HomeDesignHelper.GetAllStores(Program.Connection);
+            string allStoresCount = HomeDesignHelper.GetAllCondos(Program.Connection);
             lblStoreCount.Text = allStoresCount;
         }
         #endregion

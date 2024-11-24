@@ -5,7 +5,6 @@ using System.Data;
 
 namespace Condo_Sale_Management_Systems
 {
-
     public partial class FrmUser : FrmHome
     {
         private const string TABLE_NAME = "tblUser";

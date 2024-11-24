@@ -31,40 +31,40 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             lblTitle = new Label();
-            lblSearchStore = new Label();
-            txtSearchStore = new TextBox();
+            lblSearchCondo = new Label();
+            txtSearchCondo = new TextBox();
             pnlLeftSide = new Panel();
-            dgvStores = new DataGridView();
-            StoreID = new DataGridViewTextBoxColumn();
+            dgvCondos = new DataGridView();
+            CondoID = new DataGridViewTextBoxColumn();
             FloorNumber = new DataGridViewTextBoxColumn();
             ElectricityLastRecord = new DataGridViewTextBoxColumn();
             WaterLastRecord = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
-            StoreTypeID = new DataGridViewTextBoxColumn();
+            CondoTypeID = new DataGridViewTextBoxColumn();
             pnlRightSide = new Panel();
-            gbStoreInformation = new GroupBox();
+            gbCondoInformation = new GroupBox();
             chbStatus = new CheckBox();
-            cbStoreTypeID = new ComboBox();
+            cbCondoTypeID = new ComboBox();
             txtWaterLastRecord = new TextBox();
-            lblStoreTypeID = new Label();
+            lblCondoTypeID = new Label();
             lblStatus = new Label();
-            pnlStoreManipulation = new Panel();
-            btnCancelStore = new Button();
-            btnNewStore = new Button();
-            btnUpdateStore = new Button();
-            btnInsertStore = new Button();
+            pnlCondoManipulation = new Panel();
+            btnCancelCondo = new Button();
+            btnNewCondo = new Button();
+            btnUpdateCondo = new Button();
+            btnInsertCondo = new Button();
             lblWaterLastRecord = new Label();
-            lblStoreID = new Label();
+            lblCondoID = new Label();
             txtFloorNumber = new TextBox();
             lblFloorNumber = new Label();
-            txtStoreID = new TextBox();
+            txtCondoID = new TextBox();
             lblElectricityLastRecord = new Label();
             txtElectricityLastRecord = new TextBox();
             pnlLeftSide.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCondos).BeginInit();
             pnlRightSide.SuspendLayout();
-            gbStoreInformation.SuspendLayout();
-            pnlStoreManipulation.SuspendLayout();
+            gbCondoInformation.SuspendLayout();
+            pnlCondoManipulation.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitle
@@ -80,37 +80,37 @@
             lblTitle.Text = "ព័ត៌មានតូប";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblSearchStore
+            // lblSearchCondo
             // 
-            lblSearchStore.AutoSize = true;
-            lblSearchStore.Location = new Point(82, 29);
-            lblSearchStore.Name = "lblSearchStore";
-            lblSearchStore.Size = new Size(237, 36);
-            lblSearchStore.TabIndex = 1;
-            lblSearchStore.Text = "ស្វែងរក (លេខសម្គាល់តូប):";
+            lblSearchCondo.AutoSize = true;
+            lblSearchCondo.Location = new Point(82, 29);
+            lblSearchCondo.Name = "lblSearchCondo";
+            lblSearchCondo.Size = new Size(237, 36);
+            lblSearchCondo.TabIndex = 1;
+            lblSearchCondo.Text = "ស្វែងរក (លេខសម្គាល់តូប):";
             // 
-            // txtSearchStore
+            // txtSearchCondo
             // 
-            txtSearchStore.Location = new Point(369, 26);
-            txtSearchStore.Name = "txtSearchStore";
-            txtSearchStore.Size = new Size(334, 44);
-            txtSearchStore.TabIndex = 6;
+            txtSearchCondo.Location = new Point(369, 26);
+            txtSearchCondo.Name = "txtSearchCondo";
+            txtSearchCondo.Size = new Size(334, 44);
+            txtSearchCondo.TabIndex = 6;
             // 
             // pnlLeftSide
             // 
-            pnlLeftSide.Controls.Add(dgvStores);
-            pnlLeftSide.Controls.Add(lblSearchStore);
-            pnlLeftSide.Controls.Add(txtSearchStore);
+            pnlLeftSide.Controls.Add(dgvCondos);
+            pnlLeftSide.Controls.Add(lblSearchCondo);
+            pnlLeftSide.Controls.Add(txtSearchCondo);
             pnlLeftSide.Location = new Point(266, 537);
             pnlLeftSide.Name = "pnlLeftSide";
             pnlLeftSide.Size = new Size(1534, 463);
             pnlLeftSide.TabIndex = 3;
             // 
-            // dgvStores
+            // dgvCondos
             // 
-            dgvStores.AllowUserToAddRows = false;
-            dgvStores.AllowUserToDeleteRows = false;
-            dgvStores.BackgroundColor = Color.WhiteSmoke;
+            dgvCondos.AllowUserToAddRows = false;
+            dgvCondos.AllowUserToDeleteRows = false;
+            dgvCondos.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -118,9 +118,9 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvStores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvStores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStores.Columns.AddRange(new DataGridViewColumn[] { StoreID, FloorNumber, ElectricityLastRecord, WaterLastRecord, Status, StoreTypeID });
+            dgvCondos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvCondos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCondos.Columns.AddRange(new DataGridViewColumn[] { CondoID, FloorNumber, ElectricityLastRecord, WaterLastRecord, Status, CondoTypeID });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -128,25 +128,25 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvStores.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvStores.Location = new Point(82, 82);
-            dgvStores.Name = "dgvStores";
-            dgvStores.ReadOnly = true;
-            dgvStores.RowHeadersWidth = 51;
-            dgvStores.RowTemplate.Height = 29;
-            dgvStores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvStores.Size = new Size(1362, 325);
-            dgvStores.TabIndex = 3;
+            dgvCondos.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCondos.Location = new Point(82, 82);
+            dgvCondos.Name = "dgvCondos";
+            dgvCondos.ReadOnly = true;
+            dgvCondos.RowHeadersWidth = 51;
+            dgvCondos.RowTemplate.Height = 29;
+            dgvCondos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCondos.Size = new Size(1362, 325);
+            dgvCondos.TabIndex = 3;
             // 
-            // StoreID
+            // CondoID
             // 
-            StoreID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            StoreID.DataPropertyName = "StoreID";
-            StoreID.HeaderText = "លេខសម្គាល់តូប";
-            StoreID.MinimumWidth = 6;
-            StoreID.Name = "StoreID";
-            StoreID.ReadOnly = true;
-            StoreID.Width = 172;
+            CondoID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            CondoID.DataPropertyName = "CondoID";
+            CondoID.HeaderText = "លេខសម្គាល់តូប";
+            CondoID.MinimumWidth = 6;
+            CondoID.Name = "CondoID";
+            CondoID.ReadOnly = true;
+            CondoID.Width = 172;
             // 
             // FloorNumber
             // 
@@ -187,46 +187,46 @@
             Status.Name = "Status";
             Status.ReadOnly = true;
             // 
-            // StoreTypeID
+            // CondoTypeID
             // 
-            StoreTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            StoreTypeID.DataPropertyName = "StoreTypeID";
-            StoreTypeID.HeaderText = "លេខសម្គាល់ប្រភេទតូប";
-            StoreTypeID.MinimumWidth = 6;
-            StoreTypeID.Name = "StoreTypeID";
-            StoreTypeID.ReadOnly = true;
-            StoreTypeID.Width = 226;
+            CondoTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            CondoTypeID.DataPropertyName = "CondoTypeID";
+            CondoTypeID.HeaderText = "លេខសម្គាល់ប្រភេទតូប";
+            CondoTypeID.MinimumWidth = 6;
+            CondoTypeID.Name = "CondoTypeID";
+            CondoTypeID.ReadOnly = true;
+            CondoTypeID.Width = 226;
             // 
             // pnlRightSide
             // 
-            pnlRightSide.Controls.Add(gbStoreInformation);
+            pnlRightSide.Controls.Add(gbCondoInformation);
             pnlRightSide.Location = new Point(266, 184);
             pnlRightSide.Name = "pnlRightSide";
             pnlRightSide.Size = new Size(1534, 355);
             pnlRightSide.TabIndex = 4;
             // 
-            // gbStoreInformation
+            // gbCondoInformation
             // 
-            gbStoreInformation.Controls.Add(chbStatus);
-            gbStoreInformation.Controls.Add(cbStoreTypeID);
-            gbStoreInformation.Controls.Add(txtWaterLastRecord);
-            gbStoreInformation.Controls.Add(lblStoreTypeID);
-            gbStoreInformation.Controls.Add(lblStatus);
-            gbStoreInformation.Controls.Add(pnlStoreManipulation);
-            gbStoreInformation.Controls.Add(lblWaterLastRecord);
-            gbStoreInformation.Controls.Add(lblStoreID);
-            gbStoreInformation.Controls.Add(txtFloorNumber);
-            gbStoreInformation.Controls.Add(lblFloorNumber);
-            gbStoreInformation.Controls.Add(txtStoreID);
-            gbStoreInformation.Controls.Add(lblElectricityLastRecord);
-            gbStoreInformation.Controls.Add(txtElectricityLastRecord);
-            gbStoreInformation.Font = new Font("!Khmer OS Siemreap", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            gbStoreInformation.Location = new Point(82, 12);
-            gbStoreInformation.Name = "gbStoreInformation";
-            gbStoreInformation.Size = new Size(1362, 335);
-            gbStoreInformation.TabIndex = 25;
-            gbStoreInformation.TabStop = false;
-            gbStoreInformation.Text = "ព័ត៌មានតូប";
+            gbCondoInformation.Controls.Add(chbStatus);
+            gbCondoInformation.Controls.Add(cbCondoTypeID);
+            gbCondoInformation.Controls.Add(txtWaterLastRecord);
+            gbCondoInformation.Controls.Add(lblCondoTypeID);
+            gbCondoInformation.Controls.Add(lblStatus);
+            gbCondoInformation.Controls.Add(pnlCondoManipulation);
+            gbCondoInformation.Controls.Add(lblWaterLastRecord);
+            gbCondoInformation.Controls.Add(lblCondoID);
+            gbCondoInformation.Controls.Add(txtFloorNumber);
+            gbCondoInformation.Controls.Add(lblFloorNumber);
+            gbCondoInformation.Controls.Add(txtCondoID);
+            gbCondoInformation.Controls.Add(lblElectricityLastRecord);
+            gbCondoInformation.Controls.Add(txtElectricityLastRecord);
+            gbCondoInformation.Font = new Font("!Khmer OS Siemreap", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            gbCondoInformation.Location = new Point(82, 12);
+            gbCondoInformation.Name = "gbCondoInformation";
+            gbCondoInformation.Size = new Size(1362, 335);
+            gbCondoInformation.TabIndex = 25;
+            gbCondoInformation.TabStop = false;
+            gbCondoInformation.Text = "ព័ត៌មានតូប";
             // 
             // chbStatus
             // 
@@ -237,17 +237,17 @@
             chbStatus.TabIndex = 4;
             chbStatus.UseVisualStyleBackColor = true;
             // 
-            // cbStoreTypeID
+            // cbCondoTypeID
             // 
-            cbStoreTypeID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbStoreTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbStoreTypeID.FormattingEnabled = true;
-            cbStoreTypeID.Items.AddRange(new object[] { "ភ្នំពេញ", "តាកែវ" });
-            cbStoreTypeID.Location = new Point(946, 174);
-            cbStoreTypeID.MaxDropDownItems = 3;
-            cbStoreTypeID.Name = "cbStoreTypeID";
-            cbStoreTypeID.Size = new Size(373, 44);
-            cbStoreTypeID.TabIndex = 5;
+            cbCondoTypeID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCondoTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCondoTypeID.FormattingEnabled = true;
+            cbCondoTypeID.Items.AddRange(new object[] { "ភ្នំពេញ", "តាកែវ" });
+            cbCondoTypeID.Location = new Point(946, 174);
+            cbCondoTypeID.MaxDropDownItems = 3;
+            cbCondoTypeID.Name = "cbCondoTypeID";
+            cbCondoTypeID.Size = new Size(373, 44);
+            cbCondoTypeID.TabIndex = 5;
             // 
             // txtWaterLastRecord
             // 
@@ -257,15 +257,15 @@
             txtWaterLastRecord.Size = new Size(373, 44);
             txtWaterLastRecord.TabIndex = 3;
             // 
-            // lblStoreTypeID
+            // lblCondoTypeID
             // 
-            lblStoreTypeID.AutoSize = true;
-            lblStoreTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStoreTypeID.Location = new Point(711, 177);
-            lblStoreTypeID.Name = "lblStoreTypeID";
-            lblStoreTypeID.Size = new Size(103, 36);
-            lblStoreTypeID.TabIndex = 32;
-            lblStoreTypeID.Text = "ប្រភេទតូប:";
+            lblCondoTypeID.AutoSize = true;
+            lblCondoTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCondoTypeID.Location = new Point(711, 177);
+            lblCondoTypeID.Name = "lblCondoTypeID";
+            lblCondoTypeID.Size = new Size(103, 36);
+            lblCondoTypeID.TabIndex = 32;
+            lblCondoTypeID.Text = "ប្រភេទតូប:";
             // 
             // lblStatus
             // 
@@ -277,65 +277,65 @@
             lblStatus.TabIndex = 29;
             lblStatus.Text = "បានជួល:";
             // 
-            // pnlStoreManipulation
+            // pnlCondoManipulation
             // 
-            pnlStoreManipulation.Controls.Add(btnCancelStore);
-            pnlStoreManipulation.Controls.Add(btnNewStore);
-            pnlStoreManipulation.Controls.Add(btnUpdateStore);
-            pnlStoreManipulation.Controls.Add(btnInsertStore);
-            pnlStoreManipulation.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            pnlStoreManipulation.Location = new Point(18, 232);
-            pnlStoreManipulation.Name = "pnlStoreManipulation";
-            pnlStoreManipulation.Size = new Size(1301, 81);
-            pnlStoreManipulation.TabIndex = 5;
+            pnlCondoManipulation.Controls.Add(btnCancelCondo);
+            pnlCondoManipulation.Controls.Add(btnNewCondo);
+            pnlCondoManipulation.Controls.Add(btnUpdateCondo);
+            pnlCondoManipulation.Controls.Add(btnInsertCondo);
+            pnlCondoManipulation.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            pnlCondoManipulation.Location = new Point(18, 232);
+            pnlCondoManipulation.Name = "pnlCondoManipulation";
+            pnlCondoManipulation.Size = new Size(1301, 81);
+            pnlCondoManipulation.TabIndex = 5;
             // 
-            // btnCancelStore
+            // btnCancelCondo
             // 
-            btnCancelStore.BackColor = Color.FromArgb(0, 28, 87);
-            btnCancelStore.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCancelStore.ForeColor = Color.White;
-            btnCancelStore.Location = new Point(1100, 20);
-            btnCancelStore.Name = "btnCancelStore";
-            btnCancelStore.Size = new Size(152, 52);
-            btnCancelStore.TabIndex = 3;
-            btnCancelStore.Text = "បោះបង់";
-            btnCancelStore.UseVisualStyleBackColor = false;
+            btnCancelCondo.BackColor = Color.FromArgb(0, 28, 87);
+            btnCancelCondo.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelCondo.ForeColor = Color.White;
+            btnCancelCondo.Location = new Point(1100, 20);
+            btnCancelCondo.Name = "btnCancelCondo";
+            btnCancelCondo.Size = new Size(152, 52);
+            btnCancelCondo.TabIndex = 3;
+            btnCancelCondo.Text = "បោះបង់";
+            btnCancelCondo.UseVisualStyleBackColor = false;
             // 
-            // btnNewStore
+            // btnNewCondo
             // 
-            btnNewStore.BackColor = Color.FromArgb(0, 28, 87);
-            btnNewStore.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnNewStore.ForeColor = Color.White;
-            btnNewStore.Location = new Point(740, 20);
-            btnNewStore.Name = "btnNewStore";
-            btnNewStore.Size = new Size(152, 52);
-            btnNewStore.TabIndex = 2;
-            btnNewStore.Text = "បង្កើតថ្មី";
-            btnNewStore.UseVisualStyleBackColor = false;
+            btnNewCondo.BackColor = Color.FromArgb(0, 28, 87);
+            btnNewCondo.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNewCondo.ForeColor = Color.White;
+            btnNewCondo.Location = new Point(740, 20);
+            btnNewCondo.Name = "btnNewCondo";
+            btnNewCondo.Size = new Size(152, 52);
+            btnNewCondo.TabIndex = 2;
+            btnNewCondo.Text = "បង្កើតថ្មី";
+            btnNewCondo.UseVisualStyleBackColor = false;
             // 
-            // btnUpdateStore
+            // btnUpdateCondo
             // 
-            btnUpdateStore.BackColor = Color.FromArgb(0, 28, 87);
-            btnUpdateStore.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdateStore.ForeColor = Color.White;
-            btnUpdateStore.Location = new Point(380, 20);
-            btnUpdateStore.Name = "btnUpdateStore";
-            btnUpdateStore.Size = new Size(152, 52);
-            btnUpdateStore.TabIndex = 1;
-            btnUpdateStore.Text = "កែប្រែ";
-            btnUpdateStore.UseVisualStyleBackColor = false;
+            btnUpdateCondo.BackColor = Color.FromArgb(0, 28, 87);
+            btnUpdateCondo.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdateCondo.ForeColor = Color.White;
+            btnUpdateCondo.Location = new Point(380, 20);
+            btnUpdateCondo.Name = "btnUpdateCondo";
+            btnUpdateCondo.Size = new Size(152, 52);
+            btnUpdateCondo.TabIndex = 1;
+            btnUpdateCondo.Text = "កែប្រែ";
+            btnUpdateCondo.UseVisualStyleBackColor = false;
             // 
-            // btnInsertStore
+            // btnInsertCondo
             // 
-            btnInsertStore.BackColor = Color.FromArgb(0, 28, 87);
-            btnInsertStore.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInsertStore.ForeColor = Color.White;
-            btnInsertStore.Location = new Point(20, 20);
-            btnInsertStore.Name = "btnInsertStore";
-            btnInsertStore.Size = new Size(152, 52);
-            btnInsertStore.TabIndex = 0;
-            btnInsertStore.Text = "បញ្ចូល";
-            btnInsertStore.UseVisualStyleBackColor = false;
+            btnInsertCondo.BackColor = Color.FromArgb(0, 28, 87);
+            btnInsertCondo.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInsertCondo.ForeColor = Color.White;
+            btnInsertCondo.Location = new Point(20, 20);
+            btnInsertCondo.Name = "btnInsertCondo";
+            btnInsertCondo.Size = new Size(152, 52);
+            btnInsertCondo.TabIndex = 0;
+            btnInsertCondo.Text = "បញ្ចូល";
+            btnInsertCondo.UseVisualStyleBackColor = false;
             // 
             // lblWaterLastRecord
             // 
@@ -347,15 +347,15 @@
             lblWaterLastRecord.TabIndex = 27;
             lblWaterLastRecord.Text = "លេខនាឡិកាទឹកចុងក្រោយ:";
             // 
-            // lblStoreID
+            // lblCondoID
             // 
-            lblStoreID.AutoSize = true;
-            lblStoreID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStoreID.Location = new Point(18, 41);
-            lblStoreID.Name = "lblStoreID";
-            lblStoreID.Size = new Size(149, 36);
-            lblStoreID.TabIndex = 0;
-            lblStoreID.Text = "លេខសម្គាល់តូប:";
+            lblCondoID.AutoSize = true;
+            lblCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCondoID.Location = new Point(18, 41);
+            lblCondoID.Name = "lblCondoID";
+            lblCondoID.Size = new Size(149, 36);
+            lblCondoID.TabIndex = 0;
+            lblCondoID.Text = "លេខសម្គាល់តូប:";
             // 
             // txtFloorNumber
             // 
@@ -375,14 +375,14 @@
             lblFloorNumber.TabIndex = 4;
             lblFloorNumber.Text = "ជាន់:";
             // 
-            // txtStoreID
+            // txtCondoID
             // 
-            txtStoreID.Enabled = false;
-            txtStoreID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStoreID.Location = new Point(287, 33);
-            txtStoreID.Name = "txtStoreID";
-            txtStoreID.Size = new Size(376, 44);
-            txtStoreID.TabIndex = 3;
+            txtCondoID.Enabled = false;
+            txtCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCondoID.Location = new Point(287, 33);
+            txtCondoID.Name = "txtCondoID";
+            txtCondoID.Size = new Size(376, 44);
+            txtCondoID.TabIndex = 3;
             // 
             // lblElectricityLastRecord
             // 
@@ -402,7 +402,7 @@
             txtElectricityLastRecord.Size = new Size(376, 44);
             txtElectricityLastRecord.TabIndex = 2;
             // 
-            // FrmStore
+            // FrmCondo
             // 
             AutoScaleDimensions = new SizeF(120F, 120F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -411,52 +411,52 @@
             Controls.Add(pnlRightSide);
             Controls.Add(pnlLeftSide);
             Controls.Add(lblTitle);
-            Name = "FrmStore";
+            Name = "FrmCondo";
             Text = "ព័ត៌មានបុគ្គលិក";
             Controls.SetChildIndex(lblTitle, 0);
             Controls.SetChildIndex(pnlLeftSide, 0);
             Controls.SetChildIndex(pnlRightSide, 0);
             pnlLeftSide.ResumeLayout(false);
             pnlLeftSide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvStores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCondos).EndInit();
             pnlRightSide.ResumeLayout(false);
-            gbStoreInformation.ResumeLayout(false);
-            gbStoreInformation.PerformLayout();
-            pnlStoreManipulation.ResumeLayout(false);
+            gbCondoInformation.ResumeLayout(false);
+            gbCondoInformation.PerformLayout();
+            pnlCondoManipulation.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label lblTitle;
-        private Label lblSearchStore;
-        private TextBox txtSearchStore;
+        private Label lblSearchCondo;
+        private TextBox txtSearchCondo;
         private Panel pnlLeftSide;
         private Panel pnlRightSide;
-        private Label lblStoreID;
+        private Label lblCondoID;
         private Label lblElectricityLastRecord;
         private TextBox txtFloorNumber;
         private Label lblFloorNumber;
-        private TextBox txtStoreID;
+        private TextBox txtCondoID;
         private TextBox txtElectricityLastRecord;
-        private GroupBox gbStoreInformation;
-        private Panel pnlStoreManipulation;
-        private Button btnInsertStore;
-        private Button btnCancelStore;
-        private Button btnNewStore;
-        private Button btnUpdateStore;
+        private GroupBox gbCondoInformation;
+        private Panel pnlCondoManipulation;
+        private Button btnInsertCondo;
+        private Button btnCancelCondo;
+        private Button btnNewCondo;
+        private Button btnUpdateCondo;
         private Label lblWaterLastRecord;
-        private DataGridView dgvStores;
+        private DataGridView dgvCondos;
         private Label lblStatus;
-        private Label lblStoreTypeID;
+        private Label lblCondoTypeID;
         private TextBox txtWaterLastRecord;
-        private ComboBox cbStoreTypeID;
-        private DataGridViewTextBoxColumn StoreID;
+        private ComboBox cbCondoTypeID;
+        private DataGridViewTextBoxColumn CondoID;
         private DataGridViewTextBoxColumn FloorNumber;
         private DataGridViewTextBoxColumn ElectricityLastRecord;
         private DataGridViewTextBoxColumn WaterLastRecord;
         private DataGridViewTextBoxColumn Status;
-        private DataGridViewTextBoxColumn StoreTypeID;
+        private DataGridViewTextBoxColumn CondoTypeID;
         private CheckBox chbStatus;
     }
 }

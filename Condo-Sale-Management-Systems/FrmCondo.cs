@@ -7,16 +7,16 @@ namespace Condo_Sale_Management_Systems
 {
     public partial class FrmCondo : FrmHome
     {
-        private const string TABLE_STORE_NAME = "tblStore";
-        private const string TABLE_STORETYPE_NAME = "tblStoreType";
+        private const string TABLE_CONDO_NAME = "tblCondo";
+        private const string TABLE_CONDOTYPE_NAME = "tblCondoType";
 
-        private DataSet _storeRentalDataSet = new();
+        private DataSet _condoRentalDataSet = new();
 
-        private SqlDataAdapter _storeDataAdapter = new();
-        private SqlDataAdapter _storetypeDataAdapter = new();
+        private SqlDataAdapter _condoDataAdapter = new();
+        private SqlDataAdapter _condotypeDataAdapter = new();
 
-        private BindingSource _storeBindingSource = new();
-        private BindingSource _storetypeBindingSource = new();
+        private BindingSource _condoBindingSource = new();
+        private BindingSource _condotypeBindingSource = new();
 
         private ErrorProvider _errorProvider = new();
 
@@ -34,24 +34,24 @@ namespace Condo_Sale_Management_Systems
 
 
             #region Event Registrations
-            btnNewStore.Click += HandleBtnNewStoreClicked;
-            btnInsertStore.Click += HandleBtnInsertStoreClicked;
-            btnUpdateStore.Click += HandleBtnUpdateStoreClicked;
-            btnCancelStore.Click += HandleBtnCancelStoreClicked;
+            btnNewCondo.Click += HandleBtnNewCondoClicked;
+            btnInsertCondo.Click += HandleBtnInsertCondoClicked;
+            btnUpdateCondo.Click += HandleBtnUpdateCondoClicked;
+            btnCancelCondo.Click += HandleBtnCancelCondoClicked;
 
             txtFloorNumber.Validating += ValidateTextBoxInteger;
             txtElectricityLastRecord.Validating += ValidateTextBoxNumber;
             txtWaterLastRecord.Validating += ValidateTextBoxNumber;
 
-            dgvStores.SelectionChanged += HandleSelectionChanged;
-            dgvStores.CellFormatting += HandleCellFormatting;
+            dgvCondos.SelectionChanged += HandleSelectionChanged;
+            dgvCondos.CellFormatting += HandleCellFormatting;
 
 
-            txtSearchStore.TextChanged += HandleSearchStore;
+            txtSearchCondo.TextChanged += HandleSearchCondo;
             txtFloorNumber.GotFocus += HandleGotFocusEN;
             txtElectricityLastRecord.GotFocus += HandleGotFocusEN;
             txtWaterLastRecord.GotFocus += HandleGotFocusEN;
-            txtSearchStore.GotFocus += HandleGotFocusEN;
+            txtSearchCondo.GotFocus += HandleGotFocusEN;
             #endregion
 
         }
@@ -74,13 +74,13 @@ namespace Condo_Sale_Management_Systems
         #region InitCommands
         private void InitCommands()
         {
-            // store
-            _storeDataAdapter.SelectCommand = CondoHelper.CreateGetAllStoresCommand();
-            _storeDataAdapter.InsertCommand = CondoHelper.CreateInsertStoreCommand();
-            _storeDataAdapter.UpdateCommand = CondoHelper.CreateUpdateStoreCommand();
+            // condo
+            _condoDataAdapter.SelectCommand = CondoHelper.CreateGetAllCondosCommand();
+            _condoDataAdapter.InsertCommand = CondoHelper.CreateInsertCondoCommand();
+            _condoDataAdapter.UpdateCommand = CondoHelper.CreateUpdateCondoCommand();
 
-            // storetype
-            _storetypeDataAdapter.SelectCommand = CondoHelper.CreateGetAllStoreTypesForComboBoxCommand();
+            // condotype
+            _condotypeDataAdapter.SelectCommand = CondoHelper.CreateGetAllCondoTypesForComboBoxCommand();
 
         }
         #endregion
@@ -88,13 +88,13 @@ namespace Condo_Sale_Management_Systems
         #region BindToControls
         private void BindToControls()
         {
-            txtStoreID.DataBindings.Add(new Binding("Text", _storeBindingSource, "StoreID"));
-            txtFloorNumber.DataBindings.Add(new Binding("Text", _storeBindingSource, "FloorNumber"));
-            txtElectricityLastRecord.DataBindings.Add(new Binding("Text", _storeBindingSource, "ElectricityLastRecord"));
-            txtWaterLastRecord.DataBindings.Add(new Binding("Text", _storeBindingSource, "WaterLastRecord"));
+            txtCondoID.DataBindings.Add(new Binding("Text", _condoBindingSource, "CondoID"));
+            txtFloorNumber.DataBindings.Add(new Binding("Text", _condoBindingSource, "FloorNumber"));
+            txtElectricityLastRecord.DataBindings.Add(new Binding("Text", _condoBindingSource, "ElectricityLastRecord"));
+            txtWaterLastRecord.DataBindings.Add(new Binding("Text", _condoBindingSource, "WaterLastRecord"));
 
-            cbStoreTypeID.DataBindings.Add(new Binding("SelectedValue", _storeBindingSource, "StoreTypeID"));
-            chbStatus.DataBindings.Add("Checked", _storeBindingSource, "Status");
+            cbCondoTypeID.DataBindings.Add(new Binding("SelectedValue", _condoBindingSource, "CondoTypeID"));
+            chbStatus.DataBindings.Add("Checked", _condoBindingSource, "Status");
 
         }
         #endregion
@@ -102,13 +102,13 @@ namespace Condo_Sale_Management_Systems
         #region Handle DataGridView SelectionChanged
         private void HandleSelectionChanged(object? sender, EventArgs e)
         {
-            if (!ContainsNewRow(_storeRentalDataSet.Tables[TABLE_STORE_NAME]!))
+            if (!ContainsNewRow(_condoRentalDataSet.Tables[TABLE_CONDO_NAME]!))
             {
                 return;
             }
             else
             {
-                btnCancelStore.PerformClick();
+                btnCancelCondo.PerformClick();
             }
         }
 
@@ -121,17 +121,17 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Search
-        private void HandleSearchStore(object? sender, EventArgs e)
+        private void HandleSearchCondo(object? sender, EventArgs e)
         {
-            string searchText = txtSearchStore.Text.Trim().ToLower();
+            string searchText = txtSearchCondo.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                _storeBindingSource.Filter = string.Empty;
+                _condoBindingSource.Filter = string.Empty;
             }
             else
             {
-                _storeBindingSource.Filter = "CONVERT(StoreID, 'System.String') LIKE '%" + searchText + "%'";
+                _condoBindingSource.Filter = "CONVERT(CondoID, 'System.String') LIKE '%" + searchText + "%'";
 
             }
         }
@@ -151,18 +151,18 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle New
-        private void HandleBtnNewStoreClicked(object? sender, EventArgs e)
+        private void HandleBtnNewCondoClicked(object? sender, EventArgs e)
         {
-            if (cbStoreTypeID.Items.Count < 1)
+            if (cbCondoTypeID.Items.Count < 1)
             {
                 MessageBox.Show("សូមបញ្ចូលប្រភេទតូបជាមុនសិន", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             try
             {
-                if (cbStoreTypeID.DataBindings.Count != 0)
+                if (cbCondoTypeID.DataBindings.Count != 0)
                 {
-                    cbStoreTypeID.DataBindings.Clear();
+                    cbCondoTypeID.DataBindings.Clear();
                 }
 
                 if (chbStatus.DataBindings.Count != 0)
@@ -170,24 +170,24 @@ namespace Condo_Sale_Management_Systems
                     chbStatus.DataBindings.Clear();
                 }
 
-                _storeBindingSource.AddNew();
-                var newRowView = (_storeBindingSource.Current as DataRowView)!;
+                _condoBindingSource.AddNew();
+                var newRowView = (_condoBindingSource.Current as DataRowView)!;
                 newRowView["Status"] = 0;
-                cbStoreTypeID.SelectedIndex = 0;
-                newRowView["StoreTypeID"] = cbStoreTypeID.SelectedValue;
+                cbCondoTypeID.SelectedIndex = 0;
+                newRowView["CondoTypeID"] = cbCondoTypeID.SelectedValue;
 
-                if (cbStoreTypeID.DataBindings.Count == 0)
+                if (cbCondoTypeID.DataBindings.Count == 0)
                 {
-                    cbStoreTypeID.DataBindings.Add(new Binding("SelectedValue", _storeBindingSource, "StoreTypeID"));
+                    cbCondoTypeID.DataBindings.Add(new Binding("SelectedValue", _condoBindingSource, "CondoTypeID"));
                 }
 
                 if (chbStatus.DataBindings.Count == 0)
                 {
-                    chbStatus.DataBindings.Add("Checked", _storeBindingSource, "Status");
+                    chbStatus.DataBindings.Add("Checked", _condoBindingSource, "Status");
                 }
 
-                int lastRowIndex = dgvStores.Rows.Count - 1;
-                dgvStores.CurrentCell = dgvStores.Rows[lastRowIndex].Cells[0];
+                int lastRowIndex = dgvCondos.Rows.Count - 1;
+                dgvCondos.CurrentCell = dgvCondos.Rows[lastRowIndex].Cells[0];
 
             }
             catch (Exception)
@@ -200,16 +200,16 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Insert
-        private void HandleBtnInsertStoreClicked(object? sender, EventArgs e)
+        private void HandleBtnInsertCondoClicked(object? sender, EventArgs e)
         {
             CauseValidation();
 
             if (ErrorHelper.HasErrors(_validatingControls, _errorProvider)) return;
-            _storeBindingSource.EndEdit();
+            _condoBindingSource.EndEdit();
             try
             {
-                _storeDataAdapter.Update(_storeRentalDataSet, TABLE_STORE_NAME);
-                _storeBindingSource.ResetBindings(false);
+                _condoDataAdapter.Update(_condoRentalDataSet, TABLE_CONDO_NAME);
+                _condoBindingSource.ResetBindings(false);
             }
             catch (Exception)
             {
@@ -222,17 +222,17 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Update
-        private void HandleBtnUpdateStoreClicked(object? sender, EventArgs e)
+        private void HandleBtnUpdateCondoClicked(object? sender, EventArgs e)
         {
-            HandleBtnInsertStoreClicked(null, EventArgs.Empty);
+            HandleBtnInsertCondoClicked(null, EventArgs.Empty);
         }
         #endregion
 
         #region Handle Cancel
-        private void HandleBtnCancelStoreClicked(object? sender, EventArgs e)
+        private void HandleBtnCancelCondoClicked(object? sender, EventArgs e)
         {
             _errorProvider.Clear();
-            _storeRentalDataSet.RejectChanges();
+            _condoRentalDataSet.RejectChanges();
             RefreshDataGridView();
 
         }
@@ -254,28 +254,28 @@ namespace Condo_Sale_Management_Systems
         #region Load All Data
         private void LoadAllData()
         {
-            _storeDataAdapter.TableMappings.Add("Table", TABLE_STORE_NAME);
-            _storetypeDataAdapter.TableMappings.Add("Table", TABLE_STORETYPE_NAME);
+            _condoDataAdapter.TableMappings.Add("Table", TABLE_CONDO_NAME);
+            _condotypeDataAdapter.TableMappings.Add("Table", TABLE_CONDOTYPE_NAME);
 
             try
             {
-                _storeDataAdapter.Fill(_storeRentalDataSet, TABLE_STORE_NAME);
-                _storetypeDataAdapter.Fill(_storeRentalDataSet, TABLE_STORETYPE_NAME);
+                _condoDataAdapter.Fill(_condoRentalDataSet, TABLE_CONDO_NAME);
+                _condotypeDataAdapter.Fill(_condoRentalDataSet, TABLE_CONDOTYPE_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _storeBindingSource.DataSource = _storeRentalDataSet.Tables[TABLE_STORE_NAME];
-            dgvStores.DataSource = _storeBindingSource;
+            _condoBindingSource.DataSource = _condoRentalDataSet.Tables[TABLE_CONDO_NAME];
+            dgvCondos.DataSource = _condoBindingSource;
 
-            // bind to StoreTypeID combo box
-            _storetypeBindingSource.DataSource = _storeRentalDataSet.Tables[TABLE_STORETYPE_NAME]!.AsDataView();
+            // bind to CondoTypeID combo box
+            _condotypeBindingSource.DataSource = _condoRentalDataSet.Tables[TABLE_CONDOTYPE_NAME]!.AsDataView();
 
-            cbStoreTypeID.DataSource = _storetypeBindingSource;
-            cbStoreTypeID.DisplayMember = "StoreTypeDescription";
-            cbStoreTypeID.ValueMember = "StoreTypeID";
+            cbCondoTypeID.DataSource = _condotypeBindingSource;
+            cbCondoTypeID.DisplayMember = "CondoTypeDescription";
+            cbCondoTypeID.ValueMember = "CondoTypeID";
 
 
         }
@@ -284,10 +284,10 @@ namespace Condo_Sale_Management_Systems
         #region Refresh
         private void RefreshDataGridView()
         {
-            _storeRentalDataSet.Tables[TABLE_STORE_NAME]?.Clear();
+            _condoRentalDataSet.Tables[TABLE_CONDO_NAME]?.Clear();
             try
             {
-                _storeDataAdapter.Fill(_storeRentalDataSet, TABLE_STORE_NAME);
+                _condoDataAdapter.Fill(_condoRentalDataSet, TABLE_CONDO_NAME);
             }
             catch (Exception)
             {
@@ -300,7 +300,7 @@ namespace Condo_Sale_Management_Systems
         #region Handle Checkbox CellFormatting
         private void HandleCellFormatting(object? sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex >= 0 && dgvStores.Columns[e.ColumnIndex].Name == "Status" && e.Value != null && e.Value != DBNull.Value)
+            if (e.ColumnIndex >= 0 && dgvCondos.Columns[e.ColumnIndex].Name == "Status" && e.Value != null && e.Value != DBNull.Value)
             {
                 bool status = Convert.ToBoolean(e.Value);
                 e.Value = status ? "បានជួល" : "ទំនេរ";
