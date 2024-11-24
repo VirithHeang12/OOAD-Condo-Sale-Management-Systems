@@ -10,7 +10,7 @@ namespace Condo_Sale_Management_Systems
     {
 
         private const string TABLE_NAME = "tblCondoType";
-        private DataSet _storeRentalDataSet = new DataSet();
+        private DataSet _condoSaleDataSet = new DataSet();
         private SqlDataAdapter _condotypeDataAdapter = new();
         private BindingSource _condotypeBindingSource = new();
 
@@ -81,7 +81,7 @@ namespace Condo_Sale_Management_Systems
         #region Handle DataGridView SelectionChanged
         private void HandleSelectionChanged(object? sender, EventArgs e)
         {
-            if (!ContainsNewRow(_storeRentalDataSet.Tables[TABLE_NAME]!))
+            if (!ContainsNewRow(_condoSaleDataSet.Tables[TABLE_NAME]!))
             {
                 return;
             }
@@ -117,10 +117,6 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Validation
-        private void ValidateTextBoxIntegerOneToHundred(object? sender, CancelEventArgs e)
-        {
-            ErrorHelper.ValidateTextBoxIntegerOneToHundred((sender as TextBox)!, _errorProvider);
-        }
 
         private void ValidateTextBox(object? sender, CancelEventArgs e)
         {
@@ -158,7 +154,7 @@ namespace Condo_Sale_Management_Systems
             _condotypeBindingSource.EndEdit();
             try
             {
-                _condotypeDataAdapter.Update(_storeRentalDataSet, TABLE_NAME);
+                _condotypeDataAdapter.Update(_condoSaleDataSet, TABLE_NAME);
                 _condotypeBindingSource.ResetBindings(false);
             }
             catch (Exception)
@@ -181,7 +177,7 @@ namespace Condo_Sale_Management_Systems
         private void HandleBtnCancelCondoTypeClicked(object? sender, EventArgs e)
         {
             _errorProvider.Clear();
-            _storeRentalDataSet.RejectChanges();
+            _condoSaleDataSet.RejectChanges();
             RefreshDataGridView();
 
         }
@@ -196,11 +192,7 @@ namespace Condo_Sale_Management_Systems
                 {
                     if (control.Tag != null)
                     {
-                        if (control.Tag.ToString()!.Equals('n'))
-                        {
-                            ErrorHelper.ValidateTextBoxIntegerOneToHundred(textBox, _errorProvider);
-                        }
-                        else if (control.Tag.ToString()!.Equals('d'))
+                        if (control.Tag.ToString()!.Equals('d'))
                         {
                             ErrorHelper.ValidateTextBoxNumber(textBox, _errorProvider);
                         }
@@ -224,14 +216,14 @@ namespace Condo_Sale_Management_Systems
             _condotypeDataAdapter.TableMappings.Add("Table", TABLE_NAME);
             try
             {
-                _condotypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
+                _condotypeDataAdapter.Fill(_condoSaleDataSet, TABLE_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _condotypeBindingSource.DataSource = _storeRentalDataSet.Tables[TABLE_NAME];
+            _condotypeBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_NAME];
             dgvCondoTypes.DataSource = _condotypeBindingSource;
         }
         #endregion
@@ -239,10 +231,10 @@ namespace Condo_Sale_Management_Systems
         #region Refresh
         private void RefreshDataGridView()
         {
-            _storeRentalDataSet.Tables[TABLE_NAME]?.Clear();
+            _condoSaleDataSet.Tables[TABLE_NAME]?.Clear();
             try
             {
-                _condotypeDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
+                _condotypeDataAdapter.Fill(_condoSaleDataSet, TABLE_NAME);
             }
             catch (Exception)
             {
@@ -250,5 +242,6 @@ namespace Condo_Sale_Management_Systems
             }
         }
         #endregion
+
     }
 }

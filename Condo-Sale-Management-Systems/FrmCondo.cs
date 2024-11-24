@@ -40,8 +40,8 @@ namespace Condo_Sale_Management_Systems
             btnCancelCondo.Click += HandleBtnCancelCondoClicked;
 
             txtFloorNumber.Validating += ValidateTextBoxInteger;
-            txtElectricityLastRecord.Validating += ValidateTextBoxNumber;
-            txtWaterLastRecord.Validating += ValidateTextBoxNumber;
+            txtLength.Validating += ValidateTextBoxNumber;
+            txtWidth.Validating += ValidateTextBoxNumber;
 
             dgvCondos.SelectionChanged += HandleSelectionChanged;
             dgvCondos.CellFormatting += HandleCellFormatting;
@@ -49,8 +49,8 @@ namespace Condo_Sale_Management_Systems
 
             txtSearchCondo.TextChanged += HandleSearchCondo;
             txtFloorNumber.GotFocus += HandleGotFocusEN;
-            txtElectricityLastRecord.GotFocus += HandleGotFocusEN;
-            txtWaterLastRecord.GotFocus += HandleGotFocusEN;
+            txtLength.GotFocus += HandleGotFocusEN;
+            txtWidth.GotFocus += HandleGotFocusEN;
             txtSearchCondo.GotFocus += HandleGotFocusEN;
             #endregion
 
@@ -90,8 +90,8 @@ namespace Condo_Sale_Management_Systems
         {
             txtCondoID.DataBindings.Add(new Binding("Text", _condoBindingSource, "CondoID"));
             txtFloorNumber.DataBindings.Add(new Binding("Text", _condoBindingSource, "FloorNumber"));
-            txtElectricityLastRecord.DataBindings.Add(new Binding("Text", _condoBindingSource, "ElectricityLastRecord"));
-            txtWaterLastRecord.DataBindings.Add(new Binding("Text", _condoBindingSource, "WaterLastRecord"));
+            txtLength.DataBindings.Add(new Binding("Text", _condoBindingSource, "Length"));
+            txtWidth.DataBindings.Add(new Binding("Text", _condoBindingSource, "Width"));
 
             cbCondoTypeID.DataBindings.Add(new Binding("SelectedValue", _condoBindingSource, "CondoTypeID"));
             chbStatus.DataBindings.Add("Checked", _condoBindingSource, "Status");
@@ -140,7 +140,7 @@ namespace Condo_Sale_Management_Systems
         #region Handle Validation
         private void ValidateTextBoxNumber(object? sender, CancelEventArgs e)
         {
-            ErrorHelper.ValidateTextBoxNumberOrZero((sender as TextBox)!, _errorProvider);
+            ErrorHelper.ValidateTextBoxNumber((sender as TextBox)!, _errorProvider);
         }
 
         private void ValidateTextBoxInteger(object? sender, CancelEventArgs e)
@@ -303,7 +303,7 @@ namespace Condo_Sale_Management_Systems
             if (e.ColumnIndex >= 0 && dgvCondos.Columns[e.ColumnIndex].Name == "Status" && e.Value != null && e.Value != DBNull.Value)
             {
                 bool status = Convert.ToBoolean(e.Value);
-                e.Value = status ? "បានជួល" : "ទំនេរ";
+                e.Value = status ? "បានលក់" : "ទំនេរ";
                 e.FormattingApplied = true;
             }
         }

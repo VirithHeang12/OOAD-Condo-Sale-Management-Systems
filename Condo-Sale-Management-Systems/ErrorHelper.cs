@@ -30,7 +30,7 @@ namespace Condo_Sale_Management_Systems
                 errorProvider.SetError(txt, NOT_EMPTY_MSG);
                 return false;
             }
-            if (!double.TryParse(txt.Text, out double n) || n <= 0 || n > 100000)
+            if (!double.TryParse(txt.Text, out double n) || n <= 0 || n > 10000000)
             {
                 errorProvider.SetError(txt, errMsg);
                 return false;

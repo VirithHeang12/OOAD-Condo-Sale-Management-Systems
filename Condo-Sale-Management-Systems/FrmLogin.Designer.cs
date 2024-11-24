@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             panel1 = new Panel();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             btnLogin = new Button();
             txtLoginPassword = new TextBox();
@@ -42,7 +40,6 @@
             label5 = new Label();
             label4 = new Label();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +49,6 @@
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -74,33 +70,22 @@
             label2.AutoSize = true;
             label2.Font = new Font("Khmer OS Siemreap", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(64, 524);
+            label2.Location = new Point(164, 389);
             label2.Name = "label2";
-            label2.Size = new Size(661, 67);
+            label2.Size = new Size(485, 67);
             label2.TabIndex = 2;
-            label2.Text = "ប្រព័ន្ធគ្រប់គ្រងនៃការជួលតូបក្នុងផ្សារទំនើប";
+            label2.Text = "ប្រព័ន្ធគ្រប់គ្រងការលក់ Condo";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Khmer OS Siemreap", 28F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(201, 412);
+            label1.Location = new Point(201, 250);
             label1.Name = "label1";
             label1.Size = new Size(425, 85);
             label1.TabIndex = 1;
             label1.Text = "សូមស្វាគមន៍មកកាន់";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(168, 60);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(532, 342);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -193,7 +178,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -204,7 +188,6 @@
         private Panel panel1;
         private Label label2;
         private Label label1;
-        private PictureBox pictureBox1;
         private Label label3;
         private Panel panel2;
         private Label label4;

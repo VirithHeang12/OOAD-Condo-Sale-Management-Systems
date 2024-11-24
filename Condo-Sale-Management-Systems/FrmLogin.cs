@@ -30,7 +30,7 @@ namespace Condo_Sale_Management_Systems
             {
                 handleBtnLoginClick(null, EventArgs.Empty);
             }
-            
+
         }
 
         private void handleBtnLoginClick(object? sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace Condo_Sale_Management_Systems
                 newRow["Password"] = "12345678";
                 _storeRentalDataSet.Tables[TABLE_NAME]!.Rows.Add(newRow);
             }
-            
+
         }
     }
 }

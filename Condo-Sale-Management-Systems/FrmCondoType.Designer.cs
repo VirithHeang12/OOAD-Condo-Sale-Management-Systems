@@ -35,8 +35,6 @@
             txtSearchCondoType = new TextBox();
             pnlLeftSide = new Panel();
             dgvCondoTypes = new DataGridView();
-            CondoTypeID = new DataGridViewTextBoxColumn();
-            CondoTypeDescription = new DataGridViewTextBoxColumn();
             pnlRightSide = new Panel();
             gbCondoTypeInformation = new GroupBox();
             label2 = new Label();
@@ -51,6 +49,9 @@
             lblPrice = new Label();
             txtCondoTypeID = new TextBox();
             label1 = new Label();
+            CondoTypeID = new DataGridViewTextBoxColumn();
+            CondoTypeDescription = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
             pnlLeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCondoTypes).BeginInit();
             pnlRightSide.SuspendLayout();
@@ -68,7 +69,7 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(1534, 101);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "ព័ត៌មានប្រភេទតូប";
+            lblTitle.Text = "ព័ត៌មានប្រភេទ Condo";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSearchCondoType
@@ -76,9 +77,9 @@
             lblSearchCondoType.AutoSize = true;
             lblSearchCondoType.Location = new Point(82, 25);
             lblSearchCondoType.Name = "lblSearchCondoType";
-            lblSearchCondoType.Size = new Size(266, 36);
+            lblSearchCondoType.Size = new Size(301, 36);
             lblSearchCondoType.TabIndex = 1;
-            lblSearchCondoType.Text = "ស្វែងរក (ពិព័ណ៌នាប្រភេទតូប):";
+            lblSearchCondoType.Text = "ស្វែងរក (ពិព័ណ៌នាប្រភេទ Condo):";
             // 
             // txtSearchCondoType
             // 
@@ -131,25 +132,6 @@
             dgvCondoTypes.TabIndex = 3;
             dgvCondoTypes.TabStop = false;
             // 
-            // CondoTypeID
-            // 
-            CondoTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            CondoTypeID.DataPropertyName = "CondoTypeID";
-            CondoTypeID.HeaderText = "លេខសម្គាល់ប្រភេទតូប";
-            CondoTypeID.MinimumWidth = 8;
-            CondoTypeID.Name = "CondoTypeID";
-            CondoTypeID.ReadOnly = true;
-            CondoTypeID.Width = 226;
-            // 
-            // CondoTypeDescription
-            // 
-            CondoTypeDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            CondoTypeDescription.DataPropertyName = "CondoTypeDescription";
-            CondoTypeDescription.HeaderText = "ពិពណ៌នា";
-            CondoTypeDescription.MinimumWidth = 8;
-            CondoTypeDescription.Name = "CondoTypeDescription";
-            CondoTypeDescription.ReadOnly = true;
-            // 
             // pnlRightSide
             // 
             pnlRightSide.Controls.Add(gbCondoTypeInformation);
@@ -173,7 +155,7 @@
             gbCondoTypeInformation.Size = new Size(1397, 319);
             gbCondoTypeInformation.TabIndex = 25;
             gbCondoTypeInformation.TabStop = false;
-            gbCondoTypeInformation.Text = "ព័ត៌មានប្រភេទតូប";
+            gbCondoTypeInformation.Text = "ព័ត៌មានប្រភេទ Condo";
             // 
             // label2
             // 
@@ -181,9 +163,9 @@
             label2.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(711, 41);
             label2.Name = "label2";
-            label2.Size = new Size(90, 36);
+            label2.Size = new Size(213, 36);
             label2.TabIndex = 32;
-            label2.Text = "ពិពណ៌នា";
+            label2.Text = "ពិពណ៌នាប្រភេទ Condo:";
             // 
             // txtCondoTypeDescription
             // 
@@ -263,9 +245,9 @@
             lblCondoTypeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblCondoTypeID.Location = new Point(18, 41);
             lblCondoTypeID.Name = "lblCondoTypeID";
-            lblCondoTypeID.Size = new Size(203, 36);
+            lblCondoTypeID.Size = new Size(238, 36);
             lblCondoTypeID.TabIndex = 0;
-            lblCondoTypeID.Text = "លេខសម្គាល់ប្រភេទតូប:";
+            lblCondoTypeID.Text = "លេខសម្គាល់ប្រភេទ Condo:";
             // 
             // txtPrice
             // 
@@ -282,9 +264,9 @@
             lblPrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblPrice.Location = new Point(18, 111);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(135, 36);
+            lblPrice.Size = new Size(88, 36);
             lblPrice.TabIndex = 4;
-            lblPrice.Text = "ថ្លៃជួលប្រចាំខែ:";
+            lblPrice.Text = "តម្លៃ($):";
             // 
             // txtCondoTypeID
             // 
@@ -304,6 +286,33 @@
             label1.Size = new Size(178, 36);
             label1.TabIndex = 30;
             label1.Text = "ពិព័ណ៌នាប្រភេទតូប:";
+            // 
+            // CondoTypeID
+            // 
+            CondoTypeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CondoTypeID.DataPropertyName = "CondoTypeID";
+            CondoTypeID.HeaderText = "លេខសម្គាល់ប្រភេទ Condo";
+            CondoTypeID.MinimumWidth = 8;
+            CondoTypeID.Name = "CondoTypeID";
+            CondoTypeID.ReadOnly = true;
+            // 
+            // CondoTypeDescription
+            // 
+            CondoTypeDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            CondoTypeDescription.DataPropertyName = "CondoTypeDescription";
+            CondoTypeDescription.HeaderText = "ពិពណ៌នាប្រភេទ Condo";
+            CondoTypeDescription.MinimumWidth = 8;
+            CondoTypeDescription.Name = "CondoTypeDescription";
+            CondoTypeDescription.ReadOnly = true;
+            // 
+            // Price
+            // 
+            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Price.DataPropertyName = "Price";
+            Price.HeaderText = "តម្លៃ($)";
+            Price.MinimumWidth = 6;
+            Price.Name = "Price";
+            Price.ReadOnly = true;
             // 
             // FrmCondoType
             // 

@@ -78,7 +78,7 @@
             label1.Name = "label1";
             label1.Size = new Size(1534, 79);
             label1.TabIndex = 2;
-            label1.Text = "ទិន្នន័យនៃប្រព័ន្ធគ្រប់គ្រងការជួលតូប";
+            label1.Text = "ទិន្នន័យនៃប្រព័ន្ធគ្រប់គ្រងការលក់ Condo";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -89,7 +89,7 @@
             panel4.Controls.Add(pictureBox3);
             panel4.Location = new Point(850, 257);
             panel4.Name = "panel4";
-            panel4.Size = new Size(351, 133);
+            panel4.Size = new Size(379, 133);
             panel4.TabIndex = 4;
             // 
             // label4
@@ -99,9 +99,9 @@
             label4.ForeColor = Color.White;
             label4.Location = new Point(162, 67);
             label4.Name = "label4";
-            label4.Size = new Size(162, 36);
+            label4.Size = new Size(208, 36);
             label4.TabIndex = 2;
-            label4.Text = "ចំនួនតូបបានជួល";
+            label4.Text = "ចំនួន Condo បានលក់";
             // 
             // lblStoreRentedCount
             // 
@@ -110,9 +110,9 @@
             lblStoreRentedCount.ForeColor = Color.White;
             lblStoreRentedCount.Location = new Point(162, 25);
             lblStoreRentedCount.Name = "lblStoreRentedCount";
-            lblStoreRentedCount.Size = new Size(71, 43);
+            lblStoreRentedCount.Size = new Size(34, 43);
             lblStoreRentedCount.TabIndex = 1;
-            lblStoreRentedCount.Text = "3០០";
+            lblStoreRentedCount.Text = "0";
             // 
             // pictureBox3
             // 
@@ -153,9 +153,9 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(162, 25);
             label7.Name = "label7";
-            label7.Size = new Size(47, 43);
+            label7.Size = new Size(34, 43);
             label7.TabIndex = 1;
-            label7.Text = "68";
+            label7.Text = "0";
             // 
             // pictureBox4
             // 
@@ -196,9 +196,9 @@
             label9.ForeColor = Color.White;
             label9.Location = new Point(162, 25);
             label9.Name = "label9";
-            label9.Size = new Size(61, 43);
+            label9.Size = new Size(34, 43);
             label9.TabIndex = 1;
-            label9.Text = "299";
+            label9.Text = "0";
             // 
             // pictureBox5
             // 
@@ -228,9 +228,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(162, 67);
             label2.Name = "label2";
-            label2.Size = new Size(133, 36);
+            label2.Size = new Size(179, 36);
             label2.TabIndex = 2;
-            label2.Text = "ចំនួនតូបសរុប";
+            label2.Text = "ចំនួន Condo សរុប";
             // 
             // lblStoreCount
             // 
@@ -239,9 +239,9 @@
             lblStoreCount.ForeColor = Color.White;
             lblStoreCount.Location = new Point(162, 25);
             lblStoreCount.Name = "lblStoreCount";
-            lblStoreCount.Size = new Size(61, 43);
+            lblStoreCount.Size = new Size(34, 43);
             lblStoreCount.TabIndex = 1;
-            lblStoreCount.Text = "322";
+            lblStoreCount.Text = "0";
             // 
             // pictureBox2
             // 
@@ -261,7 +261,7 @@
             panel7.Controls.Add(pictureBox6);
             panel7.Location = new Point(850, 604);
             panel7.Name = "panel7";
-            panel7.Size = new Size(351, 133);
+            panel7.Size = new Size(422, 133);
             panel7.TabIndex = 5;
             // 
             // label10
@@ -271,9 +271,9 @@
             label10.ForeColor = Color.White;
             label10.Location = new Point(143, 67);
             label10.Name = "label10";
-            label10.Size = new Size(210, 36);
+            label10.Size = new Size(269, 36);
             label10.TabIndex = 2;
-            label10.Text = "ចំនួនដៃគូសហការសរុប";
+            label10.Text = "ចំនួនក្រុមហ៊ុនធានារ៉ាប់រងសរុប";
             // 
             // label11
             // 
@@ -282,9 +282,9 @@
             label11.ForeColor = Color.White;
             label11.Location = new Point(143, 25);
             label11.Name = "label11";
-            label11.Size = new Size(46, 43);
+            label11.Size = new Size(34, 43);
             label11.TabIndex = 1;
-            label11.Text = "10";
+            label11.Text = "0";
             // 
             // pictureBox6
             // 
@@ -314,9 +314,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(143, 67);
             label3.Name = "label3";
-            label3.Size = new Size(183, 36);
+            label3.Size = new Size(167, 36);
             label3.TabIndex = 2;
-            label3.Text = "ចំនួនកិច្ចសន្យាសរុប";
+            label3.Text = "ចំនួនការលក់សរុប";
             // 
             // lblCountContract
             // 
@@ -325,9 +325,9 @@
             lblCountContract.ForeColor = Color.White;
             lblCountContract.Location = new Point(143, 25);
             lblCountContract.Name = "lblCountContract";
-            lblCountContract.Size = new Size(46, 43);
+            lblCountContract.Size = new Size(38, 43);
             lblCountContract.TabIndex = 1;
-            lblCountContract.Text = "10";
+            lblCountContract.Text = "០";
             // 
             // pictureBox7
             // 

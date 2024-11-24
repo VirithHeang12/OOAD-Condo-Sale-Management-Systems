@@ -76,7 +76,7 @@
             lblSearchInsurance.AutoSize = true;
             lblSearchInsurance.Location = new Point(82, 19);
             lblSearchInsurance.Name = "lblSearchInsurance";
-            lblSearchInsurance.Size = new Size(371, 43);
+            lblSearchInsurance.Size = new Size(311, 36);
             lblSearchInsurance.TabIndex = 1;
             lblSearchInsurance.Text = "ស្វែងរក​ (ឈ្មោះក្រុមហ៊ុនធានារ៉ាប់រង):";
             // 
@@ -84,7 +84,7 @@
             // 
             txtSearchInsurance.Location = new Point(480, 11);
             txtSearchInsurance.Name = "txtSearchInsurance";
-            txtSearchInsurance.Size = new Size(512, 51);
+            txtSearchInsurance.Size = new Size(512, 44);
             txtSearchInsurance.TabIndex = 2;
             txtSearchInsurance.TabStop = false;
             // 
@@ -140,7 +140,7 @@
             InsuranceID.MinimumWidth = 6;
             InsuranceID.Name = "InsuranceID";
             InsuranceID.ReadOnly = true;
-            InsuranceID.Width = 230;
+            InsuranceID.Width = 299;
             // 
             // InsuranceName
             // 
@@ -177,7 +177,7 @@
             gbInsuranceInformation.Controls.Add(txtInsuranceID);
             gbInsuranceInformation.Controls.Add(lblInsuranceWebsite);
             gbInsuranceInformation.Controls.Add(txtInsuranceWebsite);
-            gbInsuranceInformation.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            gbInsuranceInformation.Font = new Font("!Khmer OS Siemreap", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             gbInsuranceInformation.Location = new Point(82, 12);
             gbInsuranceInformation.Name = "gbInsuranceInformation";
             gbInsuranceInformation.Size = new Size(1362, 288);
@@ -255,7 +255,7 @@
             lblInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblInsuranceID.Location = new Point(18, 41);
             lblInsuranceID.Name = "lblInsuranceID";
-            lblInsuranceID.Size = new Size(326, 43);
+            lblInsuranceID.Size = new Size(276, 36);
             lblInsuranceID.TabIndex = 0;
             lblInsuranceID.Text = "លេខសម្គាល់ក្រុមហ៊ុនធានារ៉ាប់រង:";
             // 
@@ -264,7 +264,7 @@
             txtInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtInsuranceName.Location = new Point(940, 33);
             txtInsuranceName.Name = "txtInsuranceName";
-            txtInsuranceName.Size = new Size(379, 51);
+            txtInsuranceName.Size = new Size(379, 44);
             txtInsuranceName.TabIndex = 5;
             // 
             // lblInsuranceName
@@ -273,7 +273,7 @@
             lblInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblInsuranceName.Location = new Point(711, 41);
             lblInsuranceName.Name = "lblInsuranceName";
-            lblInsuranceName.Size = new Size(267, 43);
+            lblInsuranceName.Size = new Size(223, 36);
             lblInsuranceName.TabIndex = 4;
             lblInsuranceName.Text = "ឈ្មោះក្រុមហ៊ុនធានារ៉ាប់រង:";
             // 
@@ -283,7 +283,7 @@
             txtInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtInsuranceID.Location = new Point(300, 33);
             txtInsuranceID.Name = "txtInsuranceID";
-            txtInsuranceID.Size = new Size(363, 51);
+            txtInsuranceID.Size = new Size(363, 44);
             txtInsuranceID.TabIndex = 3;
             // 
             // lblInsuranceWebsite
@@ -292,7 +292,7 @@
             lblInsuranceWebsite.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblInsuranceWebsite.Location = new Point(18, 111);
             lblInsuranceWebsite.Name = "lblInsuranceWebsite";
-            lblInsuranceWebsite.Size = new Size(297, 43);
+            lblInsuranceWebsite.Size = new Size(250, 36);
             lblInsuranceWebsite.TabIndex = 6;
             lblInsuranceWebsite.Text = "គេហទំព័រក្រុមហ៊ុនធានារ៉ាប់រង:";
             // 
@@ -301,7 +301,7 @@
             txtInsuranceWebsite.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtInsuranceWebsite.Location = new Point(300, 111);
             txtInsuranceWebsite.Name = "txtInsuranceWebsite";
-            txtInsuranceWebsite.Size = new Size(1019, 51);
+            txtInsuranceWebsite.Size = new Size(1019, 44);
             txtInsuranceWebsite.TabIndex = 13;
             // 
             // FrmInsurance

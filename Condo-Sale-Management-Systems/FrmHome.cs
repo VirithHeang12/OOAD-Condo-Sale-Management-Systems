@@ -17,12 +17,12 @@ namespace Condo_Sale_Management_Systems
             btnShowUserForm.Click += HandleShowFormUser;
             btnShowInsuranceForm.Click += HandleShowFormInsurance;
             btnShowPurchaseForm.Click += HandleShowFormPurchase;
-            btnShowStoreForm.Click += HandleShowFormStore;
+            btnShowCondoForm.Click += HandleShowFormCondo;
 
             btnLogout.Click += HandleButtonLogoutClick;
         }
 
-        private void HandleShowFormStore(object? sender, EventArgs e)
+        private void HandleShowFormCondo(object? sender, EventArgs e)
         {
             RaiseEvent(FormTypes.FrmCondo);
         }
