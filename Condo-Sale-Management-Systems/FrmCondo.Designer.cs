@@ -394,11 +394,11 @@
             // 
             CondoTypeDescription.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             CondoTypeDescription.DataPropertyName = "CondoTypeDescription";
-            CondoTypeDescription.HeaderText = "ប្រភេទតូប";
+            CondoTypeDescription.HeaderText = "ប្រភេទ Condo";
             CondoTypeDescription.MinimumWidth = 6;
             CondoTypeDescription.Name = "CondoTypeDescription";
             CondoTypeDescription.ReadOnly = true;
-            CondoTypeDescription.Width = 126;
+            CondoTypeDescription.Width = 161;
             // 
             // CondoTypeID
             // 

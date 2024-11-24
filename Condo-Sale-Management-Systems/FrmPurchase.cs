@@ -8,7 +8,7 @@ namespace Condo_Sale_Management_Systems
     public partial class FrmPurchase : FrmHome
     {
         private const string TABLE_PURCHASE_NAME = "tblPurchase";
-        private const string TABLE_CONDO_NAME = "tblStore";
+        private const string TABLE_CONDO_NAME = "tblCondo";
         private const string TABLE_CUSTOMER_NAME = "tblCustomer";
         private const string TABLE_STAFF_NAME = "tblStaff";
         private const string TABLE_INSURANCE_NAME = "tblInsurance";
@@ -66,10 +66,12 @@ namespace Condo_Sale_Management_Systems
 
             cbInsuranceID.SelectedIndexChanged += HandleCbInsuranceIDSelectedIndexChanged;
             cbStaffID.SelectedIndexChanged += HandleCbStaffIDSelectedIndexChanged;
+            cbCondoID.SelectedIndexChanged += HandleCbCondoIDSelectedIndexChanged;
             #endregion
 
         }
 
+        
         #region Init Commands
         private void InitCommands()
         {
@@ -101,6 +103,12 @@ namespace Condo_Sale_Management_Systems
             var dataRowView = cbInsuranceID.SelectedItem as DataRowView;
             txtInsuranceName.Text = dataRowView?["InsuranceName"] as string ?? string.Empty;
         }
+
+        private void HandleCbCondoIDSelectedIndexChanged(object? sender, EventArgs e)
+        {
+            var dataRowView = cbCondoID.SelectedItem as DataRowView;
+            txtPurchasePrice.Text = dataRowView?["Price"]?.ToString() ?? string.Empty;
+        }
         #endregion
 
         #region HandleGotFocusKM
@@ -126,6 +134,7 @@ namespace Condo_Sale_Management_Systems
                 dtpPurchaseDate.DataBindings.Add("Value", _purchaseBindingSource, "PurchaseDate");
                 cbCustomerID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "CustomerID");
                 cbCondoID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "CondoID");
+                txtPurchasePrice.DataBindings.Add("Text", _purchaseBindingSource, "PurchasePrice");
                 cbStaffID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "StaffID");
                 cbInsuranceID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "InsuranceID");
                 txtInsuranceName.DataBindings.Add("Text", _purchaseBindingSource, "InsuranceName");
@@ -144,6 +153,7 @@ namespace Condo_Sale_Management_Systems
             dtpPurchaseDate.DataBindings.Clear();
             cbCustomerID.DataBindings.Clear();
             cbCondoID.DataBindings.Clear();
+            txtPurchasePrice.DataBindings.Clear();
             cbStaffID.DataBindings.Clear();
             cbInsuranceID.DataBindings.Clear();
             txtInsuranceName.DataBindings.Clear();
@@ -208,7 +218,7 @@ namespace Condo_Sale_Management_Systems
             }
             if (cbCondoID.Items.Count < 1)
             {
-                MessageBox.Show("គ្មានតូបទំនេរសម្រាប់ជួល", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("គ្មាន Condo សម្រាប់លក់", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
                 
             }
@@ -244,9 +254,11 @@ namespace Condo_Sale_Management_Systems
 
                 cbCustomerID.SelectedIndex = 0;
                 newRowView["CustomerID"] = cbCustomerID.SelectedValue;
-
+                
                 cbCondoID.SelectedIndex = 0;
                 newRowView["CondoID"] = cbCondoID.SelectedValue;
+                dataRowView = cbCondoID?.SelectedItem as DataRowView;
+                newRowView["PurchasePrice"] = dataRowView?["Price"];
 
                 lbPurchase.DataSource = null;
                 lbPurchase.DataSource = _purchaseBindingSource;
@@ -375,6 +387,7 @@ namespace Condo_Sale_Management_Systems
 
             HandleCbInsuranceIDSelectedIndexChanged(null, EventArgs.Empty);
             HandleCbStaffIDSelectedIndexChanged(null, EventArgs.Empty);
+            HandleCbCondoIDSelectedIndexChanged(null, EventArgs.Empty);
 
         }
         #endregion

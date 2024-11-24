@@ -144,7 +144,7 @@
             btnShowPurchaseForm.Size = new Size(260, 41);
             btnShowPurchaseForm.TabIndex = 6;
             btnShowPurchaseForm.TabStop = false;
-            btnShowPurchaseForm.Text = "ការទិញ";
+            btnShowPurchaseForm.Text = "ការទិញលក់";
             btnShowPurchaseForm.UseVisualStyleBackColor = false;
             // 
             // btnShowCondoForm

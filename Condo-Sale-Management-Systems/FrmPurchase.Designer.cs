@@ -58,6 +58,8 @@
             lblPurchaseDate = new Label();
             dtpPurchaseDate = new DateTimePicker();
             lblCustomerID = new Label();
+            lblPurchasePrice = new Label();
+            txtPurchasePrice = new TextBox();
             pnlLeftSide.SuspendLayout();
             pnlRightSide.SuspendLayout();
             pnlPurchaseManipulation.SuspendLayout();
@@ -74,7 +76,7 @@
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(1534, 101);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "ព័ត៌មានកិច្ចសន្យា";
+            lblTitle.Text = "ព័ត៌មានការទិញលក់";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblSearchPurchase
@@ -82,15 +84,15 @@
             lblSearchPurchase.AutoSize = true;
             lblSearchPurchase.Location = new Point(21, 11);
             lblSearchPurchase.Name = "lblSearchPurchase";
-            lblSearchPurchase.Size = new Size(333, 43);
+            lblSearchPurchase.Size = new Size(303, 36);
             lblSearchPurchase.TabIndex = 1;
-            lblSearchPurchase.Text = "ស្វែងរក (លេខសម្គាល់កិច្ចសន្យា):";
+            lblSearchPurchase.Text = "ស្វែងរក (លេខសម្គាល់ការទិញលក់):";
             // 
             // txtSearchPurchase
             // 
             txtSearchPurchase.Location = new Point(21, 50);
             txtSearchPurchase.Name = "txtSearchPurchase";
-            txtSearchPurchase.Size = new Size(319, 51);
+            txtSearchPurchase.Size = new Size(319, 44);
             txtSearchPurchase.TabIndex = 2;
             // 
             // pnlLeftSide
@@ -106,10 +108,10 @@
             // lbPurchase
             // 
             lbPurchase.FormattingEnabled = true;
-            lbPurchase.ItemHeight = 43;
+            lbPurchase.ItemHeight = 36;
             lbPurchase.Location = new Point(21, 110);
             lbPurchase.Name = "lbPurchase";
-            lbPurchase.Size = new Size(319, 434);
+            lbPurchase.Size = new Size(319, 400);
             lbPurchase.TabIndex = 3;
             // 
             // pnlRightSide
@@ -182,6 +184,8 @@
             // 
             // gbPurchaseInformation
             // 
+            gbPurchaseInformation.Controls.Add(txtPurchasePrice);
+            gbPurchaseInformation.Controls.Add(lblPurchasePrice);
             gbPurchaseInformation.Controls.Add(txtStaffPosition);
             gbPurchaseInformation.Controls.Add(txtStaffName);
             gbPurchaseInformation.Controls.Add(cbStaffID);
@@ -206,24 +210,24 @@
             gbPurchaseInformation.Size = new Size(1069, 409);
             gbPurchaseInformation.TabIndex = 25;
             gbPurchaseInformation.TabStop = false;
-            gbPurchaseInformation.Text = "ព័ត៌មានកិច្ចសន្យា";
+            gbPurchaseInformation.Text = "ព័ត៌មានការទិញលក់";
             // 
             // txtStaffPosition
             // 
             txtStaffPosition.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStaffPosition.Location = new Point(805, 338);
+            txtStaffPosition.Location = new Point(805, 318);
             txtStaffPosition.Name = "txtStaffPosition";
             txtStaffPosition.ReadOnly = true;
-            txtStaffPosition.Size = new Size(220, 51);
+            txtStaffPosition.Size = new Size(220, 44);
             txtStaffPosition.TabIndex = 39;
             // 
             // txtStaffName
             // 
             txtStaffName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStaffName.Location = new Point(256, 338);
+            txtStaffName.Location = new Point(256, 318);
             txtStaffName.Name = "txtStaffName";
             txtStaffName.ReadOnly = true;
-            txtStaffName.Size = new Size(242, 51);
+            txtStaffName.Size = new Size(242, 44);
             txtStaffName.TabIndex = 38;
             // 
             // cbStaffID
@@ -231,18 +235,18 @@
             cbStaffID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbStaffID.FormattingEnabled = true;
             cbStaffID.Items.AddRange(new object[] { "អ្នកគ្រប់គ្រង", "គណនីករ" });
-            cbStaffID.Location = new Point(805, 276);
+            cbStaffID.Location = new Point(805, 250);
             cbStaffID.Name = "cbStaffID";
-            cbStaffID.Size = new Size(220, 51);
+            cbStaffID.Size = new Size(218, 44);
             cbStaffID.TabIndex = 37;
             // 
             // lblStaffID
             // 
             lblStaffID.AutoSize = true;
             lblStaffID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffID.Location = new Point(513, 276);
+            lblStaffID.Location = new Point(513, 253);
             lblStaffID.Name = "lblStaffID";
-            lblStaffID.Size = new Size(214, 43);
+            lblStaffID.Size = new Size(183, 36);
             lblStaffID.TabIndex = 36;
             lblStaffID.Text = "លេខសម្គាល់បុគ្គលិក:";
             // 
@@ -251,18 +255,18 @@
             cbInsuranceID.DropDownStyle = ComboBoxStyle.DropDownList;
             cbInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbInsuranceID.FormattingEnabled = true;
-            cbInsuranceID.Location = new Point(805, 215);
+            cbInsuranceID.Location = new Point(805, 187);
             cbInsuranceID.Name = "cbInsuranceID";
-            cbInsuranceID.Size = new Size(220, 51);
+            cbInsuranceID.Size = new Size(220, 44);
             cbInsuranceID.TabIndex = 35;
             // 
             // lblInsuranceID
             // 
             lblInsuranceID.AutoSize = true;
             lblInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInsuranceID.Location = new Point(513, 218);
+            lblInsuranceID.Location = new Point(513, 187);
             lblInsuranceID.Name = "lblInsuranceID";
-            lblInsuranceID.Size = new Size(326, 43);
+            lblInsuranceID.Size = new Size(276, 36);
             lblInsuranceID.TabIndex = 34;
             lblInsuranceID.Text = "លេខសម្គាល់ក្រុមហ៊ុនធានារ៉ាប់រង:";
             // 
@@ -271,18 +275,18 @@
             cbCustomerID.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCustomerID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbCustomerID.FormattingEnabled = true;
-            cbCustomerID.Location = new Point(256, 215);
+            cbCustomerID.Location = new Point(256, 179);
             cbCustomerID.Name = "cbCustomerID";
-            cbCustomerID.Size = new Size(242, 51);
+            cbCustomerID.Size = new Size(242, 44);
             cbCustomerID.TabIndex = 33;
             // 
             // lblStaffPosition
             // 
             lblStaffPosition.AutoSize = true;
             lblStaffPosition.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffPosition.Location = new Point(513, 341);
+            lblStaffPosition.Location = new Point(513, 321);
             lblStaffPosition.Name = "lblStaffPosition";
-            lblStaffPosition.Size = new Size(153, 43);
+            lblStaffPosition.Size = new Size(131, 36);
             lblStaffPosition.TabIndex = 23;
             lblStaffPosition.Text = "តួនាទីបុគ្គលិក:";
             // 
@@ -290,28 +294,28 @@
             // 
             lblStaffName.AutoSize = true;
             lblStaffName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffName.Location = new Point(18, 341);
+            lblStaffName.Location = new Point(18, 321);
             lblStaffName.Name = "lblStaffName";
-            lblStaffName.Size = new Size(155, 43);
+            lblStaffName.Size = new Size(130, 36);
             lblStaffName.TabIndex = 21;
             lblStaffName.Text = "ឈ្មោះបុគ្គលិក:";
             // 
             // txtInsuranceName
             // 
             txtInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtInsuranceName.Location = new Point(256, 276);
+            txtInsuranceName.Location = new Point(256, 245);
             txtInsuranceName.Name = "txtInsuranceName";
             txtInsuranceName.ReadOnly = true;
-            txtInsuranceName.Size = new Size(242, 51);
+            txtInsuranceName.Size = new Size(242, 44);
             txtInsuranceName.TabIndex = 17;
             // 
             // lblInsuranceName
             // 
             lblInsuranceName.AutoSize = true;
             lblInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInsuranceName.Location = new Point(19, 279);
+            lblInsuranceName.Location = new Point(19, 248);
             lblInsuranceName.Name = "lblInsuranceName";
-            lblInsuranceName.Size = new Size(267, 43);
+            lblInsuranceName.Size = new Size(223, 36);
             lblInsuranceName.TabIndex = 16;
             lblInsuranceName.Text = "ឈ្មោះក្រុមហ៊ុនធានារ៉ាប់រង:";
             // 
@@ -320,9 +324,9 @@
             cbCondoID.DropDownStyle = ComboBoxStyle.DropDownList;
             cbCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cbCondoID.FormattingEnabled = true;
-            cbCondoID.Location = new Point(805, 154);
+            cbCondoID.Location = new Point(256, 106);
             cbCondoID.Name = "cbCondoID";
-            cbCondoID.Size = new Size(220, 51);
+            cbCondoID.Size = new Size(242, 44);
             cbCondoID.TabIndex = 15;
             // 
             // lblPurchaseID
@@ -331,19 +335,19 @@
             lblPurchaseID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblPurchaseID.Location = new Point(18, 41);
             lblPurchaseID.Name = "lblPurchaseID";
-            lblPurchaseID.Size = new Size(229, 43);
+            lblPurchaseID.Size = new Size(215, 36);
             lblPurchaseID.TabIndex = 0;
-            lblPurchaseID.Text = "លេខសម្គាល់កិច្ចសន្យា:";
+            lblPurchaseID.Text = "លេខសម្គាល់ការទិញលក់:";
             // 
             // lblCondoID
             // 
             lblCondoID.AutoSize = true;
             lblCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCondoID.Location = new Point(513, 157);
+            lblCondoID.Location = new Point(18, 114);
             lblCondoID.Name = "lblCondoID";
-            lblCondoID.Size = new Size(175, 43);
+            lblCondoID.Size = new Size(184, 36);
             lblCondoID.TabIndex = 14;
-            lblCondoID.Text = "លេខសម្គាល់តូប:";
+            lblCondoID.Text = "លេខសម្គាល់ Condo:";
             // 
             // txtPurchaseID
             // 
@@ -351,7 +355,7 @@
             txtPurchaseID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPurchaseID.Location = new Point(256, 38);
             txtPurchaseID.Name = "txtPurchaseID";
-            txtPurchaseID.Size = new Size(242, 51);
+            txtPurchaseID.Size = new Size(242, 44);
             txtPurchaseID.TabIndex = 3;
             // 
             // lblPurchaseDate
@@ -360,9 +364,9 @@
             lblPurchaseDate.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lblPurchaseDate.Location = new Point(513, 41);
             lblPurchaseDate.Name = "lblPurchaseDate";
-            lblPurchaseDate.Size = new Size(250, 43);
+            lblPurchaseDate.Size = new Size(183, 36);
             lblPurchaseDate.TabIndex = 10;
-            lblPurchaseDate.Text = "កាលបរិច្ឆេទចុះកិច្ចសន្យា:";
+            lblPurchaseDate.Text = "កាលបរិច្ឆេទទិញលក់:";
             // 
             // dtpPurchaseDate
             // 
@@ -370,7 +374,7 @@
             dtpPurchaseDate.Format = DateTimePickerFormat.Short;
             dtpPurchaseDate.Location = new Point(805, 35);
             dtpPurchaseDate.Name = "dtpPurchaseDate";
-            dtpPurchaseDate.Size = new Size(220, 51);
+            dtpPurchaseDate.Size = new Size(220, 44);
             dtpPurchaseDate.TabIndex = 11;
             dtpPurchaseDate.Tag = "pop";
             // 
@@ -378,11 +382,30 @@
             // 
             lblCustomerID.AutoSize = true;
             lblCustomerID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCustomerID.Location = new Point(18, 218);
+            lblCustomerID.Location = new Point(18, 187);
             lblCustomerID.Name = "lblCustomerID";
-            lblCustomerID.Size = new Size(223, 43);
+            lblCustomerID.Size = new Size(191, 36);
             lblCustomerID.TabIndex = 12;
             lblCustomerID.Text = "លេខសម្គាល់អតិថិជន:";
+            // 
+            // lblPurchasePrice
+            // 
+            lblPurchasePrice.AutoSize = true;
+            lblPurchasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPurchasePrice.Location = new Point(513, 114);
+            lblPurchasePrice.Name = "lblPurchasePrice";
+            lblPurchasePrice.Size = new Size(123, 36);
+            lblPurchasePrice.TabIndex = 40;
+            lblPurchasePrice.Text = "តម្លៃទិញលក់:";
+            // 
+            // txtPurchasePrice
+            // 
+            txtPurchasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPurchasePrice.Location = new Point(805, 106);
+            txtPurchasePrice.Name = "txtPurchasePrice";
+            txtPurchasePrice.ReadOnly = true;
+            txtPurchasePrice.Size = new Size(220, 44);
+            txtPurchasePrice.TabIndex = 41;
             // 
             // FrmPurchase
             // 
@@ -428,7 +451,6 @@
         private Button btnCancelPurchase;
         private Button btnNewPurchase;
         private Button btnUpdatePurchase;
-        private Label lblPurchaseStartDate;
         private DateTimePicker dtpPurchaseEndDate;
         private ComboBox cbCustomerID;
         private Label lblInsuranceID;
@@ -440,5 +462,7 @@
         private Label lblPurchaseDate;
         private Label lblCondoID;
         private ComboBox cbCondoID;
+        private TextBox txtPurchasePrice;
+        private Label lblPurchasePrice;
     }
 }
