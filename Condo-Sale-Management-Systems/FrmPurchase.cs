@@ -257,7 +257,7 @@ namespace Condo_Sale_Management_Systems
                 
                 cbCondoID.SelectedIndex = 0;
                 newRowView["CondoID"] = cbCondoID.SelectedValue;
-                dataRowView = cbCondoID?.SelectedItem as DataRowView;
+                dataRowView = cbCondoID.SelectedItem as DataRowView;
                 newRowView["PurchasePrice"] = dataRowView?["Price"];
 
                 lbPurchase.DataSource = null;
