@@ -45,14 +45,14 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 28, 87);
+            panel1.BackColor = Color.FromArgb(0, 192, 0);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(916, 1000);
+            panel1.Size = new Size(802, 1000);
             panel1.TabIndex = 0;
             // 
             // label3
@@ -93,13 +93,13 @@
             panel2.Controls.Add(btnLogin);
             panel2.Controls.Add(txtLoginPassword);
             panel2.Controls.Add(txtLoginUserName);
+            panel2.Controls.Add(label4);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(label4);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(916, 0);
+            panel2.Location = new Point(802, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(884, 1000);
+            panel2.Size = new Size(998, 1000);
             panel2.TabIndex = 1;
             // 
             // btnLogin
@@ -117,7 +117,7 @@
             // 
             // txtLoginPassword
             // 
-            txtLoginPassword.Location = new Point(379, 412);
+            txtLoginPassword.Location = new Point(219, 450);
             txtLoginPassword.Name = "txtLoginPassword";
             txtLoginPassword.Size = new Size(423, 44);
             txtLoginPassword.TabIndex = 4;
@@ -125,9 +125,10 @@
             // 
             // txtLoginUserName
             // 
-            txtLoginUserName.Location = new Point(379, 320);
+            txtLoginUserName.BorderStyle = BorderStyle.None;
+            txtLoginUserName.Location = new Point(219, 333);
             txtLoginUserName.Name = "txtLoginUserName";
-            txtLoginUserName.Size = new Size(423, 44);
+            txtLoginUserName.Size = new Size(423, 37);
             txtLoginUserName.TabIndex = 3;
             // 
             // label6
@@ -135,7 +136,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(0, 28, 87);
-            label6.Location = new Point(97, 420);
+            label6.Location = new Point(219, 389);
             label6.Name = "label6";
             label6.Size = new Size(124, 36);
             label6.TabIndex = 2;
@@ -146,7 +147,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(0, 28, 87);
-            label5.Location = new Point(97, 328);
+            label5.Location = new Point(219, 283);
             label5.Name = "label5";
             label5.Size = new Size(182, 36);
             label5.TabIndex = 1;
@@ -154,10 +155,10 @@
             // 
             // label4
             // 
-            label4.BackColor = Color.FromArgb(0, 28, 87);
+            label4.BackColor = Color.MediumOrchid;
             label4.Font = new Font("Khmer OS Siemreap", 16F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(47, 163);
+            label4.Location = new Point(86, 157);
             label4.Name = "label4";
             label4.Size = new Size(798, 74);
             label4.TabIndex = 0;

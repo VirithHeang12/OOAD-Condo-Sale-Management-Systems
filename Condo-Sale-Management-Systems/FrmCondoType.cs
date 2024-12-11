@@ -21,9 +21,9 @@ namespace Condo_Sale_Management_Systems
         {
             InitializeComponent();
             #region Init DataAdapter Commands
-            _condotypeDataAdapter.SelectCommand = CondoTypeHelper.CreateGetAllCondoTypesCommand();
-            _condotypeDataAdapter.InsertCommand = CondoTypeHelper.CreateInsertCondoTypeCommand();
-            _condotypeDataAdapter.UpdateCommand = CondoTypeHelper.CreateUpdateCondoTypeCommand();
+            _condotypeDataAdapter.SelectCommand = HomeTypeHelper.CreateGetAllCondoTypesCommand();
+            _condotypeDataAdapter.InsertCommand = HomeTypeHelper.CreateInsertCondoTypeCommand();
+            _condotypeDataAdapter.UpdateCommand = HomeTypeHelper.CreateUpdateCondoTypeCommand();
             #endregion
 
             #region Add controls for validation

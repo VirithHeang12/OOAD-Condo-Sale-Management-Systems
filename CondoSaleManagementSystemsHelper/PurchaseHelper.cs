@@ -12,7 +12,6 @@ namespace CondoSaleManagementSystemsHelper
         private const string UPDATE = "spUpdatePurchase";
         private const string GET_ALL = "vGetAllPurchases";
         private const string GET_ALL_STAFFS_FOR_COMBO_BOX = "vGetAllStaffsForComboBox";
-        private const string GET_ALL_INSURANCES_FOR_COMBO_BOX = "vGetAllInsurancesForComboBox";
         private const string GET_ALL_CONDOS_FOR_COMBO_BOX = "vGetAllFreeCondosForComboBox";
         private const string GET_ALL_CUSTOMERS_FOR_COMBO_BOX = "vGetAllCustomersForComboBox";
         #endregion
@@ -50,20 +49,6 @@ namespace CondoSaleManagementSystemsHelper
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
                 SourceColumn = "CustomerID"
-            });
-            cmd.Parameters.Add(new SqlParameter("@InsuranceID", SqlDbType.Int)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "InsuranceID"
-            });
-            cmd.Parameters.Add(new SqlParameter("@InsuranceName", SqlDbType.NVarChar, 50)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "InsuranceName"
             });
             cmd.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.Int)
             {
@@ -140,20 +125,6 @@ namespace CondoSaleManagementSystemsHelper
                 SourceVersion = DataRowVersion.Current,
                 SourceColumn = "CustomerID"
             });
-            cmd.Parameters.Add(new SqlParameter("@InsuranceID", SqlDbType.Int)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "InsuranceID"
-            });
-            cmd.Parameters.Add(new SqlParameter("@InsuranceName", SqlDbType.NVarChar, 50)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "InsuranceName"
-            });
             cmd.Parameters.Add(new SqlParameter("@StaffID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
@@ -206,16 +177,6 @@ namespace CondoSaleManagementSystemsHelper
             var cmd = new SqlCommand();
             cmd.Connection = Connection;
             cmd.CommandText = $"SELECT * FROM {GET_ALL_CONDOS_FOR_COMBO_BOX}";
-            return cmd;
-        }
-        #endregion
-
-        #region Generate Get All Insurances For Combo Box Command
-        public static SqlCommand CreateGetAllInsurancesForComboBoxCommand()
-        {
-            var cmd = new SqlCommand();
-            cmd.Connection = Connection;
-            cmd.CommandText = $"SELECT * FROM {GET_ALL_INSURANCES_FOR_COMBO_BOX}";
             return cmd;
         }
         #endregion

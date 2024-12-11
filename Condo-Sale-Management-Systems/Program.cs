@@ -39,11 +39,10 @@ namespace Condo_Sale_Management_Systems
         private static void InitCommands()
         {
             StaffHelper.Connection = Connection;
-            InsuranceHelper.Connection = Connection;
-            CondoTypeHelper.Connection = Connection;
+            HomeTypeHelper.Connection = Connection;
             UserHelper.Connection = Connection;
 
-            CondoHelper.Connection = Connection;
+            HomeHelper.Connection = Connection;
             LoginHelper.Connection = Connection;
             PurchaseHelper.Connection = Connection;
             CustomerHelper.Connection = Connection;

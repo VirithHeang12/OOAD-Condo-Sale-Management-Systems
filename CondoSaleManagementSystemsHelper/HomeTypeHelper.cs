@@ -3,7 +3,7 @@ using System.Data;
 
 namespace CondoSaleManagementSystemsHelper
 {
-    public static class CondoTypeHelper
+    public static class HomeTypeHelper
     {
 
         #region Connection

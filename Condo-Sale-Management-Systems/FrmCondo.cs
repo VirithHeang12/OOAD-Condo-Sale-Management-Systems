@@ -75,12 +75,12 @@ namespace Condo_Sale_Management_Systems
         private void InitCommands()
         {
             // condo
-            _condoDataAdapter.SelectCommand = CondoHelper.CreateGetAllCondosCommand();
-            _condoDataAdapter.InsertCommand = CondoHelper.CreateInsertCondoCommand();
-            _condoDataAdapter.UpdateCommand = CondoHelper.CreateUpdateCondoCommand();
+            _condoDataAdapter.SelectCommand = HomeHelper.CreateGetAllCondosCommand();
+            _condoDataAdapter.InsertCommand = HomeHelper.CreateInsertCondoCommand();
+            _condoDataAdapter.UpdateCommand = HomeHelper.CreateUpdateCondoCommand();
 
             // condotype
-            _condotypeDataAdapter.SelectCommand = CondoHelper.CreateGetAllCondoTypesForComboBoxCommand();
+            _condotypeDataAdapter.SelectCommand = HomeHelper.CreateGetAllCondoTypesForComboBoxCommand();
 
         }
         #endregion

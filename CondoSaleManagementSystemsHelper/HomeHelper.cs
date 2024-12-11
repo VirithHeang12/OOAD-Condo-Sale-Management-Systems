@@ -3,7 +3,7 @@ using System.Data;
 
 namespace CondoSaleManagementSystemsHelper
 {
-    public static class CondoHelper
+    public static class HomeHelper
     {
         #region Connection
         public static SqlConnection Connection { get; set; } = default!;
