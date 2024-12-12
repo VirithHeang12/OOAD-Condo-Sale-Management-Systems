@@ -1,4 +1,4 @@
-﻿namespace Condo_Sale_Management_Systems
+﻿namespace Home_Sale_Management_Systems
 {
     partial class FrmPurchase
     {
@@ -44,16 +44,12 @@
             txtStaffName = new TextBox();
             cbStaffID = new ComboBox();
             lblStaffID = new Label();
-            cbInsuranceID = new ComboBox();
-            lblInsuranceID = new Label();
             cbCustomerID = new ComboBox();
             lblStaffPosition = new Label();
             lblStaffName = new Label();
-            txtInsuranceName = new TextBox();
-            lblInsuranceName = new Label();
-            cbCondoID = new ComboBox();
+            cbHomeID = new ComboBox();
             lblPurchaseID = new Label();
-            lblCondoID = new Label();
+            lblHomeID = new Label();
             txtPurchaseID = new TextBox();
             lblPurchaseDate = new Label();
             dtpPurchaseDate = new DateTimePicker();
@@ -190,16 +186,12 @@
             gbPurchaseInformation.Controls.Add(txtStaffName);
             gbPurchaseInformation.Controls.Add(cbStaffID);
             gbPurchaseInformation.Controls.Add(lblStaffID);
-            gbPurchaseInformation.Controls.Add(cbInsuranceID);
-            gbPurchaseInformation.Controls.Add(lblInsuranceID);
             gbPurchaseInformation.Controls.Add(cbCustomerID);
             gbPurchaseInformation.Controls.Add(lblStaffPosition);
             gbPurchaseInformation.Controls.Add(lblStaffName);
-            gbPurchaseInformation.Controls.Add(txtInsuranceName);
-            gbPurchaseInformation.Controls.Add(lblInsuranceName);
-            gbPurchaseInformation.Controls.Add(cbCondoID);
+            gbPurchaseInformation.Controls.Add(cbHomeID);
             gbPurchaseInformation.Controls.Add(lblPurchaseID);
-            gbPurchaseInformation.Controls.Add(lblCondoID);
+            gbPurchaseInformation.Controls.Add(lblHomeID);
             gbPurchaseInformation.Controls.Add(txtPurchaseID);
             gbPurchaseInformation.Controls.Add(lblPurchaseDate);
             gbPurchaseInformation.Controls.Add(dtpPurchaseDate);
@@ -250,26 +242,6 @@
             lblStaffID.TabIndex = 36;
             lblStaffID.Text = "លេខសម្គាល់បុគ្គលិក:";
             // 
-            // cbInsuranceID
-            // 
-            cbInsuranceID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbInsuranceID.FormattingEnabled = true;
-            cbInsuranceID.Location = new Point(805, 187);
-            cbInsuranceID.Name = "cbInsuranceID";
-            cbInsuranceID.Size = new Size(220, 44);
-            cbInsuranceID.TabIndex = 35;
-            // 
-            // lblInsuranceID
-            // 
-            lblInsuranceID.AutoSize = true;
-            lblInsuranceID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInsuranceID.Location = new Point(513, 187);
-            lblInsuranceID.Name = "lblInsuranceID";
-            lblInsuranceID.Size = new Size(276, 36);
-            lblInsuranceID.TabIndex = 34;
-            lblInsuranceID.Text = "លេខសម្គាល់ក្រុមហ៊ុនធានារ៉ាប់រង:";
-            // 
             // cbCustomerID
             // 
             cbCustomerID.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -300,34 +272,15 @@
             lblStaffName.TabIndex = 21;
             lblStaffName.Text = "ឈ្មោះបុគ្គលិក:";
             // 
-            // txtInsuranceName
+            // cbHomeID
             // 
-            txtInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtInsuranceName.Location = new Point(256, 245);
-            txtInsuranceName.Name = "txtInsuranceName";
-            txtInsuranceName.ReadOnly = true;
-            txtInsuranceName.Size = new Size(242, 44);
-            txtInsuranceName.TabIndex = 17;
-            // 
-            // lblInsuranceName
-            // 
-            lblInsuranceName.AutoSize = true;
-            lblInsuranceName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblInsuranceName.Location = new Point(19, 248);
-            lblInsuranceName.Name = "lblInsuranceName";
-            lblInsuranceName.Size = new Size(223, 36);
-            lblInsuranceName.TabIndex = 16;
-            lblInsuranceName.Text = "ឈ្មោះក្រុមហ៊ុនធានារ៉ាប់រង:";
-            // 
-            // cbCondoID
-            // 
-            cbCondoID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cbCondoID.FormattingEnabled = true;
-            cbCondoID.Location = new Point(256, 106);
-            cbCondoID.Name = "cbCondoID";
-            cbCondoID.Size = new Size(242, 44);
-            cbCondoID.TabIndex = 15;
+            cbHomeID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbHomeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbHomeID.FormattingEnabled = true;
+            cbHomeID.Location = new Point(256, 106);
+            cbHomeID.Name = "cbHomeID";
+            cbHomeID.Size = new Size(242, 44);
+            cbHomeID.TabIndex = 15;
             // 
             // lblPurchaseID
             // 
@@ -339,15 +292,15 @@
             lblPurchaseID.TabIndex = 0;
             lblPurchaseID.Text = "លេខសម្គាល់ការទិញលក់:";
             // 
-            // lblCondoID
+            // lblHomeID
             // 
-            lblCondoID.AutoSize = true;
-            lblCondoID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCondoID.Location = new Point(18, 114);
-            lblCondoID.Name = "lblCondoID";
-            lblCondoID.Size = new Size(184, 36);
-            lblCondoID.TabIndex = 14;
-            lblCondoID.Text = "លេខសម្គាល់ Condo:";
+            lblHomeID.AutoSize = true;
+            lblHomeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHomeID.Location = new Point(18, 114);
+            lblHomeID.Name = "lblHomeID";
+            lblHomeID.Size = new Size(184, 36);
+            lblHomeID.TabIndex = 14;
+            lblHomeID.Text = "លេខសម្គាល់ Condo:";
             // 
             // txtPurchaseID
             // 
@@ -443,25 +396,20 @@
         private Label lblStaffPosition;
         private Label lblCustomerID;
         private GroupBox gbPurchaseInformation;
-        private TextBox txtInsuranceName;
-        private Label lblInsuranceName;
         private Label lblStaffName;
         private Panel pnlPurchaseManipulation;
         private Button btnInsertPurchase;
         private Button btnCancelPurchase;
         private Button btnNewPurchase;
         private Button btnUpdatePurchase;
-        private DateTimePicker dtpPurchaseEndDate;
         private ComboBox cbCustomerID;
-        private Label lblInsuranceID;
-        private ComboBox cbInsuranceID;
         private TextBox txtStaffName;
         private ComboBox cbStaffID;
         private Label lblStaffID;
         private TextBox txtStaffPosition;
         private Label lblPurchaseDate;
-        private Label lblCondoID;
-        private ComboBox cbCondoID;
+        private Label lblHomeID;
+        private ComboBox cbHomeID;
         private TextBox txtPurchasePrice;
         private Label lblPurchasePrice;
     }

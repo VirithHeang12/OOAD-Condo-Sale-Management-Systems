@@ -1,4 +1,4 @@
-﻿namespace Condo_Sale_Management_Systems
+﻿namespace Home_Sale_Management_Systems
 {
     partial class FrmLogin
     {

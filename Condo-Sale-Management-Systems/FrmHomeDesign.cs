@@ -1,10 +1,10 @@
-﻿using CondoSaleManagementSystemsHelper;
+﻿using HomeSaleManagementSystemsHelper;
 
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
 
-    public partial class FrmHomeDesign : FrmHome
+    public partial class FrmHomeDesign : FrmLanding
     {
         public FrmHomeDesign()
         {
@@ -13,11 +13,10 @@ namespace Condo_Sale_Management_Systems
 
 
             #region Get All Counts 
-            GetSoldCondos();
-            GetAllCondos();
+            GetSoldHomes();
+            GetAllHomes();
             GetAllStaffs();
             GetAllCustomers();
-            GetAllInsurances();
             GetAllPurchases();
             #endregion
 
@@ -32,19 +31,19 @@ namespace Condo_Sale_Management_Systems
 
         #endregion
 
-        #region GetSoldCondos
-        private void GetSoldCondos()
+        #region GetSoldHomes
+        private void GetSoldHomes()
         {
-            string rentedStoreCount = HomeDesignHelper.GetSoldCondoCount(Program.Connection);
+            string rentedStoreCount = HomeDesignHelper.GetSoldHomeCount(Program.Connection);
             lblStoreRentedCount.Text = rentedStoreCount;
         }
 
         #endregion
 
-        #region GetAllCondos
-        private void GetAllCondos()
+        #region GetAllHomes
+        private void GetAllHomes()
         {
-            string allStoresCount = HomeDesignHelper.GetAllCondos(Program.Connection);
+            string allStoresCount = HomeDesignHelper.GetAllHomes(Program.Connection);
             lblStoreCount.Text = allStoresCount;
         }
         #endregion
@@ -65,12 +64,5 @@ namespace Condo_Sale_Management_Systems
         }
         #endregion
 
-        #region GetAllInsurances
-        private void GetAllInsurances()
-        {
-            string allCustomersCount = HomeDesignHelper.GetAllInsurances(Program.Connection);
-            label11.Text = allCustomersCount;
-        }
-        #endregion
     }
 }

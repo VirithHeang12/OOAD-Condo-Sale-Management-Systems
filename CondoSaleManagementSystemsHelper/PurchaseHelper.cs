@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class PurchaseHelper
     {
@@ -12,7 +12,7 @@ namespace CondoSaleManagementSystemsHelper
         private const string UPDATE = "spUpdatePurchase";
         private const string GET_ALL = "vGetAllPurchases";
         private const string GET_ALL_STAFFS_FOR_COMBO_BOX = "vGetAllStaffsForComboBox";
-        private const string GET_ALL_CONDOS_FOR_COMBO_BOX = "vGetAllFreeCondosForComboBox";
+        private const string GET_ALL_HOMES_FOR_COMBO_BOX = "vGetAllFreeHomesForComboBox";
         private const string GET_ALL_CUSTOMERS_FOR_COMBO_BOX = "vGetAllCustomersForComboBox";
         #endregion
 
@@ -36,12 +36,12 @@ namespace CondoSaleManagementSystemsHelper
                 SourceColumn = "PurchasePrice"
             });
 
-            cmd.Parameters.Add(new SqlParameter("@CondoID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoID"
+                SourceColumn = "HomeID"
             });
             cmd.Parameters.Add(new SqlParameter("@CustomerID", SqlDbType.Int)
             {
@@ -111,12 +111,12 @@ namespace CondoSaleManagementSystemsHelper
                 SourceVersion = DataRowVersion.Current,
                 SourceColumn = "PurchasePrice"
             });
-            cmd.Parameters.Add(new SqlParameter("@CondoID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoID"
+                SourceColumn = "HomeID"
             });
             cmd.Parameters.Add(new SqlParameter("@CustomerID", SqlDbType.Int)
             {
@@ -171,12 +171,12 @@ namespace CondoSaleManagementSystemsHelper
         }
         #endregion
 
-        #region Generate Get All Condos For Combo Box Command
-        public static SqlCommand CreateGetAllCondosForComboBoxCommand()
+        #region Generate Get All Homes For Combo Box Command
+        public static SqlCommand CreateGetAllHomesForComboBoxCommand()
         {
             var cmd = new SqlCommand();
             cmd.Connection = Connection;
-            cmd.CommandText = $"SELECT * FROM {GET_ALL_CONDOS_FOR_COMBO_BOX}";
+            cmd.CommandText = $"SELECT * FROM {GET_ALL_HOMES_FOR_COMBO_BOX}";
             return cmd;
         }
         #endregion

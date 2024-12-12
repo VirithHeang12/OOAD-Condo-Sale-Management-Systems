@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class HomeHelper
     {
@@ -10,26 +10,19 @@ namespace CondoSaleManagementSystemsHelper
         #endregion
 
         #region Procedure and View Names
-        private const string INSERT_CONDO = "spInsertNewCondo";
-        private const string UPDATE_CONDO = "spUpdateCondo";
-        private const string GET_ALL_CONDOS = "vGetAllCondos";
+        private const string INSERT_HOME = "spInsertNewHome";
+        private const string UPDATE_HOME = "spUpdateHome";
+        private const string GET_ALL_HOMES = "vGetAllHomes";
 
 
-        private const string GET_ALL_CONDOTYPES_FOR_COMBO_BOX = "vGetAllCondoTypesForComboBox";
+        private const string GET_ALL_HOMETYPES_FOR_COMBO_BOX = "vGetAllHomeTypesForComboBox";
         #endregion
 
-        #region Generate Insert Condo Command
-        public static SqlCommand CreateInsertCondoCommand()
+        #region Generate Insert Home Command
+        public static SqlCommand CreateInsertHomeCommand()
         {
-            var cmd = new SqlCommand(INSERT_CONDO, Connection);
+            var cmd = new SqlCommand(INSERT_HOME, Connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@FloorNumber", SqlDbType.TinyInt)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "FloorNumber"
-            });
             cmd.Parameters.Add(new SqlParameter("@Width", SqlDbType.Decimal)
             {
                 Direction = ParameterDirection.Input,
@@ -51,35 +44,28 @@ namespace CondoSaleManagementSystemsHelper
                 SourceVersion = DataRowVersion.Current,
                 SourceColumn = "Status"
             });
-            cmd.Parameters.Add(new SqlParameter("@CondoTypeID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeTypeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoTypeID"
+                SourceColumn = "HomeTypeID"
             });
             return cmd;
         }
         #endregion
 
-        #region Generate Update Condo Command
-        public static SqlCommand CreateUpdateCondoCommand()
+        #region Generate Update Home Command
+        public static SqlCommand CreateUpdateHomeCommand()
         {
-            var cmd = new SqlCommand(UPDATE_CONDO, Connection);
+            var cmd = new SqlCommand(UPDATE_HOME, Connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@CondoID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Original,
-                SourceColumn = "CondoID"
-            });
-            cmd.Parameters.Add(new SqlParameter("@FloorNumber", SqlDbType.TinyInt)
-            {
-                Direction = ParameterDirection.Input,
-                IsNullable = false,
-                SourceVersion = DataRowVersion.Current,
-                SourceColumn = "FloorNumber"
+                SourceColumn = "HomeID"
             });
             cmd.Parameters.Add(new SqlParameter("@Width", SqlDbType.Decimal)
             {
@@ -102,34 +88,34 @@ namespace CondoSaleManagementSystemsHelper
                 SourceVersion = DataRowVersion.Current,
                 SourceColumn = "Status"
             });
-            cmd.Parameters.Add(new SqlParameter("@CondoTypeID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeTypeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoTypeID"
+                SourceColumn = "HomeTypeID"
             });
             return cmd;
 
         }
         #endregion
 
-        #region Generate Get All Condos Command
-        public static SqlCommand CreateGetAllCondosCommand()
+        #region Generate Get All Homes Command
+        public static SqlCommand CreateGetAllHomesCommand()
         {
             var cmd = new SqlCommand();
             cmd.Connection = Connection;
-            cmd.CommandText = $"SELECT * FROM {GET_ALL_CONDOS}";
+            cmd.CommandText = $"SELECT * FROM {GET_ALL_HOMES}";
             return cmd;
         }
         #endregion
 
-        #region Generate Get All CondoTypes For Combo Box Command
-        public static SqlCommand CreateGetAllCondoTypesForComboBoxCommand()
+        #region Generate Get All HomeTypes For Combo Box Command
+        public static SqlCommand CreateGetAllHomeTypesForComboBoxCommand()
         {
             var cmd = new SqlCommand();
             cmd.Connection = Connection;
-            cmd.CommandText = $"SELECT * FROM {GET_ALL_CONDOTYPES_FOR_COMBO_BOX}";
+            cmd.CommandText = $"SELECT * FROM {GET_ALL_HOMETYPES_FOR_COMBO_BOX}";
             return cmd;
         }
         #endregion

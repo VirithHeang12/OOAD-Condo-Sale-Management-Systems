@@ -1,56 +1,56 @@
 ﻿using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 using System.ComponentModel;
 using System.Data;
 
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
-    public partial class FrmCondoType : FrmHome
+    public partial class FrmHomeType : FrmLanding
     {
 
-        private const string TABLE_NAME = "tblCondoType";
-        private DataSet _condoSaleDataSet = new DataSet();
-        private SqlDataAdapter _condotypeDataAdapter = new();
-        private BindingSource _condotypeBindingSource = new();
+        private const string TABLE_NAME = "tblHomeType";
+        private DataSet _homeSaleDataSet = new DataSet();
+        private SqlDataAdapter _hometypeDataAdapter = new();
+        private BindingSource _hometypeBindingSource = new();
 
         private ErrorProvider _errorProvider = new();
 
         private List<Control> _validatingControls = new();
-        public FrmCondoType() : base()
+        public FrmHomeType() : base()
         {
             InitializeComponent();
             #region Init DataAdapter Commands
-            _condotypeDataAdapter.SelectCommand = HomeTypeHelper.CreateGetAllCondoTypesCommand();
-            _condotypeDataAdapter.InsertCommand = HomeTypeHelper.CreateInsertCondoTypeCommand();
-            _condotypeDataAdapter.UpdateCommand = HomeTypeHelper.CreateUpdateCondoTypeCommand();
+            _hometypeDataAdapter.SelectCommand = HomeTypeHelper.CreateGetAllHomeTypesCommand();
+            _hometypeDataAdapter.InsertCommand = HomeTypeHelper.CreateInsertHomeTypeCommand();
+            _hometypeDataAdapter.UpdateCommand = HomeTypeHelper.CreateUpdateHomeTypeCommand();
             #endregion
 
             #region Add controls for validation
             _errorProvider.ContainerControl = this;
-            _validatingControls.Add(txtCondoTypeDescription);
+            _validatingControls.Add(txtHomeTypeDescription);
             _validatingControls.Add(txtPrice);
             #endregion
 
-            LoadAllCondoTypes();
+            LoadAllHomeTypes();
             BindWithControls();
 
 
             #region Event Registrations
-            btnNewCondoType.Click += HandleBtnNewCondoTypeClicked;
-            btnInsertCondoType.Click += HandleBtnInsertCondoTypeClicked;
-            btnUpdateCondoType.Click += HandleBtnUpdateCondoTypeClicked;
-            btnCancelCondoType.Click += HandleBtnCancelCondoTypeClicked;
+            btnNewHomeType.Click += HandleBtnNewHomeTypeClicked;
+            btnInsertHomeType.Click += HandleBtnInsertHomeTypeClicked;
+            btnUpdateHomeType.Click += HandleBtnUpdateHomeTypeClicked;
+            btnCancelHomeType.Click += HandleBtnCancelHomeTypeClicked;
 
-            txtCondoTypeDescription.Validating += ValidateTextBox;
+            txtHomeTypeDescription.Validating += ValidateTextBox;
             txtPrice.Validating += ValidateTextBoxNumber;
 
-            dgvCondoTypes.SelectionChanged += HandleSelectionChanged;
+            dgvHomeTypes.SelectionChanged += HandleSelectionChanged;
 
-            txtSearchCondoType.TextChanged += HandleSearchCondoType;
-            txtCondoTypeDescription.GotFocus += HandleGotFocusKM;
+            txtSearchHomeType.TextChanged += HandleSearchHomeType;
+            txtHomeTypeDescription.GotFocus += HandleGotFocusKM;
             txtPrice.GotFocus += HandleGotFocusEN;
-            txtSearchCondoType.GotFocus += HandleGotFocusEN;
+            txtSearchHomeType.GotFocus += HandleGotFocusEN;
             #endregion
 
         }
@@ -72,22 +72,22 @@ namespace Condo_Sale_Management_Systems
         #region Bind With Controls
         private void BindWithControls()
         {
-            txtCondoTypeID.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "CondoTypeID"));
-            txtCondoTypeDescription.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "CondoTypeDescription"));
-            txtPrice.DataBindings.Add(new Binding("Text", _condotypeBindingSource, "Price"));
+            txtHomeTypeID.DataBindings.Add(new Binding("Text", _hometypeBindingSource, "HomeTypeID"));
+            txtHomeTypeDescription.DataBindings.Add(new Binding("Text", _hometypeBindingSource, "HomeTypeDescription"));
+            txtPrice.DataBindings.Add(new Binding("Text", _hometypeBindingSource, "Price"));
         }
         #endregion
 
         #region Handle DataGridView SelectionChanged
         private void HandleSelectionChanged(object? sender, EventArgs e)
         {
-            if (!ContainsNewRow(_condoSaleDataSet.Tables[TABLE_NAME]!))
+            if (!ContainsNewRow(_homeSaleDataSet.Tables[TABLE_NAME]!))
             {
                 return;
             }
             else
             {
-                btnCancelCondoType.PerformClick();
+                btnCancelHomeType.PerformClick();
             }
         }
 
@@ -100,17 +100,17 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Search
-        private void HandleSearchCondoType(object? sender, EventArgs e)
+        private void HandleSearchHomeType(object? sender, EventArgs e)
         {
-            string searchText = txtSearchCondoType.Text.Trim().ToLower();
+            string searchText = txtSearchHomeType.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(searchText))
             {
-                _condotypeBindingSource.Filter = string.Empty;
+                _hometypeBindingSource.Filter = string.Empty;
             }
             else
             {
-                _condotypeBindingSource.Filter = "CondoTypeDescription LIKE '%" + searchText + "%'";
+                _hometypeBindingSource.Filter = "HomeTypeDescription LIKE '%" + searchText + "%'";
 
             }
         }
@@ -130,32 +130,32 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle New
-        private void HandleBtnNewCondoTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnNewHomeTypeClicked(object? sender, EventArgs e)
         {
             try
             {
-                _condotypeBindingSource.AddNew();
+                _hometypeBindingSource.AddNew();
             }
             catch (Exception)
             {
                 MessageBox.Show("ការថែមទិន្នន័យមិនបានសម្រេច", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            txtCondoTypeDescription.Focus();
+            txtHomeTypeDescription.Focus();
         }
         #endregion
 
         #region Handle Insert
-        private void HandleBtnInsertCondoTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnInsertHomeTypeClicked(object? sender, EventArgs e)
         {
             CauseValidation();
 
             if (ErrorHelper.HasErrors(_validatingControls, _errorProvider)) return;
-            _condotypeBindingSource.EndEdit();
+            _hometypeBindingSource.EndEdit();
             try
             {
-                _condotypeDataAdapter.Update(_condoSaleDataSet, TABLE_NAME);
-                _condotypeBindingSource.ResetBindings(false);
+                _hometypeDataAdapter.Update(_homeSaleDataSet, TABLE_NAME);
+                _hometypeBindingSource.ResetBindings(false);
             }
             catch (Exception)
             {
@@ -167,17 +167,17 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Handle Update
-        private void HandleBtnUpdateCondoTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnUpdateHomeTypeClicked(object? sender, EventArgs e)
         {
-            HandleBtnInsertCondoTypeClicked(null, EventArgs.Empty);
+            HandleBtnInsertHomeTypeClicked(null, EventArgs.Empty);
         }
         #endregion
 
         #region Handle Cancel
-        private void HandleBtnCancelCondoTypeClicked(object? sender, EventArgs e)
+        private void HandleBtnCancelHomeTypeClicked(object? sender, EventArgs e)
         {
             _errorProvider.Clear();
-            _condoSaleDataSet.RejectChanges();
+            _homeSaleDataSet.RejectChanges();
             RefreshDataGridView();
 
         }
@@ -211,30 +211,30 @@ namespace Condo_Sale_Management_Systems
         #endregion
 
         #region Load
-        private void LoadAllCondoTypes()
+        private void LoadAllHomeTypes()
         {
-            _condotypeDataAdapter.TableMappings.Add("Table", TABLE_NAME);
+            _hometypeDataAdapter.TableMappings.Add("Table", TABLE_NAME);
             try
             {
-                _condotypeDataAdapter.Fill(_condoSaleDataSet, TABLE_NAME);
+                _hometypeDataAdapter.Fill(_homeSaleDataSet, TABLE_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _condotypeBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_NAME];
-            dgvCondoTypes.DataSource = _condotypeBindingSource;
+            _hometypeBindingSource.DataSource = _homeSaleDataSet.Tables[TABLE_NAME];
+            dgvHomeTypes.DataSource = _hometypeBindingSource;
         }
         #endregion
 
         #region Refresh
         private void RefreshDataGridView()
         {
-            _condoSaleDataSet.Tables[TABLE_NAME]?.Clear();
+            _homeSaleDataSet.Tables[TABLE_NAME]?.Clear();
             try
             {
-                _condotypeDataAdapter.Fill(_condoSaleDataSet, TABLE_NAME);
+                _hometypeDataAdapter.Fill(_homeSaleDataSet, TABLE_NAME);
             }
             catch (Exception)
             {

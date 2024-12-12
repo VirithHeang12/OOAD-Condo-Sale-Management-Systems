@@ -1,6 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class LoginHelper
     {

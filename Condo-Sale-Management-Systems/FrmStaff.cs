@@ -1,12 +1,12 @@
 ﻿using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 using System.ComponentModel;
 using System.Data;
 
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
-    public partial class FrmStaff : FrmHome
+    public partial class FrmStaff : FrmLanding
     {
         private const string TABLE_NAME = "tblStaff";
         public DataSet _storeRentalDataSet { get; set; } = new DataSet();

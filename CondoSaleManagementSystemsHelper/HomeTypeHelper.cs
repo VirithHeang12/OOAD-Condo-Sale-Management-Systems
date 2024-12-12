@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class HomeTypeHelper
     {
@@ -11,23 +11,23 @@ namespace CondoSaleManagementSystemsHelper
         #endregion
 
         #region Procedure and View Names
-        private const string INSERT = "spInsertNewCondoType";
-        private const string UPDATE = "spUpdateCondoType";
-        private const string GET_ALL = "vGetAllCondoTypes";
+        private const string INSERT = "spInsertNewHomeType";
+        private const string UPDATE = "spUpdateHomeType";
+        private const string GET_ALL = "vGetAllHomeTypes";
         #endregion
 
-        #region Generate Insert CondoType Command
-        public static SqlCommand CreateInsertCondoTypeCommand()
+        #region Generate Insert HomeType Command
+        public static SqlCommand CreateInsertHomeTypeCommand()
         {
             var cmd = new SqlCommand(INSERT, Connection);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.Add(new SqlParameter("@CondoTypeDescription", SqlDbType.NVarChar, 255)
+            cmd.Parameters.Add(new SqlParameter("@HomeTypeDescription", SqlDbType.NVarChar, 255)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoTypeDescription"
+                SourceColumn = "HomeTypeDescription"
             });
             cmd.Parameters.Add(new SqlParameter("@Price", SqlDbType.Money)
             {
@@ -40,8 +40,8 @@ namespace CondoSaleManagementSystemsHelper
         }
         #endregion
 
-        #region Generate Get All CondoTypes Command
-        public static SqlCommand CreateGetAllCondoTypesCommand()
+        #region Generate Get All HomeTypes Command
+        public static SqlCommand CreateGetAllHomeTypesCommand()
         {
             var cmd = new SqlCommand();
             cmd.Connection = Connection;
@@ -50,24 +50,24 @@ namespace CondoSaleManagementSystemsHelper
         }
         #endregion
 
-        #region Generate Update CondoType Command
-        public static SqlCommand CreateUpdateCondoTypeCommand()
+        #region Generate Update HomeType Command
+        public static SqlCommand CreateUpdateHomeTypeCommand()
         {
             var cmd = new SqlCommand(UPDATE, Connection);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add(new SqlParameter("@CondoTypeID", SqlDbType.Int)
+            cmd.Parameters.Add(new SqlParameter("@HomeTypeID", SqlDbType.Int)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Original,
-                SourceColumn = "CondoTypeID"
+                SourceColumn = "HomeTypeID"
             });
-            cmd.Parameters.Add(new SqlParameter("@CondoTypeDescription", SqlDbType.NVarChar, 255)
+            cmd.Parameters.Add(new SqlParameter("@HomeTypeDescription", SqlDbType.NVarChar, 255)
             {
                 Direction = ParameterDirection.Input,
                 IsNullable = false,
                 SourceVersion = DataRowVersion.Current,
-                SourceColumn = "CondoTypeDescription"
+                SourceColumn = "HomeTypeDescription"
             });
             cmd.Parameters.Add(new SqlParameter("@Price", SqlDbType.Money)
             {

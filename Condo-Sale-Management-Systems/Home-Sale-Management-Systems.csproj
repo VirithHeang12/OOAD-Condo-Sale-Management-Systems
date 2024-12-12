@@ -3,7 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <RootNamespace>Condo_Sale_Management_Systems</RootNamespace>
+    <RootNamespace>Home_Sale_Management_Systems</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -35,11 +35,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.10.3" />
+    <PackageReference Include="Azure.Identity" Version="1.13.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CondoSaleManagementSystemsHelper\CondoSaleManagementSystemsHelper.csproj" />
+    <ProjectReference Include="..\CondoSaleManagementSystemsHelper\HomeSaleManagementSystemsHelper.csproj" />
   </ItemGroup>
 
 </Project>

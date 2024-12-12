@@ -1,11 +1,11 @@
 ﻿using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 using System.ComponentModel;
 using System.Data;
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
-    public partial class FrmUser : FrmHome
+    public partial class FrmUser : FrmLanding
     {
         private const string TABLE_NAME = "tblUser";
         private const string TABLE_STAFF_NAME = "tblStaff";

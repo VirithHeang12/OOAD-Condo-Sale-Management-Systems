@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Condo-Sale-Management-Systems", "Condo-Sale-Management-Systems\Condo-Sale-Management-Systems.csproj", "{57913F36-976D-452D-B3EF-1696063CBEA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Home-Sale-Management-Systems", "Condo-Sale-Management-Systems\Home-Sale-Management-Systems.csproj", "{57913F36-976D-452D-B3EF-1696063CBEA2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CondoSaleManagementSystemsHelper", "CondoSaleManagementSystemsHelper\CondoSaleManagementSystemsHelper.csproj", "{1DB5776F-B81D-45E1-AFB8-4416D1DF756B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeSaleManagementSystemsHelper", "CondoSaleManagementSystemsHelper\HomeSaleManagementSystemsHelper.csproj", "{1DB5776F-B81D-45E1-AFB8-4416D1DF756B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

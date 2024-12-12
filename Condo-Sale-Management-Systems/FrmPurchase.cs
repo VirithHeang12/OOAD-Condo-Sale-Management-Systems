@@ -1,29 +1,26 @@
 ﻿using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 using System.ComponentModel;
 using System.Data;
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
-    public partial class FrmPurchase : FrmHome
+    public partial class FrmPurchase : FrmLanding
     {
         private const string TABLE_PURCHASE_NAME = "tblPurchase";
-        private const string TABLE_CONDO_NAME = "tblCondo";
+        private const string TABLE_HOME_NAME = "tblHome";
         private const string TABLE_CUSTOMER_NAME = "tblCustomer";
         private const string TABLE_STAFF_NAME = "tblStaff";
-        private const string TABLE_INSURANCE_NAME = "tblInsurance";
-        public DataSet _condoSaleDataSet { get; set; } = new DataSet();
+        public DataSet _homeSaleDataSet { get; set; } = new DataSet();
         public SqlDataAdapter _purchaseDataAdapter { get; set; } = new SqlDataAdapter();
-        public SqlDataAdapter _condoDataAdapter { get; set; } = new SqlDataAdapter();
+        public SqlDataAdapter _homeDataAdapter { get; set; } = new SqlDataAdapter();
         public SqlDataAdapter _customerDataAdapter { get; set; } = new SqlDataAdapter();
         public SqlDataAdapter _staffDataAdapter { get; set; } = new SqlDataAdapter();
-        public SqlDataAdapter _insuranceDataAdapter { get; set; } = new SqlDataAdapter();
 
         private BindingSource _purchaseBindingSource { get; set; } = new BindingSource();
-        private BindingSource _condoBindingSource { get; set; } = new BindingSource();
+        private BindingSource _homeBindingSource { get; set; } = new BindingSource();
         private BindingSource _customerBindingSource { get; set; } = new BindingSource();
         private BindingSource _staffBindingSource { get; set; } = new BindingSource();
-        private BindingSource _insuranceBindingSource { get; set; } = new BindingSource();
 
         private ErrorProvider _errorProvider = new();
 
@@ -57,16 +54,13 @@ namespace Condo_Sale_Management_Systems
             lbPurchase.SelectedValueChanged += HandleSelectedValueChanged;
 
             dtpPurchaseDate.GotFocus += HandleGotFocusEN;
-            cbCondoID.GotFocus += HandleGotFocusEN;
+            cbHomeID.GotFocus += HandleGotFocusEN;
             cbCustomerID.GotFocus += HandleGotFocusEN;
-            cbInsuranceID.GotFocus += HandleGotFocusEN;
             cbStaffID.GotFocus += HandleGotFocusEN;
 
             txtSearchPurchase.TextChanged += HandleSearchStaff;
-
-            cbInsuranceID.SelectedIndexChanged += HandleCbInsuranceIDSelectedIndexChanged;
             cbStaffID.SelectedIndexChanged += HandleCbStaffIDSelectedIndexChanged;
-            cbCondoID.SelectedIndexChanged += HandleCbCondoIDSelectedIndexChanged;
+            cbHomeID.SelectedIndexChanged += HandleCbHomeIDSelectedIndexChanged;
             #endregion
 
         }
@@ -80,11 +74,9 @@ namespace Condo_Sale_Management_Systems
             _purchaseDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllPurchasesCommand();
             _purchaseDataAdapter.UpdateCommand = PurchaseHelper.CreateUpdatePurchaseCommand();
             // Store
-            _condoDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllCondosForComboBoxCommand();
+            _homeDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllHomesForComboBoxCommand();
             // Customer
             _customerDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllCustomersForComboBoxCommand();
-            // Insurance
-            _insuranceDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllInsurancesForComboBoxCommand();
             // Staff
             _staffDataAdapter.SelectCommand = PurchaseHelper.CreateGetAllStaffsForComboBoxCommand();
         }
@@ -98,15 +90,9 @@ namespace Condo_Sale_Management_Systems
             txtStaffPosition.Text = dataRowView?["StaffPosition"] as string ?? string.Empty;
         }
 
-        private void HandleCbInsuranceIDSelectedIndexChanged(object? sender, EventArgs e)
+        private void HandleCbHomeIDSelectedIndexChanged(object? sender, EventArgs e)
         {
-            var dataRowView = cbInsuranceID.SelectedItem as DataRowView;
-            txtInsuranceName.Text = dataRowView?["InsuranceName"] as string ?? string.Empty;
-        }
-
-        private void HandleCbCondoIDSelectedIndexChanged(object? sender, EventArgs e)
-        {
-            var dataRowView = cbCondoID.SelectedItem as DataRowView;
+            var dataRowView = cbHomeID.SelectedItem as DataRowView;
             txtPurchasePrice.Text = dataRowView?["Price"]?.ToString() ?? string.Empty;
         }
         #endregion
@@ -133,11 +119,9 @@ namespace Condo_Sale_Management_Systems
                 txtPurchaseID.DataBindings.Add("Text", _purchaseBindingSource, "PurchaseID");
                 dtpPurchaseDate.DataBindings.Add("Value", _purchaseBindingSource, "PurchaseDate");
                 cbCustomerID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "CustomerID");
-                cbCondoID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "CondoID");
+                cbHomeID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "HomeID");
                 txtPurchasePrice.DataBindings.Add("Text", _purchaseBindingSource, "PurchasePrice");
                 cbStaffID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "StaffID");
-                cbInsuranceID.DataBindings.Add("SelectedValue", _purchaseBindingSource, "InsuranceID");
-                txtInsuranceName.DataBindings.Add("Text", _purchaseBindingSource, "InsuranceName");
                 txtStaffName.DataBindings.Add("Text", _purchaseBindingSource, "StaffName");
                 txtStaffPosition.DataBindings.Add("Text", _purchaseBindingSource, "StaffPosition");
 
@@ -152,11 +136,9 @@ namespace Condo_Sale_Management_Systems
             txtPurchaseID.DataBindings.Clear();
             dtpPurchaseDate.DataBindings.Clear();
             cbCustomerID.DataBindings.Clear();
-            cbCondoID.DataBindings.Clear();
+            cbHomeID.DataBindings.Clear();
             txtPurchasePrice.DataBindings.Clear();
             cbStaffID.DataBindings.Clear();
-            cbInsuranceID.DataBindings.Clear();
-            txtInsuranceName.DataBindings.Clear();
             txtStaffName.DataBindings.Clear();
             txtStaffPosition.DataBindings.Clear();
         }
@@ -165,7 +147,7 @@ namespace Condo_Sale_Management_Systems
         #region Handle ListBox SelectedValueChanged
         private void HandleSelectedValueChanged(object? sender, EventArgs e)
         {
-            if (!ContainsNewRow(_condoSaleDataSet.Tables[TABLE_PURCHASE_NAME]!))
+            if (!ContainsNewRow(_homeSaleDataSet.Tables[TABLE_PURCHASE_NAME]!))
             {
                 return;
             }
@@ -216,9 +198,9 @@ namespace Condo_Sale_Management_Systems
                 MessageBox.Show("សូមបញ្ចូលបុគ្គលិកជាមុនសិន", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (cbCondoID.Items.Count < 1)
+            if (cbHomeID.Items.Count < 1)
             {
-                MessageBox.Show("គ្មាន Condo សម្រាប់លក់", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("គ្មាន Home សម្រាប់លក់", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
                 
             }
@@ -228,11 +210,6 @@ namespace Condo_Sale_Management_Systems
                 return;
             }
             
-            if (cbInsuranceID.Items.Count < 1)
-            {
-                MessageBox.Show("សូមបញ្ចូលក្រុមហ៊ុនធានារ៉ាប់រងជាមុនសិន", "ថែមទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
             try
             {
                 UnbindWithControls();
@@ -247,17 +224,12 @@ namespace Condo_Sale_Management_Systems
                 newRowView["StaffName"] = dataRowView?["StaffName"];
                 newRowView["StaffPosition"] = dataRowView?["StaffPosition"];
 
-                cbInsuranceID.SelectedIndex = 0;
-                newRowView["InsuranceID"] = cbInsuranceID.SelectedValue;
-                dataRowView = cbInsuranceID.SelectedItem as DataRowView;
-                newRowView["InsuranceName"] = dataRowView?["InsuranceName"];
-
                 cbCustomerID.SelectedIndex = 0;
                 newRowView["CustomerID"] = cbCustomerID.SelectedValue;
                 
-                cbCondoID.SelectedIndex = 0;
-                newRowView["CondoID"] = cbCondoID.SelectedValue;
-                dataRowView = cbCondoID.SelectedItem as DataRowView;
+                cbHomeID.SelectedIndex = 0;
+                newRowView["HomeID"] = cbHomeID.SelectedValue;
+                dataRowView = cbHomeID.SelectedItem as DataRowView;
                 newRowView["PurchasePrice"] = dataRowView?["Price"];
 
                 lbPurchase.DataSource = null;
@@ -293,7 +265,7 @@ namespace Condo_Sale_Management_Systems
             _purchaseBindingSource.EndEdit();
             try
             {
-                _purchaseDataAdapter.Update(_condoSaleDataSet, TABLE_PURCHASE_NAME);
+                _purchaseDataAdapter.Update(_homeSaleDataSet, TABLE_PURCHASE_NAME);
                 _purchaseBindingSource.ResetBindings(false);
             }
             catch (Exceptio​n)
@@ -318,7 +290,7 @@ namespace Condo_Sale_Management_Systems
         private void HandleBtnCancelPurchaseClicked(object? sender, EventArgs e)
         {
             _errorProvider.Clear();
-            _condoSaleDataSet.RejectChanges();
+            _homeSaleDataSet.RejectChanges();
             RefreshListBox();
         }
         #endregion
@@ -341,53 +313,44 @@ namespace Condo_Sale_Management_Systems
         {
             _purchaseDataAdapter.TableMappings.Add("Table", TABLE_PURCHASE_NAME);
             _staffDataAdapter.TableMappings.Add("Table", TABLE_STAFF_NAME);
-            _insuranceDataAdapter.TableMappings.Add("Table", TABLE_INSURANCE_NAME);
-            _condoDataAdapter.TableMappings.Add("Table", TABLE_CONDO_NAME);
+            _homeDataAdapter.TableMappings.Add("Table", TABLE_HOME_NAME);
             _customerDataAdapter.TableMappings.Add("Table", TABLE_CUSTOMER_NAME);
 
             try
             {
-                _purchaseDataAdapter.Fill(_condoSaleDataSet, TABLE_PURCHASE_NAME);
-                _staffDataAdapter.Fill(_condoSaleDataSet, TABLE_STAFF_NAME);
-                _insuranceDataAdapter.Fill(_condoSaleDataSet, TABLE_INSURANCE_NAME);
-                _condoDataAdapter.Fill(_condoSaleDataSet, TABLE_CONDO_NAME);
-                _customerDataAdapter.Fill(_condoSaleDataSet, TABLE_CUSTOMER_NAME);
+                _purchaseDataAdapter.Fill(_homeSaleDataSet, TABLE_PURCHASE_NAME);
+                _staffDataAdapter.Fill(_homeSaleDataSet, TABLE_STAFF_NAME);
+                _homeDataAdapter.Fill(_homeSaleDataSet, TABLE_HOME_NAME);
+                _customerDataAdapter.Fill(_homeSaleDataSet, TABLE_CUSTOMER_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            _purchaseBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_PURCHASE_NAME];
+            _purchaseBindingSource.DataSource = _homeSaleDataSet.Tables[TABLE_PURCHASE_NAME];
             lbPurchase.DataSource = _purchaseBindingSource;
             lbPurchase.DisplayMember = "PurchaseID";
             lbPurchase.ValueMember = "PurchaseID";
 
-            _condoSaleDataSet.Tables[TABLE_STAFF_NAME]!.PrimaryKey = new DataColumn[] { _condoSaleDataSet.Tables[TABLE_STAFF_NAME]!.Columns["StaffID"]! };
-            _staffBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_STAFF_NAME]!.AsDataView();
+            _homeSaleDataSet.Tables[TABLE_STAFF_NAME]!.PrimaryKey = new DataColumn[] { _homeSaleDataSet.Tables[TABLE_STAFF_NAME]!.Columns["StaffID"]! };
+            _staffBindingSource.DataSource = _homeSaleDataSet.Tables[TABLE_STAFF_NAME]!.AsDataView();
             cbStaffID.DataSource = _staffBindingSource;
             cbStaffID.ValueMember = "StaffID";
             cbStaffID.DisplayMember = "StaffID";
 
-            _condoSaleDataSet.Tables[TABLE_INSURANCE_NAME]!.PrimaryKey = new DataColumn[] { _condoSaleDataSet.Tables[TABLE_INSURANCE_NAME]!.Columns["InsuranceID"]! };
-            _insuranceBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_INSURANCE_NAME]!.AsDataView();
-            cbInsuranceID.DataSource = _insuranceBindingSource;
-            cbInsuranceID.ValueMember = "InsuranceID";
-            cbInsuranceID.DisplayMember = "InsuranceID";
+            _homeBindingSource.DataSource = _homeSaleDataSet.Tables[TABLE_HOME_NAME]!.AsDataView();
+            cbHomeID.DataSource = _homeBindingSource;
+            cbHomeID.ValueMember = "HomeID";
+            cbHomeID.DisplayMember = "HomeID";
 
-            _condoBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_CONDO_NAME]!.AsDataView();
-            cbCondoID.DataSource = _condoBindingSource;
-            cbCondoID.ValueMember = "CondoID";
-            cbCondoID.DisplayMember = "CondoID";
-
-            _customerBindingSource.DataSource = _condoSaleDataSet.Tables[TABLE_CUSTOMER_NAME];
+            _customerBindingSource.DataSource = _homeSaleDataSet.Tables[TABLE_CUSTOMER_NAME];
             cbCustomerID.DataSource = _customerBindingSource;
             cbCustomerID.ValueMember = "CustomerID";
             cbCustomerID.DisplayMember = "CustomerID";
 
-            HandleCbInsuranceIDSelectedIndexChanged(null, EventArgs.Empty);
             HandleCbStaffIDSelectedIndexChanged(null, EventArgs.Empty);
-            HandleCbCondoIDSelectedIndexChanged(null, EventArgs.Empty);
+            HandleCbHomeIDSelectedIndexChanged(null, EventArgs.Empty);
 
         }
         #endregion
@@ -397,10 +360,10 @@ namespace Condo_Sale_Management_Systems
         {
             UnbindWithControls();
 
-            _condoSaleDataSet.Tables[TABLE_PURCHASE_NAME]?.Clear();
+            _homeSaleDataSet.Tables[TABLE_PURCHASE_NAME]?.Clear();
             try
             {
-                _purchaseDataAdapter.Fill(_condoSaleDataSet, TABLE_PURCHASE_NAME);
+                _purchaseDataAdapter.Fill(_homeSaleDataSet, TABLE_PURCHASE_NAME);
             }
             catch (Exception)
             {

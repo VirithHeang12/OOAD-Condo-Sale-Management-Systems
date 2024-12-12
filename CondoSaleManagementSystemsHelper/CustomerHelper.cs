@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using System.Data;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class CustomerHelper
     {

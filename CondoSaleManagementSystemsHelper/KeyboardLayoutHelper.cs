@@ -1,6 +1,6 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace CondoSaleManagementSystemsHelper
+namespace HomeSaleManagementSystemsHelper
 {
     public static class KeyboardLayoutHelper
     {

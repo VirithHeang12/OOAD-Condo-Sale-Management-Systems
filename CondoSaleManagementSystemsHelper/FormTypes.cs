@@ -1,11 +1,11 @@
-﻿namespace CondoSaleManagementSystemsHelper
+﻿namespace HomeSaleManagementSystemsHelper
 {
     public enum FormTypes { 
-        FrmHome = 0, 
+        FrmLanding = 0, 
         FrmStaff = 1, 
         FrmCustomer = 2, 
-        FrmCondo = 3,
-        FrmCondoType = 4,
+        FrmHome = 3,
+        FrmHomeType = 4,
         FrmPurchase = 5,
         FrmUser = 6,
         FrmInsurance = 7,

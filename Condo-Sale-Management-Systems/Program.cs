@@ -1,7 +1,7 @@
 using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
     internal static class Program
     {
@@ -20,14 +20,14 @@ namespace Condo_Sale_Management_Systems
 
         static void TryConnectingToServer()
         {
-            CondoSaleManagementSystemsHelper.Connection.ConnectionStringKey = "ConnectionString";
+            HomeSaleManagementSystemsHelper.Connection.ConnectionStringKey = "ConnectionString";
             try
             {
-            CondoSaleManagementSystemsHelper.Connection.LoadConfiguration("appsettings.json");
-                CondoSaleManagementSystemsHelper.Connection.Conn = Connection;
-                Connection = CondoSaleManagementSystemsHelper.Connection.OpenConnection();
+            HomeSaleManagementSystemsHelper.Connection.LoadConfiguration("appsettings.json");
+                HomeSaleManagementSystemsHelper.Connection.Conn = Connection;
+                Connection = HomeSaleManagementSystemsHelper.Connection.OpenConnection();
                 InitCommands();
-                CondoSaleManagementSystemsHelper.Connection.CloseConnnection();
+                HomeSaleManagementSystemsHelper.Connection.CloseConnnection();
             }
             catch (Exception ex)
             {
@@ -47,7 +47,6 @@ namespace Condo_Sale_Management_Systems
             PurchaseHelper.Connection = Connection;
             CustomerHelper.Connection = Connection;
             HomeDesignHelper.Connection = Connection;
-
         }
     }
 }

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Data.SqlClient;
-using CondoSaleManagementSystemsHelper;
+using HomeSaleManagementSystemsHelper;
 using System.Data;
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
     public partial class FrmLogin : Form
     {

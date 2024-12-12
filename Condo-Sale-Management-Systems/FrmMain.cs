@@ -1,6 +1,6 @@
-﻿using CondoSaleManagementSystemsHelper;
+﻿using HomeSaleManagementSystemsHelper;
 
-namespace Condo_Sale_Management_Systems
+namespace Home_Sale_Management_Systems
 {
     public partial class FrmMain : Form
     {
@@ -15,8 +15,8 @@ namespace Condo_Sale_Management_Systems
             this.WindowState = FormWindowState.Maximized;
 
             FrmLogin.LoggedIn += HandleLoggedIn;
-            FrmHome.NavButtonClicked += HandleNavButtonClicked;
-            FrmHome.ButtonLogoutClicked += HandleButtonLogoutClick;
+            FrmLanding.NavButtonClicked += HandleNavButtonClicked;
+            FrmLanding.ButtonLogoutClicked += HandleButtonLogoutClick;
             OpenChildForm(new FrmLogin());
         }
 
@@ -29,7 +29,7 @@ namespace Condo_Sale_Management_Systems
         {
             switch (e.Form)
             {
-                case FormTypes.FrmHome:
+                case FormTypes.FrmLanding:
                     OpenChildForm(new FrmHomeDesign());
                     break;
                 case FormTypes.FrmStaff:
@@ -38,20 +38,17 @@ namespace Condo_Sale_Management_Systems
                 case FormTypes.FrmCustomer:
                     OpenChildForm(new FrmCustomer());
                     break;
-                case FormTypes.FrmCondoType:
-                    OpenChildForm(new FrmCondoType());
+                case FormTypes.FrmHomeType:
+                    OpenChildForm(new FrmHomeType());
                     break;
                 case FormTypes.FrmUser:
                     OpenChildForm(new FrmUser());
                     break;
-                case FormTypes.FrmInsurance:
-                    OpenChildForm(new FrmInsurance());
-                    break;
                 case FormTypes.FrmPurchase:
                     OpenChildForm(new FrmPurchase());
                     break;
-                case FormTypes.FrmCondo:
-                    OpenChildForm(new FrmCondo());
+                case FormTypes.FrmHome:
+                    OpenChildForm(new FrmHome());
                     break;
                 default: break;
             }
@@ -59,7 +56,7 @@ namespace Condo_Sale_Management_Systems
 
         private void HandleLoggedIn(object? sender, EventArgs e)
         {
-            OpenChildForm(new FrmHome());
+            OpenChildForm(new FrmLanding());
         }
 
         private void HandleFormResize(object? sender, EventArgs e)
