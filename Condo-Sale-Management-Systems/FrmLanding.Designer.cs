@@ -73,7 +73,7 @@
             // 
             // lblCopyright
             // 
-            lblCopyright.Font = new Font("!Khmer OS Siemreap", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCopyright.Font = new Font("!Khmer OS Siemreap", 9F);
             lblCopyright.Location = new Point(0, 902);
             lblCopyright.Name = "lblCopyright";
             lblCopyright.Size = new Size(263, 80);
@@ -207,7 +207,7 @@
             btnLogout.BackColor = Color.FromArgb(244, 244, 244);
             btnLogout.Dock = DockStyle.Right;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogout.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
             btnLogout.ForeColor = Color.FromArgb(0, 28, 87);
             btnLogout.Image = Properties.Resources.logout;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
@@ -220,7 +220,7 @@
             btnLogout.TextAlign = ContentAlignment.MiddleRight;
             btnLogout.UseVisualStyleBackColor = false;
             // 
-            // FrmHome
+            // FrmLanding
             // 
             AutoScaleDimensions = new SizeF(11F, 36F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -229,9 +229,9 @@
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(pnlSideNav);
-            Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("!Khmer OS Siemreap", 12F);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmHome";
+            Name = "FrmLanding";
             StartPosition = FormStartPosition.CenterScreen;
             pnlSideNav.ResumeLayout(false);
             panel1.ResumeLayout(false);
