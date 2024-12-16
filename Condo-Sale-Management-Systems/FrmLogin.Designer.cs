@@ -36,16 +36,16 @@
             btnLogin = new Button();
             txtLoginPassword = new TextBox();
             txtLoginUserName = new TextBox();
+            label4 = new Label();
             label6 = new Label();
             label5 = new Label();
-            label4 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 192, 0);
+            panel1.BackColor = Color.FromArgb(0, 192, 192);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label1);
@@ -57,7 +57,7 @@
             // 
             // label3
             // 
-            label3.Font = new Font("Khmer OS Siemreap", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Khmer OS Siemreap", 11F);
             label3.ForeColor = Color.White;
             label3.Location = new Point(201, 938);
             label3.Name = "label3";
@@ -68,22 +68,22 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Khmer OS Siemreap", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Khmer OS Wat Phnom", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(164, 389);
+            label2.Location = new Point(176, 174);
             label2.Name = "label2";
-            label2.Size = new Size(485, 67);
+            label2.Size = new Size(483, 77);
             label2.TabIndex = 2;
-            label2.Text = "ប្រព័ន្ធគ្រប់គ្រងការលក់ Condo";
+            label2.Text = "ប្រព័ន្ធគ្រប់គ្រងការលក់ ផ្ទះបុរី\r\n";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Khmer OS Siemreap", 28F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Khmer OS Wat Phnom", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(201, 250);
+            label1.Location = new Point(201, 89);
             label1.Name = "label1";
-            label1.Size = new Size(425, 85);
+            label1.Size = new Size(439, 97);
             label1.TabIndex = 1;
             label1.Text = "សូមស្វាគមន៍មកកាន់";
             // 
@@ -105,58 +105,36 @@
             // btnLogin
             // 
             btnLogin.AutoSize = true;
-            btnLogin.BackColor = Color.FromArgb(0, 28, 87);
-            btnLogin.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogin.BackColor = Color.FromArgb(0, 192, 192);
+            btnLogin.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(602, 524);
+            btnLogin.Location = new Point(333, 495);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(200, 71);
             btnLogin.TabIndex = 5;
-            btnLogin.Text = "ចូលក្នុងប្រព័ន្ធ";
+            btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
             // 
             // txtLoginPassword
             // 
-            txtLoginPassword.Location = new Point(219, 450);
+            txtLoginPassword.Location = new Point(219, 428);
             txtLoginPassword.Name = "txtLoginPassword";
-            txtLoginPassword.Size = new Size(423, 44);
+            txtLoginPassword.Size = new Size(423, 30);
             txtLoginPassword.TabIndex = 4;
             txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // txtLoginUserName
             // 
             txtLoginUserName.BorderStyle = BorderStyle.None;
-            txtLoginUserName.Location = new Point(219, 333);
+            txtLoginUserName.Location = new Point(219, 363);
             txtLoginUserName.Name = "txtLoginUserName";
-            txtLoginUserName.Size = new Size(423, 37);
+            txtLoginUserName.Size = new Size(423, 23);
             txtLoginUserName.TabIndex = 3;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(0, 28, 87);
-            label6.Location = new Point(219, 389);
-            label6.Name = "label6";
-            label6.Size = new Size(124, 36);
-            label6.TabIndex = 2;
-            label6.Text = "លេខសម្ងាត់ៈ";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.FromArgb(0, 28, 87);
-            label5.Location = new Point(219, 283);
-            label5.Name = "label5";
-            label5.Size = new Size(182, 36);
-            label5.TabIndex = 1;
-            label5.Text = "ឈ្មោះអ្នកប្រើប្រាស់ៈ";
             // 
             // label4
             // 
-            label4.BackColor = Color.MediumOrchid;
-            label4.Font = new Font("Khmer OS Siemreap", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.BackColor = Color.FromArgb(0, 192, 192);
+            label4.Font = new Font("Khmer OS Wat Phnom", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
             label4.Location = new Point(86, 157);
             label4.Name = "label4";
@@ -165,6 +143,28 @@
             label4.Text = "សូមបញ្ចូលឈ្មោះ និង លេខសម្ងាត់ដើម្បីចូលក្នុងប្រព័ន្ធ";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold);
+            label6.ForeColor = Color.FromArgb(0, 28, 87);
+            label6.Location = new Point(219, 389);
+            label6.Name = "label6";
+            label6.Size = new Size(116, 36);
+            label6.TabIndex = 2;
+            label6.Text = "Password:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold);
+            label5.ForeColor = Color.FromArgb(0, 28, 87);
+            label5.Location = new Point(219, 313);
+            label5.Name = "label5";
+            label5.Size = new Size(123, 36);
+            label5.TabIndex = 1;
+            label5.Text = "Username:";
+            // 
             // FrmLogin
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -172,7 +172,7 @@
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Font = new Font("Microsoft Sans Serif", 12F);
             FormBorderStyle = FormBorderStyle.None;
             MdiChildrenMinimizedAnchorBottom = false;
             Name = "FrmLogin";

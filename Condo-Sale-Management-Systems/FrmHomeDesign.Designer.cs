@@ -70,20 +70,20 @@
             // 
             // label1
             // 
-            label1.BackColor = Color.FromArgb(0, 28, 87);
+            label1.BackColor = Color.Cyan;
             label1.Dock = DockStyle.Top;
-            label1.Font = new Font("Khmer OS Siemreap", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Khmer OS Wat Phnom", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(266, 80);
+            label1.Location = new Point(290, 56);
             label1.Name = "label1";
-            label1.Size = new Size(1534, 79);
+            label1.Size = new Size(1510, 79);
             label1.TabIndex = 2;
-            label1.Text = "ទិន្នន័យនៃប្រព័ន្ធគ្រប់គ្រងការលក់ Condo";
+            label1.Text = "ទិន្នន័យនៃប្រព័ន្ធគ្រប់គ្រងការលក់ ផ្ទះបុរី";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(0, 28, 87);
+            panel4.BackColor = Color.Cyan;
             panel4.Controls.Add(label4);
             panel4.Controls.Add(lblStoreRentedCount);
             panel4.Controls.Add(pictureBox3);
@@ -95,18 +95,18 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Khmer OS Wat Phnom", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
             label4.Location = new Point(162, 67);
             label4.Name = "label4";
-            label4.Size = new Size(208, 36);
+            label4.Size = new Size(171, 41);
             label4.TabIndex = 2;
-            label4.Text = "ចំនួន Condo បានលក់";
+            label4.Text = "ចំនួន ផ្ទះ បានលក់";
             // 
             // lblStoreRentedCount
             // 
             lblStoreRentedCount.AutoSize = true;
-            lblStoreRentedCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStoreRentedCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             lblStoreRentedCount.ForeColor = Color.White;
             lblStoreRentedCount.Location = new Point(162, 25);
             lblStoreRentedCount.Name = "lblStoreRentedCount";
@@ -126,7 +126,7 @@
             // 
             // panel5
             // 
-            panel5.BackColor = Color.FromArgb(0, 28, 87);
+            panel5.BackColor = Color.Cyan;
             panel5.Controls.Add(label6);
             panel5.Controls.Add(label7);
             panel5.Controls.Add(pictureBox4);
@@ -138,18 +138,18 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Font = new Font("Khmer OS Wat Phnom", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
             label6.Location = new Point(162, 67);
             label6.Name = "label6";
-            label6.Size = new Size(169, 36);
+            label6.Size = new Size(174, 41);
             label6.TabIndex = 2;
             label6.Text = "ចំនួនបុគ្គលិកសរុប";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             label7.ForeColor = Color.White;
             label7.Location = new Point(162, 25);
             label7.Name = "label7";
@@ -169,7 +169,7 @@
             // 
             // panel6
             // 
-            panel6.BackColor = Color.FromArgb(0, 28, 87);
+            panel6.BackColor = Color.Cyan;
             panel6.Controls.Add(label8);
             panel6.Controls.Add(label9);
             panel6.Controls.Add(pictureBox5);
@@ -181,18 +181,18 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Font = new Font("Khmer OS Wat Phnom", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label8.ForeColor = Color.White;
             label8.Location = new Point(162, 67);
             label8.Name = "label8";
-            label8.Size = new Size(178, 36);
+            label8.Size = new Size(183, 41);
             label8.TabIndex = 2;
             label8.Text = "ចំនួនអតិថិជនសរុប";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             label9.ForeColor = Color.White;
             label9.Location = new Point(162, 25);
             label9.Name = "label9";
@@ -212,7 +212,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(0, 28, 87);
+            panel3.BackColor = Color.Cyan;
             panel3.Controls.Add(label2);
             panel3.Controls.Add(lblStoreCount);
             panel3.Controls.Add(pictureBox2);
@@ -224,18 +224,18 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Font = new Font("Khmer OS Wat Phnom", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(162, 67);
             label2.Name = "label2";
-            label2.Size = new Size(179, 36);
+            label2.Size = new Size(146, 41);
             label2.TabIndex = 2;
-            label2.Text = "ចំនួន Condo សរុប";
+            label2.Text = "ចំនួន ផ្ទះ សរុប";
             // 
             // lblStoreCount
             // 
             lblStoreCount.AutoSize = true;
-            lblStoreCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStoreCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             lblStoreCount.ForeColor = Color.White;
             lblStoreCount.Location = new Point(162, 25);
             lblStoreCount.Name = "lblStoreCount";
@@ -255,7 +255,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.FromArgb(0, 28, 87);
+            panel7.BackColor = Color.Cyan;
             panel7.Controls.Add(label10);
             panel7.Controls.Add(label11);
             panel7.Controls.Add(pictureBox6);
@@ -267,18 +267,18 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Font = new Font("Khmer OS Wat Phnom", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.White;
             label10.Location = new Point(143, 67);
             label10.Name = "label10";
-            label10.Size = new Size(269, 36);
+            label10.Size = new Size(257, 38);
             label10.TabIndex = 2;
             label10.Text = "ចំនួនក្រុមហ៊ុនធានារ៉ាប់រងសរុប";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            label11.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             label11.ForeColor = Color.White;
             label11.Location = new Point(143, 25);
             label11.Name = "label11";
@@ -298,7 +298,7 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(0, 28, 87);
+            panel8.BackColor = Color.Cyan;
             panel8.Controls.Add(label3);
             panel8.Controls.Add(lblCountContract);
             panel8.Controls.Add(pictureBox7);
@@ -310,18 +310,18 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Khmer OS Wat Phnom", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
             label3.Location = new Point(143, 67);
             label3.Name = "label3";
-            label3.Size = new Size(167, 36);
+            label3.Size = new Size(172, 41);
             label3.TabIndex = 2;
             label3.Text = "ចំនួនការលក់សរុប";
             // 
             // lblCountContract
             // 
             lblCountContract.AutoSize = true;
-            lblCountContract.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCountContract.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold);
             lblCountContract.ForeColor = Color.White;
             lblCountContract.Location = new Point(143, 25);
             lblCountContract.Name = "lblCountContract";

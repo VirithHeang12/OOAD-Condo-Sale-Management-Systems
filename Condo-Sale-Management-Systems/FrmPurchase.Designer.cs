@@ -40,6 +40,8 @@
             btnUpdatePurchase = new Button();
             btnInsertPurchase = new Button();
             gbPurchaseInformation = new GroupBox();
+            txtPurchasePrice = new TextBox();
+            lblPurchasePrice = new Label();
             txtStaffPosition = new TextBox();
             txtStaffName = new TextBox();
             cbStaffID = new ComboBox();
@@ -54,8 +56,6 @@
             lblPurchaseDate = new Label();
             dtpPurchaseDate = new DateTimePicker();
             lblCustomerID = new Label();
-            lblPurchasePrice = new Label();
-            txtPurchasePrice = new TextBox();
             pnlLeftSide.SuspendLayout();
             pnlRightSide.SuspendLayout();
             pnlPurchaseManipulation.SuspendLayout();
@@ -64,13 +64,13 @@
             // 
             // lblTitle
             // 
-            lblTitle.BackColor = Color.FromArgb(0, 28, 87);
+            lblTitle.BackColor = Color.Cyan;
             lblTitle.Dock = DockStyle.Top;
-            lblTitle.Font = new Font("!Khmer OS Siemreap", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitle.Font = new Font("Khmer OS Wat Phnom", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(266, 80);
+            lblTitle.Location = new Point(290, 56);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(1534, 101);
+            lblTitle.Size = new Size(1510, 101);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "ព័ត៌មានការទិញលក់";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -80,7 +80,7 @@
             lblSearchPurchase.AutoSize = true;
             lblSearchPurchase.Location = new Point(21, 11);
             lblSearchPurchase.Name = "lblSearchPurchase";
-            lblSearchPurchase.Size = new Size(303, 36);
+            lblSearchPurchase.Size = new Size(268, 35);
             lblSearchPurchase.TabIndex = 1;
             lblSearchPurchase.Text = "ស្វែងរក (លេខសម្គាល់ការទិញលក់):";
             // 
@@ -88,7 +88,7 @@
             // 
             txtSearchPurchase.Location = new Point(21, 50);
             txtSearchPurchase.Name = "txtSearchPurchase";
-            txtSearchPurchase.Size = new Size(319, 44);
+            txtSearchPurchase.Size = new Size(319, 43);
             txtSearchPurchase.TabIndex = 2;
             // 
             // pnlLeftSide
@@ -96,18 +96,19 @@
             pnlLeftSide.Controls.Add(lbPurchase);
             pnlLeftSide.Controls.Add(lblSearchPurchase);
             pnlLeftSide.Controls.Add(txtSearchPurchase);
-            pnlLeftSide.Location = new Point(272, 272);
+            pnlLeftSide.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            pnlLeftSide.Location = new Point(290, 272);
             pnlLeftSide.Name = "pnlLeftSide";
-            pnlLeftSide.Size = new Size(364, 636);
+            pnlLeftSide.Size = new Size(346, 636);
             pnlLeftSide.TabIndex = 3;
             // 
             // lbPurchase
             // 
             lbPurchase.FormattingEnabled = true;
-            lbPurchase.ItemHeight = 36;
+            lbPurchase.ItemHeight = 35;
             lbPurchase.Location = new Point(21, 110);
             lbPurchase.Name = "lbPurchase";
-            lbPurchase.Size = new Size(319, 400);
+            lbPurchase.Size = new Size(319, 389);
             lbPurchase.TabIndex = 3;
             // 
             // pnlRightSide
@@ -132,8 +133,8 @@
             // 
             // btnCancelPurchase
             // 
-            btnCancelPurchase.BackColor = Color.FromArgb(0, 28, 87);
-            btnCancelPurchase.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCancelPurchase.BackColor = Color.Cyan;
+            btnCancelPurchase.Font = new Font("Khmer OS Wat Phnom", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelPurchase.ForeColor = Color.White;
             btnCancelPurchase.Location = new Point(871, 20);
             btnCancelPurchase.Name = "btnCancelPurchase";
@@ -144,8 +145,8 @@
             // 
             // btnNewPurchase
             // 
-            btnNewPurchase.BackColor = Color.FromArgb(0, 28, 87);
-            btnNewPurchase.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNewPurchase.BackColor = Color.Cyan;
+            btnNewPurchase.Font = new Font("Khmer OS Wat Phnom", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnNewPurchase.ForeColor = Color.White;
             btnNewPurchase.Location = new Point(587, 20);
             btnNewPurchase.Name = "btnNewPurchase";
@@ -156,8 +157,8 @@
             // 
             // btnUpdatePurchase
             // 
-            btnUpdatePurchase.BackColor = Color.FromArgb(0, 28, 87);
-            btnUpdatePurchase.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnUpdatePurchase.BackColor = Color.Cyan;
+            btnUpdatePurchase.Font = new Font("Khmer OS Wat Phnom", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnUpdatePurchase.ForeColor = Color.White;
             btnUpdatePurchase.Location = new Point(303, 20);
             btnUpdatePurchase.Name = "btnUpdatePurchase";
@@ -168,8 +169,8 @@
             // 
             // btnInsertPurchase
             // 
-            btnInsertPurchase.BackColor = Color.FromArgb(0, 28, 87);
-            btnInsertPurchase.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnInsertPurchase.BackColor = Color.Cyan;
+            btnInsertPurchase.Font = new Font("Khmer OS Wat Phnom", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnInsertPurchase.ForeColor = Color.White;
             btnInsertPurchase.Location = new Point(19, 20);
             btnInsertPurchase.Name = "btnInsertPurchase";
@@ -196,7 +197,7 @@
             gbPurchaseInformation.Controls.Add(lblPurchaseDate);
             gbPurchaseInformation.Controls.Add(dtpPurchaseDate);
             gbPurchaseInformation.Controls.Add(lblCustomerID);
-            gbPurchaseInformation.Font = new Font("!Khmer OS Siemreap", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            gbPurchaseInformation.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             gbPurchaseInformation.Location = new Point(45, 32);
             gbPurchaseInformation.Name = "gbPurchaseInformation";
             gbPurchaseInformation.Size = new Size(1069, 409);
@@ -204,161 +205,161 @@
             gbPurchaseInformation.TabStop = false;
             gbPurchaseInformation.Text = "ព័ត៌មានការទិញលក់";
             // 
+            // txtPurchasePrice
+            // 
+            txtPurchasePrice.Font = new Font("Microsoft Sans Serif", 12F);
+            txtPurchasePrice.Location = new Point(805, 106);
+            txtPurchasePrice.Name = "txtPurchasePrice";
+            txtPurchasePrice.ReadOnly = true;
+            txtPurchasePrice.Size = new Size(220, 30);
+            txtPurchasePrice.TabIndex = 41;
+            // 
+            // lblPurchasePrice
+            // 
+            lblPurchasePrice.AutoSize = true;
+            lblPurchasePrice.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPurchasePrice.Location = new Point(515, 101);
+            lblPurchasePrice.Name = "lblPurchasePrice";
+            lblPurchasePrice.Size = new Size(108, 35);
+            lblPurchasePrice.TabIndex = 40;
+            lblPurchasePrice.Text = "តម្លៃទិញលក់:";
+            // 
             // txtStaffPosition
             // 
-            txtStaffPosition.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStaffPosition.Font = new Font("Microsoft Sans Serif", 12F);
             txtStaffPosition.Location = new Point(805, 318);
             txtStaffPosition.Name = "txtStaffPosition";
             txtStaffPosition.ReadOnly = true;
-            txtStaffPosition.Size = new Size(220, 44);
+            txtStaffPosition.Size = new Size(220, 30);
             txtStaffPosition.TabIndex = 39;
             // 
             // txtStaffName
             // 
-            txtStaffName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStaffName.Font = new Font("Microsoft Sans Serif", 12F);
             txtStaffName.Location = new Point(256, 318);
             txtStaffName.Name = "txtStaffName";
             txtStaffName.ReadOnly = true;
-            txtStaffName.Size = new Size(242, 44);
+            txtStaffName.Size = new Size(242, 30);
             txtStaffName.TabIndex = 38;
             // 
             // cbStaffID
             // 
-            cbStaffID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbStaffID.Font = new Font("Microsoft Sans Serif", 12F);
             cbStaffID.FormattingEnabled = true;
             cbStaffID.Items.AddRange(new object[] { "អ្នកគ្រប់គ្រង", "គណនីករ" });
             cbStaffID.Location = new Point(805, 250);
             cbStaffID.Name = "cbStaffID";
-            cbStaffID.Size = new Size(218, 44);
+            cbStaffID.Size = new Size(218, 33);
             cbStaffID.TabIndex = 37;
             // 
             // lblStaffID
             // 
             lblStaffID.AutoSize = true;
-            lblStaffID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffID.Location = new Point(513, 253);
+            lblStaffID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStaffID.Location = new Point(513, 248);
             lblStaffID.Name = "lblStaffID";
-            lblStaffID.Size = new Size(183, 36);
+            lblStaffID.Size = new Size(165, 35);
             lblStaffID.TabIndex = 36;
             lblStaffID.Text = "លេខសម្គាល់បុគ្គលិក:";
             // 
             // cbCustomerID
             // 
             cbCustomerID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbCustomerID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbCustomerID.Font = new Font("Microsoft Sans Serif", 12F);
             cbCustomerID.FormattingEnabled = true;
             cbCustomerID.Location = new Point(256, 179);
             cbCustomerID.Name = "cbCustomerID";
-            cbCustomerID.Size = new Size(242, 44);
+            cbCustomerID.Size = new Size(242, 33);
             cbCustomerID.TabIndex = 33;
             // 
             // lblStaffPosition
             // 
             lblStaffPosition.AutoSize = true;
-            lblStaffPosition.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffPosition.Location = new Point(513, 321);
+            lblStaffPosition.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStaffPosition.Location = new Point(513, 313);
             lblStaffPosition.Name = "lblStaffPosition";
-            lblStaffPosition.Size = new Size(131, 36);
+            lblStaffPosition.Size = new Size(112, 35);
             lblStaffPosition.TabIndex = 23;
             lblStaffPosition.Text = "តួនាទីបុគ្គលិក:";
             // 
             // lblStaffName
             // 
             lblStaffName.AutoSize = true;
-            lblStaffName.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblStaffName.Location = new Point(18, 321);
+            lblStaffName.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStaffName.Location = new Point(19, 313);
             lblStaffName.Name = "lblStaffName";
-            lblStaffName.Size = new Size(130, 36);
+            lblStaffName.Size = new Size(119, 35);
             lblStaffName.TabIndex = 21;
             lblStaffName.Text = "ឈ្មោះបុគ្គលិក:";
             // 
             // cbHomeID
             // 
             cbHomeID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbHomeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cbHomeID.Font = new Font("Microsoft Sans Serif", 12F);
             cbHomeID.FormattingEnabled = true;
             cbHomeID.Location = new Point(256, 106);
             cbHomeID.Name = "cbHomeID";
-            cbHomeID.Size = new Size(242, 44);
+            cbHomeID.Size = new Size(242, 33);
             cbHomeID.TabIndex = 15;
             // 
             // lblPurchaseID
             // 
             lblPurchaseID.AutoSize = true;
-            lblPurchaseID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPurchaseID.Location = new Point(18, 41);
+            lblPurchaseID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPurchaseID.Location = new Point(18, 35);
             lblPurchaseID.Name = "lblPurchaseID";
-            lblPurchaseID.Size = new Size(215, 36);
+            lblPurchaseID.Size = new Size(193, 35);
             lblPurchaseID.TabIndex = 0;
             lblPurchaseID.Text = "លេខសម្គាល់ការទិញលក់:";
             // 
             // lblHomeID
             // 
             lblHomeID.AutoSize = true;
-            lblHomeID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblHomeID.Location = new Point(18, 114);
+            lblHomeID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHomeID.Location = new Point(18, 106);
             lblHomeID.Name = "lblHomeID";
-            lblHomeID.Size = new Size(184, 36);
+            lblHomeID.Size = new Size(157, 35);
             lblHomeID.TabIndex = 14;
-            lblHomeID.Text = "លេខសម្គាល់ Condo:";
+            lblHomeID.Text = "លេខសម្គាល់ ផ្ទះបុរី:";
             // 
             // txtPurchaseID
             // 
             txtPurchaseID.Enabled = false;
-            txtPurchaseID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPurchaseID.Font = new Font("Microsoft Sans Serif", 12F);
             txtPurchaseID.Location = new Point(256, 38);
             txtPurchaseID.Name = "txtPurchaseID";
-            txtPurchaseID.Size = new Size(242, 44);
+            txtPurchaseID.Size = new Size(242, 30);
             txtPurchaseID.TabIndex = 3;
             // 
             // lblPurchaseDate
             // 
             lblPurchaseDate.AutoSize = true;
-            lblPurchaseDate.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPurchaseDate.Location = new Point(513, 41);
+            lblPurchaseDate.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblPurchaseDate.Location = new Point(513, 35);
             lblPurchaseDate.Name = "lblPurchaseDate";
-            lblPurchaseDate.Size = new Size(183, 36);
+            lblPurchaseDate.Size = new Size(162, 35);
             lblPurchaseDate.TabIndex = 10;
             lblPurchaseDate.Text = "កាលបរិច្ឆេទទិញលក់:";
             // 
             // dtpPurchaseDate
             // 
-            dtpPurchaseDate.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpPurchaseDate.Font = new Font("Microsoft Sans Serif", 12F);
             dtpPurchaseDate.Format = DateTimePickerFormat.Short;
             dtpPurchaseDate.Location = new Point(805, 35);
             dtpPurchaseDate.Name = "dtpPurchaseDate";
-            dtpPurchaseDate.Size = new Size(220, 44);
+            dtpPurchaseDate.Size = new Size(220, 30);
             dtpPurchaseDate.TabIndex = 11;
             dtpPurchaseDate.Tag = "pop";
             // 
             // lblCustomerID
             // 
             lblCustomerID.AutoSize = true;
-            lblCustomerID.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCustomerID.Location = new Point(18, 187);
+            lblCustomerID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCustomerID.Location = new Point(18, 179);
             lblCustomerID.Name = "lblCustomerID";
-            lblCustomerID.Size = new Size(191, 36);
+            lblCustomerID.Size = new Size(173, 35);
             lblCustomerID.TabIndex = 12;
             lblCustomerID.Text = "លេខសម្គាល់អតិថិជន:";
-            // 
-            // lblPurchasePrice
-            // 
-            lblPurchasePrice.AutoSize = true;
-            lblPurchasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPurchasePrice.Location = new Point(513, 114);
-            lblPurchasePrice.Name = "lblPurchasePrice";
-            lblPurchasePrice.Size = new Size(123, 36);
-            lblPurchasePrice.TabIndex = 40;
-            lblPurchasePrice.Text = "តម្លៃទិញលក់:";
-            // 
-            // txtPurchasePrice
-            // 
-            txtPurchasePrice.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPurchasePrice.Location = new Point(805, 106);
-            txtPurchasePrice.Name = "txtPurchasePrice";
-            txtPurchasePrice.ReadOnly = true;
-            txtPurchasePrice.Size = new Size(220, 44);
-            txtPurchasePrice.TabIndex = 41;
             // 
             // FrmPurchase
             // 

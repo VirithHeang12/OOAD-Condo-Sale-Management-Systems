@@ -35,6 +35,12 @@
             txtSearchHome = new TextBox();
             pnlLeftSide = new Panel();
             dgvHomes = new DataGridView();
+            HomeID = new DataGridViewTextBoxColumn();
+            Length = new DataGridViewTextBoxColumn();
+            Width = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            HomeTypeDescription = new DataGridViewTextBoxColumn();
+            HomeTypeID = new DataGridViewTextBoxColumn();
             pnlRightSide = new Panel();
             gbHomeInformation = new GroupBox();
             chbStatus = new CheckBox();
@@ -52,12 +58,6 @@
             txtHomeID = new TextBox();
             lblLength = new Label();
             txtLength = new TextBox();
-            HomeID = new DataGridViewTextBoxColumn();
-            Length = new DataGridViewTextBoxColumn();
-            Width = new DataGridViewTextBoxColumn();
-            Status = new DataGridViewTextBoxColumn();
-            HomeTypeDescription = new DataGridViewTextBoxColumn();
-            HomeTypeID = new DataGridViewTextBoxColumn();
             pnlLeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHomes).BeginInit();
             pnlRightSide.SuspendLayout();
@@ -67,9 +67,9 @@
             // 
             // lblTitle
             // 
-            lblTitle.BackColor = Color.FromArgb(0, 28, 87);
+            lblTitle.BackColor = Color.Cyan;
             lblTitle.Dock = DockStyle.Top;
-            lblTitle.Font = new Font("!Khmer OS Siemreap", 19.8000011F, FontStyle.Bold);
+            lblTitle.Font = new Font("Khmer OS Wat Phnom", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.White;
             lblTitle.Location = new Point(266, 80);
             lblTitle.Name = "lblTitle";
@@ -81,9 +81,10 @@
             // lblSearchHome
             // 
             lblSearchHome.AutoSize = true;
-            lblSearchHome.Location = new Point(82, 29);
+            lblSearchHome.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSearchHome.Location = new Point(82, 21);
             lblSearchHome.Name = "lblSearchHome";
-            lblSearchHome.Size = new Size(229, 36);
+            lblSearchHome.Size = new Size(208, 35);
             lblSearchHome.TabIndex = 1;
             lblSearchHome.Text = "ស្វែងរក (លេខសម្គាល់បុរី):";
             // 
@@ -91,7 +92,7 @@
             // 
             txtSearchHome.Location = new Point(369, 26);
             txtSearchHome.Name = "txtSearchHome";
-            txtSearchHome.Size = new Size(334, 44);
+            txtSearchHome.Size = new Size(334, 30);
             txtSearchHome.TabIndex = 6;
             // 
             // pnlLeftSide
@@ -99,9 +100,9 @@
             pnlLeftSide.Controls.Add(dgvHomes);
             pnlLeftSide.Controls.Add(lblSearchHome);
             pnlLeftSide.Controls.Add(txtSearchHome);
-            pnlLeftSide.Location = new Point(266, 537);
+            pnlLeftSide.Location = new Point(290, 537);
             pnlLeftSide.Name = "pnlLeftSide";
-            pnlLeftSide.Size = new Size(1534, 463);
+            pnlLeftSide.Size = new Size(1510, 463);
             pnlLeftSide.TabIndex = 3;
             // 
             // dgvHomes
@@ -111,7 +112,7 @@
             dgvHomes.BackgroundColor = Color.WhiteSmoke;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("!Khmer OS Siemreap", 12F);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
@@ -121,7 +122,7 @@
             dgvHomes.Columns.AddRange(new DataGridViewColumn[] { HomeID, Length, Width, Status, HomeTypeDescription, HomeTypeID });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("!Khmer OS Siemreap", 12F);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 28, 87);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
@@ -135,191 +136,6 @@
             dgvHomes.Size = new Size(1362, 325);
             dgvHomes.TabIndex = 3;
             // 
-            // pnlRightSide
-            // 
-            pnlRightSide.Controls.Add(gbHomeInformation);
-            pnlRightSide.Location = new Point(266, 184);
-            pnlRightSide.Name = "pnlRightSide";
-            pnlRightSide.Size = new Size(1534, 355);
-            pnlRightSide.TabIndex = 4;
-            // 
-            // gbHomeInformation
-            // 
-            gbHomeInformation.Controls.Add(chbStatus);
-            gbHomeInformation.Controls.Add(cbHomeTypeID);
-            gbHomeInformation.Controls.Add(txtWidth);
-            gbHomeInformation.Controls.Add(lblHomeTypeID);
-            gbHomeInformation.Controls.Add(lblStatus);
-            gbHomeInformation.Controls.Add(pnlHomeManipulation);
-            gbHomeInformation.Controls.Add(lblWidth);
-            gbHomeInformation.Controls.Add(lblHomeID);
-            gbHomeInformation.Controls.Add(txtHomeID);
-            gbHomeInformation.Controls.Add(lblLength);
-            gbHomeInformation.Controls.Add(txtLength);
-            gbHomeInformation.Font = new Font("!Khmer OS Siemreap", 10.2F, FontStyle.Bold);
-            gbHomeInformation.Location = new Point(82, 12);
-            gbHomeInformation.Name = "gbHomeInformation";
-            gbHomeInformation.Size = new Size(1362, 335);
-            gbHomeInformation.TabIndex = 25;
-            gbHomeInformation.TabStop = false;
-            gbHomeInformation.Text = "ព័ត៌មានបុរី";
-            // 
-            // chbStatus
-            // 
-            chbStatus.AutoSize = true;
-            chbStatus.Location = new Point(837, 52);
-            chbStatus.Name = "chbStatus";
-            chbStatus.Size = new Size(18, 17);
-            chbStatus.TabIndex = 4;
-            chbStatus.UseVisualStyleBackColor = true;
-            // 
-            // cbHomeTypeID
-            // 
-            cbHomeTypeID.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbHomeTypeID.Font = new Font("!Khmer OS Siemreap", 12F);
-            cbHomeTypeID.FormattingEnabled = true;
-            cbHomeTypeID.Items.AddRange(new object[] { "ភ្នំពេញ", "តាកែវ" });
-            cbHomeTypeID.Location = new Point(287, 179);
-            cbHomeTypeID.MaxDropDownItems = 3;
-            cbHomeTypeID.Name = "cbHomeTypeID";
-            cbHomeTypeID.Size = new Size(373, 44);
-            cbHomeTypeID.TabIndex = 5;
-            // 
-            // txtWidth
-            // 
-            txtWidth.Font = new Font("!Khmer OS Siemreap", 12F);
-            txtWidth.Location = new Point(946, 105);
-            txtWidth.Name = "txtWidth";
-            txtWidth.Size = new Size(373, 44);
-            txtWidth.TabIndex = 3;
-            // 
-            // lblHomeTypeID
-            // 
-            lblHomeTypeID.AutoSize = true;
-            lblHomeTypeID.Font = new Font("!Khmer OS Siemreap", 12F);
-            lblHomeTypeID.Location = new Point(18, 182);
-            lblHomeTypeID.Name = "lblHomeTypeID";
-            lblHomeTypeID.Size = new Size(95, 36);
-            lblHomeTypeID.TabIndex = 32;
-            lblHomeTypeID.Text = "ប្រភេទបុរី:";
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new Font("!Khmer OS Siemreap", 12F);
-            lblStatus.Location = new Point(711, 41);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(89, 36);
-            lblStatus.TabIndex = 29;
-            lblStatus.Text = "បានលក់:";
-            // 
-            // pnlHomeManipulation
-            // 
-            pnlHomeManipulation.Controls.Add(btnCancelHome);
-            pnlHomeManipulation.Controls.Add(btnNewHome);
-            pnlHomeManipulation.Controls.Add(btnUpdateHome);
-            pnlHomeManipulation.Controls.Add(btnInsertHome);
-            pnlHomeManipulation.Font = new Font("!Khmer OS Siemreap", 12F);
-            pnlHomeManipulation.Location = new Point(18, 232);
-            pnlHomeManipulation.Name = "pnlHomeManipulation";
-            pnlHomeManipulation.Size = new Size(1301, 81);
-            pnlHomeManipulation.TabIndex = 5;
-            // 
-            // btnCancelHome
-            // 
-            btnCancelHome.BackColor = Color.FromArgb(0, 28, 87);
-            btnCancelHome.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
-            btnCancelHome.ForeColor = Color.White;
-            btnCancelHome.Location = new Point(1100, 20);
-            btnCancelHome.Name = "btnCancelHome";
-            btnCancelHome.Size = new Size(152, 52);
-            btnCancelHome.TabIndex = 3;
-            btnCancelHome.Text = "បោះបង់";
-            btnCancelHome.UseVisualStyleBackColor = false;
-            // 
-            // btnNewHome
-            // 
-            btnNewHome.BackColor = Color.FromArgb(0, 28, 87);
-            btnNewHome.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
-            btnNewHome.ForeColor = Color.White;
-            btnNewHome.Location = new Point(740, 20);
-            btnNewHome.Name = "btnNewHome";
-            btnNewHome.Size = new Size(152, 52);
-            btnNewHome.TabIndex = 2;
-            btnNewHome.Text = "បង្កើតថ្មី";
-            btnNewHome.UseVisualStyleBackColor = false;
-            // 
-            // btnUpdateHome
-            // 
-            btnUpdateHome.BackColor = Color.FromArgb(0, 28, 87);
-            btnUpdateHome.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
-            btnUpdateHome.ForeColor = Color.White;
-            btnUpdateHome.Location = new Point(380, 20);
-            btnUpdateHome.Name = "btnUpdateHome";
-            btnUpdateHome.Size = new Size(152, 52);
-            btnUpdateHome.TabIndex = 1;
-            btnUpdateHome.Text = "កែប្រែ";
-            btnUpdateHome.UseVisualStyleBackColor = false;
-            // 
-            // btnInsertHome
-            // 
-            btnInsertHome.BackColor = Color.FromArgb(0, 28, 87);
-            btnInsertHome.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
-            btnInsertHome.ForeColor = Color.White;
-            btnInsertHome.Location = new Point(20, 20);
-            btnInsertHome.Name = "btnInsertHome";
-            btnInsertHome.Size = new Size(152, 52);
-            btnInsertHome.TabIndex = 0;
-            btnInsertHome.Text = "បញ្ចូល";
-            btnInsertHome.UseVisualStyleBackColor = false;
-            // 
-            // lblWidth
-            // 
-            lblWidth.AutoSize = true;
-            lblWidth.Font = new Font("!Khmer OS Siemreap", 12F);
-            lblWidth.Location = new Point(711, 111);
-            lblWidth.Name = "lblWidth";
-            lblWidth.Size = new Size(63, 36);
-            lblWidth.TabIndex = 27;
-            lblWidth.Text = "ទទឹង:";
-            // 
-            // lblHomeID
-            // 
-            lblHomeID.AutoSize = true;
-            lblHomeID.Font = new Font("!Khmer OS Siemreap", 12F);
-            lblHomeID.Location = new Point(18, 41);
-            lblHomeID.Name = "lblHomeID";
-            lblHomeID.Size = new Size(141, 36);
-            lblHomeID.TabIndex = 0;
-            lblHomeID.Text = "លេខសម្គាល់បុរី:";
-            // 
-            // txtHomeID
-            // 
-            txtHomeID.Enabled = false;
-            txtHomeID.Font = new Font("!Khmer OS Siemreap", 12F);
-            txtHomeID.Location = new Point(287, 33);
-            txtHomeID.Name = "txtHomeID";
-            txtHomeID.Size = new Size(376, 44);
-            txtHomeID.TabIndex = 3;
-            // 
-            // lblLength
-            // 
-            lblLength.AutoSize = true;
-            lblLength.Font = new Font("!Khmer OS Siemreap", 12F);
-            lblLength.Location = new Point(18, 111);
-            lblLength.Name = "lblLength";
-            lblLength.Size = new Size(95, 36);
-            lblLength.TabIndex = 6;
-            lblLength.Text = "បណ្ដោយ:";
-            // 
-            // txtLength
-            // 
-            txtLength.Font = new Font("!Khmer OS Siemreap", 12F);
-            txtLength.Location = new Point(287, 105);
-            txtLength.Name = "txtLength";
-            txtLength.Size = new Size(376, 44);
-            txtLength.TabIndex = 2;
-            // 
             // HomeID
             // 
             HomeID.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -328,7 +144,7 @@
             HomeID.MinimumWidth = 6;
             HomeID.Name = "HomeID";
             HomeID.ReadOnly = true;
-            HomeID.Width = 164;
+            HomeID.Width = 139;
             // 
             // Length
             // 
@@ -365,7 +181,7 @@
             HomeTypeDescription.MinimumWidth = 6;
             HomeTypeDescription.Name = "HomeTypeDescription";
             HomeTypeDescription.ReadOnly = true;
-            HomeTypeDescription.Width = 118;
+            HomeTypeDescription.Width = 107;
             // 
             // HomeTypeID
             // 
@@ -376,6 +192,191 @@
             HomeTypeID.ReadOnly = true;
             HomeTypeID.Visible = false;
             HomeTypeID.Width = 125;
+            // 
+            // pnlRightSide
+            // 
+            pnlRightSide.Controls.Add(gbHomeInformation);
+            pnlRightSide.Location = new Point(290, 184);
+            pnlRightSide.Name = "pnlRightSide";
+            pnlRightSide.Size = new Size(1510, 355);
+            pnlRightSide.TabIndex = 4;
+            // 
+            // gbHomeInformation
+            // 
+            gbHomeInformation.Controls.Add(chbStatus);
+            gbHomeInformation.Controls.Add(cbHomeTypeID);
+            gbHomeInformation.Controls.Add(txtWidth);
+            gbHomeInformation.Controls.Add(lblHomeTypeID);
+            gbHomeInformation.Controls.Add(lblStatus);
+            gbHomeInformation.Controls.Add(pnlHomeManipulation);
+            gbHomeInformation.Controls.Add(lblWidth);
+            gbHomeInformation.Controls.Add(lblHomeID);
+            gbHomeInformation.Controls.Add(txtHomeID);
+            gbHomeInformation.Controls.Add(lblLength);
+            gbHomeInformation.Controls.Add(txtLength);
+            gbHomeInformation.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            gbHomeInformation.Location = new Point(82, 12);
+            gbHomeInformation.Name = "gbHomeInformation";
+            gbHomeInformation.Size = new Size(1362, 335);
+            gbHomeInformation.TabIndex = 25;
+            gbHomeInformation.TabStop = false;
+            gbHomeInformation.Text = "ព័ត៌មានបុរី";
+            // 
+            // chbStatus
+            // 
+            chbStatus.AutoSize = true;
+            chbStatus.Location = new Point(837, 52);
+            chbStatus.Name = "chbStatus";
+            chbStatus.Size = new Size(18, 17);
+            chbStatus.TabIndex = 4;
+            chbStatus.UseVisualStyleBackColor = true;
+            // 
+            // cbHomeTypeID
+            // 
+            cbHomeTypeID.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbHomeTypeID.Font = new Font("Microsoft Sans Serif", 12F);
+            cbHomeTypeID.FormattingEnabled = true;
+            cbHomeTypeID.Items.AddRange(new object[] { "ភ្នំពេញ", "តាកែវ" });
+            cbHomeTypeID.Location = new Point(287, 179);
+            cbHomeTypeID.MaxDropDownItems = 3;
+            cbHomeTypeID.Name = "cbHomeTypeID";
+            cbHomeTypeID.Size = new Size(373, 33);
+            cbHomeTypeID.TabIndex = 5;
+            // 
+            // txtWidth
+            // 
+            txtWidth.Font = new Font("Microsoft Sans Serif", 12F);
+            txtWidth.Location = new Point(946, 105);
+            txtWidth.Name = "txtWidth";
+            txtWidth.Size = new Size(373, 30);
+            txtWidth.TabIndex = 3;
+            // 
+            // lblHomeTypeID
+            // 
+            lblHomeTypeID.AutoSize = true;
+            lblHomeTypeID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHomeTypeID.Location = new Point(18, 177);
+            lblHomeTypeID.Name = "lblHomeTypeID";
+            lblHomeTypeID.Size = new Size(88, 35);
+            lblHomeTypeID.TabIndex = 32;
+            lblHomeTypeID.Text = "ប្រភេទបុរី:";
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblStatus.Location = new Point(711, 41);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(79, 35);
+            lblStatus.TabIndex = 29;
+            lblStatus.Text = "បានលក់:";
+            // 
+            // pnlHomeManipulation
+            // 
+            pnlHomeManipulation.Controls.Add(btnCancelHome);
+            pnlHomeManipulation.Controls.Add(btnNewHome);
+            pnlHomeManipulation.Controls.Add(btnUpdateHome);
+            pnlHomeManipulation.Controls.Add(btnInsertHome);
+            pnlHomeManipulation.Font = new Font("Microsoft Sans Serif", 12F);
+            pnlHomeManipulation.Location = new Point(18, 232);
+            pnlHomeManipulation.Name = "pnlHomeManipulation";
+            pnlHomeManipulation.Size = new Size(1301, 81);
+            pnlHomeManipulation.TabIndex = 5;
+            // 
+            // btnCancelHome
+            // 
+            btnCancelHome.BackColor = Color.Cyan;
+            btnCancelHome.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelHome.ForeColor = Color.White;
+            btnCancelHome.Location = new Point(1100, 20);
+            btnCancelHome.Name = "btnCancelHome";
+            btnCancelHome.Size = new Size(152, 52);
+            btnCancelHome.TabIndex = 3;
+            btnCancelHome.Text = "បោះបង់";
+            btnCancelHome.UseVisualStyleBackColor = false;
+            // 
+            // btnNewHome
+            // 
+            btnNewHome.BackColor = Color.Cyan;
+            btnNewHome.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNewHome.ForeColor = Color.White;
+            btnNewHome.Location = new Point(740, 20);
+            btnNewHome.Name = "btnNewHome";
+            btnNewHome.Size = new Size(152, 52);
+            btnNewHome.TabIndex = 2;
+            btnNewHome.Text = "បង្កើតថ្មី";
+            btnNewHome.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdateHome
+            // 
+            btnUpdateHome.BackColor = Color.Cyan;
+            btnUpdateHome.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdateHome.ForeColor = Color.White;
+            btnUpdateHome.Location = new Point(380, 20);
+            btnUpdateHome.Name = "btnUpdateHome";
+            btnUpdateHome.Size = new Size(152, 52);
+            btnUpdateHome.TabIndex = 1;
+            btnUpdateHome.Text = "កែប្រែ";
+            btnUpdateHome.UseVisualStyleBackColor = false;
+            // 
+            // btnInsertHome
+            // 
+            btnInsertHome.BackColor = Color.Cyan;
+            btnInsertHome.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInsertHome.ForeColor = Color.White;
+            btnInsertHome.Location = new Point(20, 20);
+            btnInsertHome.Name = "btnInsertHome";
+            btnInsertHome.Size = new Size(152, 52);
+            btnInsertHome.TabIndex = 0;
+            btnInsertHome.Text = "បញ្ចូល";
+            btnInsertHome.UseVisualStyleBackColor = false;
+            // 
+            // lblWidth
+            // 
+            lblWidth.AutoSize = true;
+            lblWidth.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWidth.Location = new Point(711, 100);
+            lblWidth.Name = "lblWidth";
+            lblWidth.Size = new Size(56, 35);
+            lblWidth.TabIndex = 27;
+            lblWidth.Text = "ទទឹង:";
+            // 
+            // lblHomeID
+            // 
+            lblHomeID.AutoSize = true;
+            lblHomeID.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHomeID.Location = new Point(18, 28);
+            lblHomeID.Name = "lblHomeID";
+            lblHomeID.Size = new Size(133, 35);
+            lblHomeID.TabIndex = 0;
+            lblHomeID.Text = "លេខសម្គាល់បុរី:";
+            // 
+            // txtHomeID
+            // 
+            txtHomeID.Enabled = false;
+            txtHomeID.Font = new Font("Microsoft Sans Serif", 12F);
+            txtHomeID.Location = new Point(287, 33);
+            txtHomeID.Name = "txtHomeID";
+            txtHomeID.Size = new Size(376, 30);
+            txtHomeID.TabIndex = 3;
+            // 
+            // lblLength
+            // 
+            lblLength.AutoSize = true;
+            lblLength.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblLength.Location = new Point(18, 105);
+            lblLength.Name = "lblLength";
+            lblLength.Size = new Size(84, 35);
+            lblLength.TabIndex = 6;
+            lblLength.Text = "បណ្ដោយ:";
+            // 
+            // txtLength
+            // 
+            txtLength.Font = new Font("Microsoft Sans Serif", 12F);
+            txtLength.Location = new Point(287, 105);
+            txtLength.Name = "txtLength";
+            txtLength.Size = new Size(376, 30);
+            txtLength.TabIndex = 2;
             // 
             // FrmHome
             // 

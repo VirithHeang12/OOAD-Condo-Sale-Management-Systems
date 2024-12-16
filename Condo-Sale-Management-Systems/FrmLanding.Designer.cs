@@ -73,7 +73,7 @@
             // 
             // lblCopyright
             // 
-            lblCopyright.Font = new Font("!Khmer OS Siemreap", 9F);
+            lblCopyright.Font = new Font("Microsoft Sans Serif", 9F);
             lblCopyright.Location = new Point(0, 902);
             lblCopyright.Name = "lblCopyright";
             lblCopyright.Size = new Size(263, 80);
@@ -86,6 +86,7 @@
             btnShowUserForm.BackColor = Color.Transparent;
             btnShowUserForm.FlatAppearance.BorderSize = 0;
             btnShowUserForm.FlatStyle = FlatStyle.Flat;
+            btnShowUserForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowUserForm.Image = (Image)resources.GetObject("btnShowUserForm.Image");
             btnShowUserForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowUserForm.Location = new Point(0, 396);
@@ -102,6 +103,7 @@
             btnShowHomeTypeForm.BackColor = Color.Transparent;
             btnShowHomeTypeForm.FlatAppearance.BorderSize = 0;
             btnShowHomeTypeForm.FlatStyle = FlatStyle.Flat;
+            btnShowHomeTypeForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowHomeTypeForm.Image = (Image)resources.GetObject("btnShowHomeTypeForm.Image");
             btnShowHomeTypeForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowHomeTypeForm.Location = new Point(3, 302);
@@ -118,6 +120,7 @@
             btnShowPurchaseForm.BackColor = Color.Transparent;
             btnShowPurchaseForm.FlatAppearance.BorderSize = 0;
             btnShowPurchaseForm.FlatStyle = FlatStyle.Flat;
+            btnShowPurchaseForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowPurchaseForm.Image = (Image)resources.GetObject("btnShowPurchaseForm.Image");
             btnShowPurchaseForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowPurchaseForm.Location = new Point(0, 349);
@@ -134,7 +137,8 @@
             btnShowHomeForm.BackColor = Color.Transparent;
             btnShowHomeForm.FlatAppearance.BorderSize = 0;
             btnShowHomeForm.FlatStyle = FlatStyle.Flat;
-            btnShowHomeForm.Image = (Image)resources.GetObject("btnShowHomeForm.Image");
+            btnShowHomeForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnShowHomeForm.Image = Properties.Resources.home;
             btnShowHomeForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowHomeForm.Location = new Point(3, 255);
             btnShowHomeForm.Name = "btnShowHomeForm";
@@ -150,6 +154,7 @@
             btnShowCustomerForm.BackColor = Color.Transparent;
             btnShowCustomerForm.FlatAppearance.BorderSize = 0;
             btnShowCustomerForm.FlatStyle = FlatStyle.Flat;
+            btnShowCustomerForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowCustomerForm.Image = Properties.Resources.account_settings;
             btnShowCustomerForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowCustomerForm.Location = new Point(3, 208);
@@ -166,6 +171,7 @@
             btnShowStaffForm.BackColor = Color.Transparent;
             btnShowStaffForm.FlatAppearance.BorderSize = 0;
             btnShowStaffForm.FlatStyle = FlatStyle.Flat;
+            btnShowStaffForm.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowStaffForm.Image = Properties.Resources.account_tie;
             btnShowStaffForm.ImageAlign = ContentAlignment.MiddleLeft;
             btnShowStaffForm.Location = new Point(3, 148);
@@ -182,6 +188,7 @@
             btnLanding.BackColor = Color.Transparent;
             btnLanding.FlatAppearance.BorderSize = 0;
             btnLanding.FlatStyle = FlatStyle.Flat;
+            btnLanding.Font = new Font("Khmer OS Wat Phnom", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLanding.Image = Properties.Resources.home;
             btnLanding.ImageAlign = ContentAlignment.MiddleLeft;
             btnLanding.Location = new Point(3, 101);
@@ -207,7 +214,7 @@
             btnLogout.BackColor = Color.FromArgb(244, 244, 244);
             btnLogout.Dock = DockStyle.Right;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("!Khmer OS Siemreap", 12F, FontStyle.Bold);
+            btnLogout.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold);
             btnLogout.ForeColor = Color.FromArgb(0, 28, 87);
             btnLogout.Image = Properties.Resources.logout;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
@@ -222,14 +229,14 @@
             // 
             // FrmLanding
             // 
-            AutoScaleDimensions = new SizeF(11F, 36F);
+            AutoScaleDimensions = new SizeF(12F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1800, 1000);
             ControlBox = false;
             Controls.Add(panel1);
             Controls.Add(pnlSideNav);
-            Font = new Font("!Khmer OS Siemreap", 12F);
+            Font = new Font("Microsoft Sans Serif", 12F);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmLanding";
             StartPosition = FormStartPosition.CenterScreen;

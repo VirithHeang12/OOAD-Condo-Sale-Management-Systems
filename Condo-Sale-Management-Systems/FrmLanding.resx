@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!--
-    Microsoft ResX Schema
+    Microsoft ResX Schema 
 
     Version 2.0
 
@@ -48,7 +48,7 @@
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-
+    
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
@@ -136,7 +136,7 @@
   <data name="btnShowHomeTypeForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAhFJREFUWEftlrtO3EAUhpf7tUgDSEg8Bh3QRvQBesQ7RAEqBAIknoCeAihR2hR5
+        wAAADsABataJCQAAAhFJREFUWEftlrtO3EAUhpf7tUgDSEg8Bh3QRvQBesQ7RAEqBAIknoCeAihR2hR5
         iHTpUKQAEhdxE/f/Ez7oZJhdrx2vTOFf+nZ2Z4/n/HNmxnatUovVLwYKhPFyq09ci7sCuRW5xWwexXOB
         PIncCg0xu7wUYqhDfBc2UGfSl5VBYRPLZGhYTL9+fVObWBCnyfc88pVu2tCsOBJctCeGhNdo0pp6RG/S
         esX6MxmiKruCYM9f8UXERAJOH4NfCZYFYYL9Qv+lYIlRU4Yo/4w4EaEZD9XCtBeJbG9hwAxRGRLSfyO6
@@ -151,26 +151,10 @@
   <data name="btnShowPurchaseForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAALRJREFUWEft1jEKAkEMheFB0NobCeIeQEXRw2ixvXgKBb2LoOcRcf8UAWFW3CJh
+        vgAADr4B6kKxwAAAALRJREFUWEft1jEKAkEMheFB0NobCeIeQEXRw2ixvXgKBb2LoOcRcf8UAWFW3CJh
         VsiDr5GQeVs4TIpE+pYx9jjhauyMHeSM1ozwwNvZDUNkqaBDLzyNyU7dP0GWDXRgDWlpaQvdP0eWzwIL
         +cE48lGdCxywNHZE5wLeokD/C3jfAz8LrDAw9l/3QBSIAsULFPkbzqAD3hfRFFnk0XCHDnmRM+Ss1siD
         scbFiez++iiNRAokpQbGok021BK9VAAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="btnShowHomeForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAAAlRJREFUWEft1ztPFFEYxvFFRLwQJaExkcbYkGihFiQWAi2d8QPQWRAKLDQxeFsj
-        NAZj1FjyFaAlJNAZEwugEwptLCXeARW8/J+Nb/JymLM7sx6EKE/yK3Z3Zs7LO2fOHEq72SFpxD40VD5t
-        QzRwDx7jJT5iBW8wiX604a+kAzP4WcMHXMYebFku4DPCwdfwFT/cd2YcB5A8vdDANpAKGEM3NH80j9ox
-        gAX4oiaQdH4dxVvYAK9wCrHsxX34ogaRLA9hF9bEPY48eQI77x1akStqeRnPcFpfBNFv69CFL+mLnDmE
-        17CiNMlrRgXMw07S3LgNFelzDi8wiuECnsOuPY1omqG//BvsBG8OZ+Cjp+UBrFtFfUJmzsJ3Rb7DT1xR
-        sVndOo9F+GPz0LKwIerKHfjHV/SYauVtwSOEHVDxYbcO4gpGargHW582FJTVlS/QfVahPp0Ij411q1ZU
-        uLqva1QKsico7MpTnEQsTbiGZfjzNLeynsRYNhU0+/uDeQ+9/PKunCcwBX8NdesiLJpTd51bsHfYpoLs
-        /oneK8dQNCq+D0uwaw3Bch32vaxCHVaiBWm+hHOlaG7CBt0RBd2ADeoLquuWZRWkl6CW9yy6UJhYQdVS
-        qCA9RZqgWbTBsrZbtryg8N57WcfHCuqCXwy1XtV1y1IVlGxS/7MF6SnzW45tv2XVsluQUvctO4L9Thk2
-        QEjHH4Y/Xnsp+/2PJ7VoC+IXPzswptrxSQpKyRdUaGHUBkvtT+0q8kT/GGhzr3NUS2XHqMmZmnUgT3T7
-        dE7R7e9/l1LpF5+d50R/sTG3AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>
