@@ -35,7 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CondoSaleManagementSystemsHelper\HomeSaleManagementSystemsHelper.csproj" />
+    <ProjectReference Include="..\HomeSaleManagementSystemsHelper\HomeSaleManagementSystemsHelper.csproj" />
   </ItemGroup>
 
 </Project>
