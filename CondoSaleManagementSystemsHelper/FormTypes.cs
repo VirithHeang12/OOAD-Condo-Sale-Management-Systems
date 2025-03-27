@@ -9,6 +9,7 @@
         FrmPurchase = 5,
         FrmUser = 6,
         FrmInsurance = 7,
+        FrmLogin = 8
     };
     
 }

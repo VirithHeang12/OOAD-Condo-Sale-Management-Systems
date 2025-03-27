@@ -4,13 +4,15 @@ using System.Data;
 
 namespace Condo_Sale_Management_Systems
 {
-    public partial class FrmLogin : Form
+    public partial class FrmLogin : Form, IForm
     {
         private const string TABLE_NAME = "tblUser";
         private DataSet _storeRentalDataSet = new DataSet();
         private SqlDataAdapter _userDataAdapter = new();
 
         public static event EventHandler? LoggedIn;
+
+        public Form UnderlyingForm => this;
 
         public FrmLogin()
         {
@@ -22,6 +24,11 @@ namespace Condo_Sale_Management_Systems
             btnLogin.Click += handleBtnLoginClick;
             txtLoginPassword.KeyDown += HandleKeyDown;
             txtLoginUserName.KeyDown += HandleKeyDown;
+        }
+
+        public void Initialize()
+        {
+            // Common initialization logic
         }
 
         private void HandleKeyDown(object? sender, KeyEventArgs e)

@@ -3,10 +3,13 @@
 
 namespace Condo_Sale_Management_Systems
 {
-    public partial class FrmHome : Form
+    public partial class FrmHome : Form, IForm
     {
         public static event EventHandler<FormEventArgs>? NavButtonClicked;
         public static event EventHandler? ButtonLogoutClicked;
+
+        public Form UnderlyingForm => this;
+
         public FrmHome()
         {
             InitializeComponent();
@@ -21,6 +24,12 @@ namespace Condo_Sale_Management_Systems
 
             btnLogout.Click += HandleButtonLogoutClick;
         }
+
+        public virtual void Initialize()
+        {
+            // Common initialization logic
+        }
+
 
         private void HandleShowFormCondo(object? sender, EventArgs e)
         {

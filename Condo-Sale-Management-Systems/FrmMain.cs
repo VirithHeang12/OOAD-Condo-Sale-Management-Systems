@@ -4,120 +4,93 @@ namespace Condo_Sale_Management_Systems
 {
     public partial class FrmMain : Form
     {
-        public Form? FrmActive { get; set; } = null;
+        private IForm? _activeForm = null;
+        private FormFactory _formFactory;
 
         public FrmMain()
         {
             InitializeComponent();
-            this.Resize += HandleFormResize;
 
+            // Initialize the form factory
+            _formFactory = new FormFactory(this);
+
+            this.Resize += HandleFormResize;
             this.MaximizeBox = false;
             this.WindowState = FormWindowState.Maximized;
 
+            // Set up event handlers
             FrmLogin.LoggedIn += HandleLoggedIn;
             FrmHome.NavButtonClicked += HandleNavButtonClicked;
             FrmHome.ButtonLogoutClicked += HandleButtonLogoutClick;
-            OpenChildForm(new FrmLogin());
+
+            // Open the login form
+            OpenChildForm(FormTypes.FrmLogin);
         }
 
         private void HandleButtonLogoutClick(object? sender, EventArgs e)
         {
-            OpenChildForm(new FrmLogin());
+            OpenChildForm(FormTypes.FrmLogin);
         }
 
         private void HandleNavButtonClicked(object? sender, FormEventArgs e)
         {
-            switch (e.Form)
-            {
-                case FormTypes.FrmHome:
-                    OpenChildForm(new FrmHomeDesign());
-                    break;
-                case FormTypes.FrmStaff:
-                    OpenChildForm(new FrmStaff());
-                    break;
-                case FormTypes.FrmCustomer:
-                    OpenChildForm(new FrmCustomer());
-                    break;
-                case FormTypes.FrmCondoType:
-                    OpenChildForm(new FrmCondoType());
-                    break;
-                case FormTypes.FrmUser:
-                    OpenChildForm(new FrmUser());
-                    break;
-                case FormTypes.FrmInsurance:
-                    OpenChildForm(new FrmInsurance());
-                    break;
-                case FormTypes.FrmPurchase:
-                    OpenChildForm(new FrmPurchase());
-                    break;
-                case FormTypes.FrmCondo:
-                    OpenChildForm(new FrmCondo());
-                    break;
-                default: break;
-            }
+            OpenChildForm(e.Form);
         }
 
         private void HandleLoggedIn(object? sender, EventArgs e)
         {
-            OpenChildForm(new FrmHome());
+            OpenChildForm(FormTypes.FrmHome);
         }
 
         private void HandleFormResize(object? sender, EventArgs e)
         {
-            if (this.MdiChildren.Length > 0)
+            if (_activeForm != null)
             {
-                AdjustChildFormSize(this.MdiChildren[0]);
+                Form actualForm = _activeForm.UnderlyingForm;
+                actualForm.Width = this.ClientSize.Width - 4;
+                actualForm.Height = this.ClientSize.Height - 4;
             }
         }
 
-        private void AdjustChildFormSize(Form child)
+        private async Task FadeIn(IForm form)
         {
-            child.Left = 0;
-            child.Top = 0;
-            child.Width = this.ClientSize.Width - 4;
-            child.Height = this.ClientSize.Height - 4;
-        }
-
-        private async Task FadeIn(Form form)
-        {
-            form.Opacity = 0;
+            Form actualForm = form.UnderlyingForm;
+            actualForm.Opacity = 0;
             form.Show();
-            form.BringToFront();
 
-            while (form.Opacity < 1.0)
+            while (actualForm.Opacity < 1.0)
             {
-
-                await Task.Delay(1); // Adjust delay as needed
-                form.Opacity += 0.05;
+                await Task.Delay(1);
+                actualForm.Opacity += 0.05;
             }
         }
 
-        private async Task FadeOut(Form form)
+        private async Task FadeOut(IForm form)
         {
-            while (form.Opacity > 0.0)
-            {
+            Form actualForm = form.UnderlyingForm;
 
-                await Task.Delay(1); // Adjust delay as needed
-                form.Opacity -= 0.05;
+            while (actualForm.Opacity > 0.0)
+            {
+                await Task.Delay(1);
+                actualForm.Opacity -= 0.05;
             }
-            form.Hide(); // Hide instead of closing immediately
+
+            form.Hide();
         }
 
-        private async void OpenChildForm(Form form)
+        private async void OpenChildForm(FormTypes formType)
         {
-            if (FrmActive != null)
+            // Factory Method pattern usage
+            if (_activeForm != null)
             {
-                await FadeOut(FrmActive);
+                await FadeOut(_activeForm);
             }
 
-            FrmActive = form;
-            FrmActive.MdiParent = this;
-            FrmActive.StartPosition = FormStartPosition.Manual;
-            FrmActive.Location = new Point(0, 0);
-            FrmActive.Width = this.ClientSize.Width - 4;
-            FrmActive.Height = this.ClientSize.Height - 4;
+            // Create form using factory method
+            IForm newForm = _formFactory.CreateForm(formType);
+            _activeForm = newForm;
 
-            await FadeIn(FrmActive);
+            await FadeIn(_activeForm);
         }
     }
 
