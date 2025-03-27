@@ -3,40 +3,50 @@ using Microsoft.Extensions.Configuration;
 
 namespace CondoSaleManagementSystemsHelper
 {
-    public static class Connection
+    public class Connection
     {
-        public static string ConnectionStringKey { get; set; } = "ConnectionString";
-        public static IConfiguration? Configuration { get; set; } = null;
-        public static SqlConnection? Conn = default;
-        public static void LoadConfiguration(string jsonFile)
+        private static Connection? _instance;
+        private SqlConnection? _conn;
+        private static IConfiguration? _configuration;
+
+        private Connection() { }
+
+        public static Connection Instance
         {
-            var builder = new ConfigurationBuilder()
-              .AddJsonFile(jsonFile, optional: false, reloadOnChange: true);
-            Configuration = builder.Build();
-        }
-        public static SqlConnection OpenConnection()
-        {
-            if (Conn?.State != null && Conn?.State != System.Data.ConnectionState.Closed)
-                throw new Exception("The connection is currently not in closed state");
-            try
+            get
             {
-                string? connStr = Configuration?.GetRequiredSection(ConnectionStringKey).Value;
-                var conn = new SqlConnection(connStr);
-                conn.Open();
-                Conn = conn;
-                return conn;
-            }
-            catch (Exception ex)
-            {
-                Conn = null;
-                throw new Exception($"Failed to connect to the server > {ex.Message}");
+                _instance ??= new Connection();
+                return _instance;
             }
         }
 
-        public static void CloseConnnection()
+        public static void LoadConfiguration(string jsonFile)
         {
-            if (Conn!.State != System.Data.ConnectionState.Closed)
-                Conn.Close();
+            var builder = new ConfigurationBuilder()
+                .AddJsonFile(jsonFile, optional: false, reloadOnChange: true);
+            _configuration = builder.Build();
+        }
+
+        public SqlConnection GetConnection()
+        {
+            if (_conn == null || _conn.State == System.Data.ConnectionState.Closed || _conn.State == System.Data.ConnectionState.Broken)
+            {
+                try
+                {
+                    string? connStr = _configuration?.GetRequiredSection("ConnectionString").Value;
+                    if (string.IsNullOrEmpty(connStr))
+                        throw new Exception("Connection string is missing.");
+
+                    _conn = new SqlConnection(connStr);
+                    _conn.Open();
+                }
+                catch (Exception ex)
+                {
+                    _conn = null;
+                    throw new Exception($"Failed to connect to the server > {ex.Message}");
+                }
+            }
+            return _conn;
         }
     }
 

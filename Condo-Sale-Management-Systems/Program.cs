@@ -13,31 +13,16 @@ namespace Condo_Sale_Management_Systems
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-            TryConnectingToServer();
+            InitCommands();
             ApplicationConfiguration.Initialize();
             Application.Run(new FrmMain());
         }
 
-        static void TryConnectingToServer()
-        {
-            CondoSaleManagementSystemsHelper.Connection.ConnectionStringKey = "ConnectionString";
-            try
-            {
-            CondoSaleManagementSystemsHelper.Connection.LoadConfiguration("appsettings.json");
-                CondoSaleManagementSystemsHelper.Connection.Conn = Connection;
-                Connection = CondoSaleManagementSystemsHelper.Connection.OpenConnection();
-                InitCommands();
-                CondoSaleManagementSystemsHelper.Connection.CloseConnnection();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Preparing a connection", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(0);
-            }
-        }
         public static SqlConnection Connection = default!;
         private static void InitCommands()
         {
+            CondoSaleManagementSystemsHelper.Connection.LoadConfiguration("appsettings.json");
+            Connection = CondoSaleManagementSystemsHelper.Connection.Instance.GetConnection();
             StaffHelper.Connection = Connection;
             InsuranceHelper.Connection = Connection;
             CondoTypeHelper.Connection = Connection;
