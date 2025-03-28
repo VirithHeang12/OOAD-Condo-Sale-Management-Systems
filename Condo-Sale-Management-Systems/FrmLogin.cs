@@ -21,7 +21,7 @@ namespace Condo_Sale_Management_Systems
             InitCommands();
             LoadAllUsers();
 
-            btnLogin.Click += handleBtnLoginClick;
+            btnLogin.Click += HandleBtnLoginClick;
             txtLoginPassword.KeyDown += HandleKeyDown;
             txtLoginUserName.KeyDown += HandleKeyDown;
         }
@@ -35,12 +35,12 @@ namespace Condo_Sale_Management_Systems
         {
             if (e.KeyCode == Keys.Enter)
             {
-                handleBtnLoginClick(null, EventArgs.Empty);
+                HandleBtnLoginClick(null, EventArgs.Empty);
             }
 
         }
 
-        private void handleBtnLoginClick(object? sender, EventArgs e)
+        private void HandleBtnLoginClick(object? sender, EventArgs e)
         {
             string userNameInput = txtLoginUserName.Text;
             string passwordInput = txtLoginPassword.Text;

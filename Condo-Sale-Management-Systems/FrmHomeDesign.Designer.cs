@@ -32,27 +32,27 @@
             label1 = new Label();
             panel4 = new Panel();
             label4 = new Label();
-            lblStoreRentedCount = new Label();
+            lblCondoSoldCount = new Label();
             pictureBox3 = new PictureBox();
             panel5 = new Panel();
             label6 = new Label();
-            label7 = new Label();
+            lblStaffCount = new Label();
             pictureBox4 = new PictureBox();
             panel6 = new Panel();
             label8 = new Label();
-            label9 = new Label();
+            lblCustomerCount = new Label();
             pictureBox5 = new PictureBox();
             panel3 = new Panel();
             label2 = new Label();
-            lblStoreCount = new Label();
+            lblCondoCount = new Label();
             pictureBox2 = new PictureBox();
             panel7 = new Panel();
             label10 = new Label();
-            label11 = new Label();
+            lblInsuranceCount = new Label();
             pictureBox6 = new PictureBox();
             panel8 = new Panel();
             label3 = new Label();
-            lblCountContract = new Label();
+            lblContractCount = new Label();
             pictureBox7 = new PictureBox();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -85,7 +85,7 @@
             // 
             panel4.BackColor = Color.FromArgb(0, 28, 87);
             panel4.Controls.Add(label4);
-            panel4.Controls.Add(lblStoreRentedCount);
+            panel4.Controls.Add(lblCondoSoldCount);
             panel4.Controls.Add(pictureBox3);
             panel4.Location = new Point(850, 257);
             panel4.Name = "panel4";
@@ -103,16 +103,16 @@
             label4.TabIndex = 2;
             label4.Text = "ចំនួន Condo បានលក់";
             // 
-            // lblStoreRentedCount
+            // lblCondoSoldCount
             // 
-            lblStoreRentedCount.AutoSize = true;
-            lblStoreRentedCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblStoreRentedCount.ForeColor = Color.White;
-            lblStoreRentedCount.Location = new Point(162, 25);
-            lblStoreRentedCount.Name = "lblStoreRentedCount";
-            lblStoreRentedCount.Size = new Size(34, 43);
-            lblStoreRentedCount.TabIndex = 1;
-            lblStoreRentedCount.Text = "0";
+            lblCondoSoldCount.AutoSize = true;
+            lblCondoSoldCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCondoSoldCount.ForeColor = Color.White;
+            lblCondoSoldCount.Location = new Point(162, 25);
+            lblCondoSoldCount.Name = "lblCondoSoldCount";
+            lblCondoSoldCount.Size = new Size(34, 43);
+            lblCondoSoldCount.TabIndex = 1;
+            lblCondoSoldCount.Text = "0";
             // 
             // pictureBox3
             // 
@@ -128,7 +128,7 @@
             // 
             panel5.BackColor = Color.FromArgb(0, 28, 87);
             panel5.Controls.Add(label6);
-            panel5.Controls.Add(label7);
+            panel5.Controls.Add(lblStaffCount);
             panel5.Controls.Add(pictureBox4);
             panel5.Location = new Point(1336, 257);
             panel5.Name = "panel5";
@@ -146,16 +146,16 @@
             label6.TabIndex = 2;
             label6.Text = "ចំនួនបុគ្គលិកសរុប";
             // 
-            // label7
+            // lblStaffCount
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = Color.White;
-            label7.Location = new Point(162, 25);
-            label7.Name = "label7";
-            label7.Size = new Size(34, 43);
-            label7.TabIndex = 1;
-            label7.Text = "0";
+            lblStaffCount.AutoSize = true;
+            lblStaffCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblStaffCount.ForeColor = Color.White;
+            lblStaffCount.Location = new Point(162, 25);
+            lblStaffCount.Name = "lblStaffCount";
+            lblStaffCount.Size = new Size(34, 43);
+            lblStaffCount.TabIndex = 1;
+            lblStaffCount.Text = "0";
             // 
             // pictureBox4
             // 
@@ -171,7 +171,7 @@
             // 
             panel6.BackColor = Color.FromArgb(0, 28, 87);
             panel6.Controls.Add(label8);
-            panel6.Controls.Add(label9);
+            panel6.Controls.Add(lblCustomerCount);
             panel6.Controls.Add(pictureBox5);
             panel6.Location = new Point(347, 604);
             panel6.Name = "panel6";
@@ -189,16 +189,16 @@
             label8.TabIndex = 2;
             label8.Text = "ចំនួនអតិថិជនសរុប";
             // 
-            // label9
+            // lblCustomerCount
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.White;
-            label9.Location = new Point(162, 25);
-            label9.Name = "label9";
-            label9.Size = new Size(34, 43);
-            label9.TabIndex = 1;
-            label9.Text = "0";
+            lblCustomerCount.AutoSize = true;
+            lblCustomerCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCustomerCount.ForeColor = Color.White;
+            lblCustomerCount.Location = new Point(162, 25);
+            lblCustomerCount.Name = "lblCustomerCount";
+            lblCustomerCount.Size = new Size(34, 43);
+            lblCustomerCount.TabIndex = 1;
+            lblCustomerCount.Text = "0";
             // 
             // pictureBox5
             // 
@@ -214,7 +214,7 @@
             // 
             panel3.BackColor = Color.FromArgb(0, 28, 87);
             panel3.Controls.Add(label2);
-            panel3.Controls.Add(lblStoreCount);
+            panel3.Controls.Add(lblCondoCount);
             panel3.Controls.Add(pictureBox2);
             panel3.Location = new Point(347, 257);
             panel3.Name = "panel3";
@@ -232,16 +232,16 @@
             label2.TabIndex = 2;
             label2.Text = "ចំនួន Condo សរុប";
             // 
-            // lblStoreCount
+            // lblCondoCount
             // 
-            lblStoreCount.AutoSize = true;
-            lblStoreCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblStoreCount.ForeColor = Color.White;
-            lblStoreCount.Location = new Point(162, 25);
-            lblStoreCount.Name = "lblStoreCount";
-            lblStoreCount.Size = new Size(34, 43);
-            lblStoreCount.TabIndex = 1;
-            lblStoreCount.Text = "0";
+            lblCondoCount.AutoSize = true;
+            lblCondoCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblCondoCount.ForeColor = Color.White;
+            lblCondoCount.Location = new Point(162, 25);
+            lblCondoCount.Name = "lblCondoCount";
+            lblCondoCount.Size = new Size(34, 43);
+            lblCondoCount.TabIndex = 1;
+            lblCondoCount.Text = "0";
             // 
             // pictureBox2
             // 
@@ -257,7 +257,7 @@
             // 
             panel7.BackColor = Color.FromArgb(0, 28, 87);
             panel7.Controls.Add(label10);
-            panel7.Controls.Add(label11);
+            panel7.Controls.Add(lblInsuranceCount);
             panel7.Controls.Add(pictureBox6);
             panel7.Location = new Point(850, 604);
             panel7.Name = "panel7";
@@ -275,16 +275,16 @@
             label10.TabIndex = 2;
             label10.Text = "ចំនួនក្រុមហ៊ុនធានារ៉ាប់រងសរុប";
             // 
-            // label11
+            // lblInsuranceCount
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            label11.ForeColor = Color.White;
-            label11.Location = new Point(143, 25);
-            label11.Name = "label11";
-            label11.Size = new Size(34, 43);
-            label11.TabIndex = 1;
-            label11.Text = "0";
+            lblInsuranceCount.AutoSize = true;
+            lblInsuranceCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblInsuranceCount.ForeColor = Color.White;
+            lblInsuranceCount.Location = new Point(143, 25);
+            lblInsuranceCount.Name = "lblInsuranceCount";
+            lblInsuranceCount.Size = new Size(34, 43);
+            lblInsuranceCount.TabIndex = 1;
+            lblInsuranceCount.Text = "0";
             // 
             // pictureBox6
             // 
@@ -300,7 +300,7 @@
             // 
             panel8.BackColor = Color.FromArgb(0, 28, 87);
             panel8.Controls.Add(label3);
-            panel8.Controls.Add(lblCountContract);
+            panel8.Controls.Add(lblContractCount);
             panel8.Controls.Add(pictureBox7);
             panel8.Location = new Point(1336, 604);
             panel8.Name = "panel8";
@@ -318,16 +318,16 @@
             label3.TabIndex = 2;
             label3.Text = "ចំនួនការលក់សរុប";
             // 
-            // lblCountContract
+            // lblContractCount
             // 
-            lblCountContract.AutoSize = true;
-            lblCountContract.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCountContract.ForeColor = Color.White;
-            lblCountContract.Location = new Point(143, 25);
-            lblCountContract.Name = "lblCountContract";
-            lblCountContract.Size = new Size(38, 43);
-            lblCountContract.TabIndex = 1;
-            lblCountContract.Text = "០";
+            lblContractCount.AutoSize = true;
+            lblContractCount.Font = new Font("Khmer OS Siemreap", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lblContractCount.ForeColor = Color.White;
+            lblContractCount.Location = new Point(143, 25);
+            lblContractCount.Name = "lblContractCount";
+            lblContractCount.Size = new Size(38, 43);
+            lblContractCount.TabIndex = 1;
+            lblContractCount.Text = "០";
             // 
             // pictureBox7
             // 
@@ -385,27 +385,27 @@
         private Label label1;
         private Panel panel4;
         private Label label4;
-        private Label lblStoreRentedCount;
+        private Label lblCondoSoldCount;
         private PictureBox pictureBox3;
         private Panel panel5;
         private Label label6;
-        private Label label7;
+        private Label lblStaffCount;
         private PictureBox pictureBox4;
         private Panel panel6;
         private Label label8;
-        private Label label9;
+        private Label lblCustomerCount;
         private PictureBox pictureBox5;
         private Panel panel3;
         private Label label2;
-        private Label lblStoreCount;
+        private Label lblCondoCount;
         private PictureBox pictureBox2;
         private Panel panel7;
         private Label label10;
-        private Label label11;
+        private Label lblInsuranceCount;
         private PictureBox pictureBox6;
         private Panel panel8;
         private Label label3;
-        private Label lblCountContract;
+        private Label lblContractCount;
         private PictureBox pictureBox7;
     }
 }

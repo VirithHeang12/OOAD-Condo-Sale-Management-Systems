@@ -1,4 +1,5 @@
-﻿using CondoSaleManagementSystemsHelper;
+﻿using Condo_Sale_Management_Systems.Dashboard;
+using CondoSaleManagementSystemsHelper;
 
 
 namespace Condo_Sale_Management_Systems
@@ -6,71 +7,73 @@ namespace Condo_Sale_Management_Systems
 
     public partial class FrmHomeDesign : FrmHome
     {
+        private IDashboardComponent dashboard;
+
+        public Label LblContractCount 
+        {
+            get
+            { 
+                return lblContractCount; 
+            }
+        }
+
+        public Label LblStaffCount
+        {
+            get
+            {
+                return lblStaffCount;
+            }
+        }
+
+        public Label LblCustomerCount
+        {
+            get
+            {
+                return lblCustomerCount;
+            }
+        }
+
+        public Label LblCondoSoldCount
+        {
+            get
+            {
+                return lblCondoSoldCount;
+            }
+        }
+
+        public Label LblInsuranceCount
+        {
+            get
+            {
+                return lblInsuranceCount;
+            }
+        }
+
+        public Label LblCondoCount
+        {
+            get
+            {
+                return lblCondoCount;
+            }
+        }
+
+
         public FrmHomeDesign()
         {
-
             InitializeComponent();
 
+            // Create base component
+            dashboard = new BasicDashboard(this);
 
-            #region Get All Counts 
-            GetSoldCondos();
-            GetAllCondos();
-            GetAllStaffs();
-            GetAllCustomers();
-            GetAllInsurances();
-            GetAllPurchases();
-            #endregion
+            // Decorate with various statistics components
+            dashboard = new CondoStatsDecorator(dashboard, this);
+            dashboard = new StaffStatsDecorator(dashboard, this);
+            dashboard = new CustomerStatsDecorator(dashboard, this);
+            dashboard = new InsuranceStatsDecorator(dashboard, this);
+            dashboard = new PurchaseStatsDecorator(dashboard, this);
 
+            // Update dashboard with all decorators
+            dashboard.UpdateDashboard();
         }
-
-        #region GetAllPurchases
-        private void GetAllPurchases()
-        {
-            string contractCount = HomeDesignHelper.GetAllPurchases(Program.Connection);
-            lblCountContract.Text = contractCount;
-        }
-
-        #endregion
-
-        #region GetSoldCondos
-        private void GetSoldCondos()
-        {
-            string rentedStoreCount = HomeDesignHelper.GetSoldCondoCount(Program.Connection);
-            lblStoreRentedCount.Text = rentedStoreCount;
-        }
-
-        #endregion
-
-        #region GetAllCondos
-        private void GetAllCondos()
-        {
-            string allStoresCount = HomeDesignHelper.GetAllCondos(Program.Connection);
-            lblStoreCount.Text = allStoresCount;
-        }
-        #endregion
-
-        #region GetAllStaffs
-        private void GetAllStaffs()
-        {
-            string allStaffsCount = HomeDesignHelper.GetAllStaffs(Program.Connection);
-            label7.Text = allStaffsCount;
-        }
-        #endregion
-
-        #region GetAllCustomers
-        private void GetAllCustomers()
-        {
-            string allCustomersCount = HomeDesignHelper.GetAllCustomers(Program.Connection);
-            label9.Text = allCustomersCount;
-        }
-        #endregion
-
-        #region GetAllInsurances
-        private void GetAllInsurances()
-        {
-            string allCustomersCount = HomeDesignHelper.GetAllInsurances(Program.Connection);
-            label11.Text = allCustomersCount;
-        }
-        #endregion
     }
 }
