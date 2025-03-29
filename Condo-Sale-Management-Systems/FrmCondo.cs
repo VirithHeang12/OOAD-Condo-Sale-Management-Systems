@@ -309,7 +309,5 @@ namespace Condo_Sale_Management_Systems
         }
         #endregion
 
-
-
     }
 }
