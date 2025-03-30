@@ -22,7 +22,7 @@ namespace Condo_Sale_Management_Systems
             btnShowPurchaseForm.Click += HandleShowFormPurchase;
             btnShowCondoForm.Click += HandleShowFormCondo;
 
-            btnLogout.Click += HandleButtonLogoutClick;
+            btnLogout.Click += HandleButtonLogoutClicked;
         }
 
         public virtual void Initialize()
@@ -61,7 +61,7 @@ namespace Condo_Sale_Management_Systems
             RaiseEvent(FormTypes.FrmCustomer);
         }
 
-        private void HandleButtonLogoutClick(object? sender, EventArgs e)
+        private void HandleButtonLogoutClicked(object? sender, EventArgs e)
         {
             var result = MessageBox.Show("តើអ្នកពិតជាចង់ចាកចេញពីប្រព័ន្ធមែនឬទេ?", "ចាកចេញពីប្រព័ន្ធ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (result == DialogResult.OK)
@@ -81,11 +81,11 @@ namespace Condo_Sale_Management_Systems
             RaiseEvent(FormTypes.FrmStaff);
         }
 
-        private void RaiseEvent(FormTypes ft)
+        private void RaiseEvent(FormTypes formType)
         {
             NavButtonClicked?.Invoke(this, new FormEventArgs()
             {
-                Form = ft,
+                Form = formType,
             });
         }
     }

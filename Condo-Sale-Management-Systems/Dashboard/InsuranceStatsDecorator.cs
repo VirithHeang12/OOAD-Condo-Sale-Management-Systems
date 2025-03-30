@@ -9,12 +9,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
 {
     public class InsuranceStatsDecorator : DashboardDecorator
     {
-        private FrmHomeDesign _form;
-
-        public InsuranceStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component)
-        {
-            _form = form;
-        }
+        public InsuranceStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component, form) { }
 
         public override void UpdateDashboard()
         {
@@ -25,7 +20,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
         private void AddInsuranceStats()
         {
             string allInsurancesCount = HomeDesignHelper.GetAllInsurances(Program.Connection);
-            _form.LblInsuranceCount.Text = allInsurancesCount;
+            homeForm.LblInsuranceCount.Text = allInsurancesCount;
         }
     }
 }

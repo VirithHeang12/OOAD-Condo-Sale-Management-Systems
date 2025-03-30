@@ -7,7 +7,7 @@ namespace Condo_Sale_Management_Systems
 
     public partial class FrmHomeDesign : FrmHome
     {
-        private IDashboardComponent dashboard;
+        private IDashboardComponent _dashboard;
 
         public Label LblContractCount 
         {
@@ -63,17 +63,17 @@ namespace Condo_Sale_Management_Systems
             InitializeComponent();
 
             // Create base component
-            dashboard = new BasicDashboard(this);
+            _dashboard = new BasicDashboard(this);
 
             // Decorate with various statistics components
-            dashboard = new CondoStatsDecorator(dashboard, this);
-            dashboard = new StaffStatsDecorator(dashboard, this);
-            dashboard = new CustomerStatsDecorator(dashboard, this);
-            dashboard = new InsuranceStatsDecorator(dashboard, this);
-            dashboard = new PurchaseStatsDecorator(dashboard, this);
+            _dashboard = new CondoStatsDecorator(_dashboard, this);
+            _dashboard = new StaffStatsDecorator(_dashboard, this);
+            _dashboard = new CustomerStatsDecorator(_dashboard, this);
+            _dashboard = new InsuranceStatsDecorator(_dashboard, this);
+            _dashboard = new PurchaseStatsDecorator(_dashboard, this);
 
             // Update dashboard with all decorators
-            dashboard.UpdateDashboard();
+            _dashboard.UpdateDashboard();
         }
     }
 }

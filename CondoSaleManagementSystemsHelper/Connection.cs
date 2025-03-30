@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace CondoSaleManagementSystemsHelper
 {
-    public class Connection
+    public sealed class Connection
     {
         private static Connection? _instance;
         private SqlConnection? _conn;

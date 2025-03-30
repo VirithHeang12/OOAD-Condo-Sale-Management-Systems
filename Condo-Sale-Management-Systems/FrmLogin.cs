@@ -7,7 +7,7 @@ namespace Condo_Sale_Management_Systems
     public partial class FrmLogin : Form, IForm
     {
         private const string TABLE_NAME = "tblUser";
-        private DataSet _storeRentalDataSet = new DataSet();
+        private DataSet _condoSaleDataSet = new DataSet();
         private SqlDataAdapter _userDataAdapter = new();
 
         public static event EventHandler? LoggedIn;
@@ -21,7 +21,7 @@ namespace Condo_Sale_Management_Systems
             InitCommands();
             LoadAllUsers();
 
-            btnLogin.Click += HandleBtnLoginClick;
+            btnLogin.Click += HandleBtnLoginClicked;
             txtLoginPassword.KeyDown += HandleKeyDown;
             txtLoginUserName.KeyDown += HandleKeyDown;
         }
@@ -35,12 +35,12 @@ namespace Condo_Sale_Management_Systems
         {
             if (e.KeyCode == Keys.Enter)
             {
-                HandleBtnLoginClick(null, EventArgs.Empty);
+                HandleBtnLoginClicked(null, EventArgs.Empty);
             }
 
         }
 
-        private void HandleBtnLoginClick(object? sender, EventArgs e)
+        private void HandleBtnLoginClicked(object? sender, EventArgs e)
         {
             string userNameInput = txtLoginUserName.Text;
             string passwordInput = txtLoginPassword.Text;
@@ -52,7 +52,7 @@ namespace Condo_Sale_Management_Systems
                 return;
             }
 
-            foreach (DataRow row in _storeRentalDataSet.Tables[TABLE_NAME]!.Rows)
+            foreach (DataRow row in _condoSaleDataSet.Tables[TABLE_NAME]!.Rows)
             {
                 if (userNameInput.Equals(row["UserName"]) && passwordInput.Equals(row["Password"]))
                 {
@@ -74,19 +74,19 @@ namespace Condo_Sale_Management_Systems
 
             try
             {
-                _userDataAdapter.Fill(_storeRentalDataSet, TABLE_NAME);
+                _userDataAdapter.Fill(_condoSaleDataSet, TABLE_NAME);
             }
             catch (Exception)
             {
                 MessageBox.Show("ការទាញទិន្នន័យមិនបានសម្រេច", "ទាញទិន្នន័យ", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            if (_storeRentalDataSet.Tables[TABLE_NAME]!.Rows.Count == 0)
+            if (_condoSaleDataSet.Tables[TABLE_NAME]!.Rows.Count == 0)
             {
-                var newRow = _storeRentalDataSet.Tables[TABLE_NAME]!.NewRow();
+                var newRow = _condoSaleDataSet.Tables[TABLE_NAME]!.NewRow();
                 newRow["UserName"] = "abc";
                 newRow["Password"] = "12345678";
-                _storeRentalDataSet.Tables[TABLE_NAME]!.Rows.Add(newRow);
+                _condoSaleDataSet.Tables[TABLE_NAME]!.Rows.Add(newRow);
             }
 
         }

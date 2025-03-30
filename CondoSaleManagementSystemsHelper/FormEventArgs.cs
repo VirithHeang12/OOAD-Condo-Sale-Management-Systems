@@ -4,6 +4,6 @@
     {
         public FormTypes Form { get; set; } = FormTypes.FrmHome;
         
-        public new static FormEventArgs Empty => new FormEventArgs();
+        public new static FormEventArgs Empty => new();
     }
 }

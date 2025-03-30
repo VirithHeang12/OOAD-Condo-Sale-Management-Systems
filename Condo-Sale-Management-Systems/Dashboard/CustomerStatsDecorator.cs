@@ -9,12 +9,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
 {
     public class CustomerStatsDecorator : DashboardDecorator
     {
-        private FrmHomeDesign _form;
-
-        public CustomerStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component)
-        {
-            _form = form;
-        }
+        public CustomerStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component, form) { }
 
         public override void UpdateDashboard()
         {
@@ -25,7 +20,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
         private void AddCustomerStats()
         {
             string allCustomersCount = HomeDesignHelper.GetAllCustomers(Program.Connection);
-            _form.LblCustomerCount.Text = allCustomersCount;
+            homeForm.LblCustomerCount.Text = allCustomersCount;
         }
     }
 }

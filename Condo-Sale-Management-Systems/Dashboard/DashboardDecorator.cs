@@ -9,10 +9,12 @@ namespace Condo_Sale_Management_Systems.Dashboard
     public abstract class DashboardDecorator : IDashboardComponent
     {
         protected IDashboardComponent _component;
+        protected FrmHomeDesign homeForm;
 
-        public DashboardDecorator(IDashboardComponent component)
+        public DashboardDecorator(IDashboardComponent component, FrmHomeDesign homeForm)
         {
             _component = component;
+            this.homeForm = homeForm;
         }
 
         public virtual void UpdateDashboard()

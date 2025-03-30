@@ -9,12 +9,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
 {
     public class PurchaseStatsDecorator : DashboardDecorator
     {
-        private FrmHomeDesign _form;
-
-        public PurchaseStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component)
-        {
-            _form = form;
-        }
+        public PurchaseStatsDecorator(IDashboardComponent component, FrmHomeDesign form) : base(component, form) { }
 
         public override void UpdateDashboard()
         {
@@ -25,7 +20,7 @@ namespace Condo_Sale_Management_Systems.Dashboard
         private void AddPurchaseStats()
         {
             string contractCount = HomeDesignHelper.GetAllPurchases(Program.Connection);
-            _form.LblContractCount.Text = contractCount;
+            homeForm.LblContractCount.Text = contractCount;
         }
     }
 }
