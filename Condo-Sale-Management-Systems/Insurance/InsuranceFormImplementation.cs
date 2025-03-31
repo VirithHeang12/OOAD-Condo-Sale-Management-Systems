@@ -23,7 +23,7 @@ namespace Condo_Sale_Management_Systems.Insurance
             _errorProvider.ContainerControl = _form;
         }
 
-        public void Initialize()
+        public override void Initialize()
         {
             LoadAllInsurances();
             BindWithControls();

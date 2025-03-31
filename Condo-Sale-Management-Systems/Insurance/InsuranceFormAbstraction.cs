@@ -9,7 +9,7 @@ namespace Condo_Sale_Management_Systems.Insurance
 {
     public abstract class InsuranceFormAbstraction
     {
-        protected readonly IInsuranceOperations _operations;
+        protected readonly IInsuranceOperations operations;
         protected const string TABLE_NAME = "tblInsurance";
         protected DataSet _dataSet = new();
         protected BindingSource _bindingSource = new();
@@ -18,46 +18,47 @@ namespace Condo_Sale_Management_Systems.Insurance
 
         protected InsuranceFormAbstraction(IInsuranceOperations operations)
         {
-            _operations = operations;
+            this.operations = operations;
         }
 
         public virtual void LoadAllInsurances()
         {
-            _operations.LoadInsurances(_dataSet, TABLE_NAME);
+            operations.LoadInsurances(_dataSet, TABLE_NAME);
         }
 
         public virtual void RefreshDataGridView()
         {
-            _operations.RefreshInsurances(_dataSet, TABLE_NAME);
+            operations.RefreshInsurances(_dataSet, TABLE_NAME);
         }
 
         public virtual void HandleInsertOrUpdate()
         {
             _bindingSource.EndEdit();
-            _operations.InsertOrUpdateInsurance(_dataSet, TABLE_NAME);
+            operations.InsertOrUpdateInsurance(_dataSet, TABLE_NAME);
             _bindingSource.ResetBindings(false);
             RefreshDataGridView();
         }
 
         public virtual void HandleNewRecord()
         {
-            _operations.AddNewInsurance(_bindingSource);
+            operations.AddNewInsurance(_bindingSource);
         }
 
         public virtual void HandleCancel()
         {
             _errorProvider.Clear();
-            _operations.CancelChanges(_dataSet, _bindingSource);
+            operations.CancelChanges(_dataSet, _bindingSource);
             RefreshDataGridView();
         }
 
         public virtual void HandleSearch(string searchText)
         {
-            _operations.FilterInsurances(_bindingSource, searchText);
+            operations.FilterInsurances(_bindingSource, searchText);
         }
 
         public abstract void BindWithControls();
         public abstract void SetupValidation();
         public abstract void RegisterEvents();
+        public abstract void Initialize();  
     }
 }

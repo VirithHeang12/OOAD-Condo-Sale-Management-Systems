@@ -10,7 +10,7 @@ namespace Condo_Sale_Management_Systems
 {
     public partial class FrmInsurance : FrmHome
     {
-        private InsuranceFormImplementation _formImplementation;
+        private InsuranceFormAbstraction _formImplementation;
 
         public DataGridView DgvInsurances => dgvInsurances;
         public TextBox TxtInsuranceID => txtInsuranceID;
